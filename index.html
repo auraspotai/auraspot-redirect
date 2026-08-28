@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AuraSpot</title>
+
+  <script>
+    (function () {
+      const androidUrl =
+        "https://play.google.com/store/apps/details?id=com.ybong.mdai";
+
+      const iosUrl =
+        "https://apps.apple.com/kr/app/auraspot/id6760815307";
+
+      const pcUrl =
+        "https://as.nzip.ai/";
+
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Android
+      const isAndroid = /android/i.test(ua);
+
+      // iPhone / iPad / iPod
+      const isIOS =
+        /iPad|iPhone|iPod/i.test(ua) ||
+        (
+          navigator.platform === "MacIntel" &&
+          navigator.maxTouchPoints > 1
+        );
+
+      if (isAndroid) {
+        window.location.replace(androidUrl);
+        return;
+      }
+
+      if (isIOS) {
+        window.location.replace(iosUrl);
+        return;
+      }
+
+      // PC / Mac / 기타
+      window.location.replace(pcUrl);
+    })();
+  </script>
+</head>
+
+<body>
+  <p>AuraSpot으로 이동 중입니다...</p>
+</body>
+</html>
