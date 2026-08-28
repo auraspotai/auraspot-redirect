@@ -11,15 +11,15 @@
   <title>아우라스팟 | AuraSpot</title>
 
   <!--
-    auraspot.kr은 광고/다운로드 전용 주소.
-    검색 노출은 info.auraspot.kr에서 담당.
+    auraspot.kr은 광고 / 앱 다운로드 / 자동분기 전용 주소입니다.
+    검색 노출은 info.auraspot.kr에서 담당합니다.
   -->
   <meta
     name="robots"
     content="noindex, nofollow"
   >
 
-  <!-- SNS 공유용 -->
+  <!-- SNS 공유 정보 -->
   <meta
     property="og:type"
     content="website"
@@ -50,7 +50,9 @@
     content="#F7F8F5"
   >
 
-  <!-- 기기 자동 감지 -->
+  <!-- =====================================================
+       기기 자동 감지 및 이동
+  ====================================================== -->
   <script>
     (function () {
 
@@ -61,9 +63,9 @@
         "https://apps.apple.com/kr/app/auraspot/id6760815307";
 
       const webUrl =
-        "https://sites.google.com/view/auraspot";
+        "https://app.auraspot.kr/";
 
-      const ua =
+      const userAgent =
         navigator.userAgent ||
         navigator.vendor ||
         window.opera ||
@@ -71,36 +73,48 @@
 
       /*
        * Android
-       * Chrome, Instagram, Facebook,
-       * Kakao 등 인앱 브라우저 포함
+       * Chrome
+       * Samsung Internet
+       * Instagram
+       * Facebook
+       * KakaoTalk 등의 인앱 브라우저 포함
        */
       const isAndroid =
-        /android/i.test(ua);
+        /android/i.test(userAgent);
 
       /*
        * iPhone / iPad / iPod
-       * 최신 iPadOS에서 Mac처럼 표시되는 경우도 포함
        */
-      const isIOS =
-        /iPhone|iPad|iPod/i.test(ua) ||
-        (
-          navigator.platform === "MacIntel" &&
-          navigator.maxTouchPoints > 1
-        );
+      const isIOSDevice =
+        /iPhone|iPad|iPod/i.test(userAgent);
 
+      /*
+       * 최근 iPadOS는 User-Agent가
+       * Macintosh처럼 표시될 수 있으므로 추가 판별
+       */
+      const isIPadOS =
+        navigator.platform === "MacIntel" &&
+        navigator.maxTouchPoints > 1;
+
+      /*
+       * Android
+       */
       if (isAndroid) {
         window.location.replace(androidUrl);
         return;
       }
 
-      if (isIOS) {
+      /*
+       * iPhone / iPad
+       */
+      if (isIOSDevice || isIPadOS) {
         window.location.replace(iosUrl);
         return;
       }
 
       /*
-       * Windows / Mac / Linux / 기타
-       * → AuraSpot 소개 웹사이트
+       * Windows / Mac / Linux / 기타 브라우저
+       * → FlutterFlow 웹앱
        */
       window.location.replace(webUrl);
 
@@ -114,11 +128,12 @@
 
     body {
       margin: 0;
+
       min-height: 100vh;
 
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
 
       font-family:
         -apple-system,
@@ -128,65 +143,62 @@
         Arial,
         sans-serif;
 
+      color: #252a2d;
+
       background:
         radial-gradient(
-          circle at 25% 20%,
-          rgba(103, 213, 169, 0.15),
+          circle at 20% 18%,
+          rgba(83, 203, 156, 0.18),
           transparent 34%
         ),
         radial-gradient(
-          circle at 80% 25%,
-          rgba(163, 140, 241, 0.14),
+          circle at 82% 18%,
+          rgba(157, 139, 239, 0.17),
           transparent 34%
         ),
+        radial-gradient(
+          circle at 50% 90%,
+          rgba(239, 157, 185, 0.13),
+          transparent 32%
+        ),
         #f7f8f5;
-
-      color: #252a2d;
     }
 
     .wrap {
       width: calc(100% - 40px);
-      max-width: 440px;
+      max-width: 430px;
+
       text-align: center;
     }
 
     .brand {
-      margin-bottom: 16px;
-      font-size: 24px;
+      margin-bottom: 18px;
+
+      font-size: 25px;
       font-weight: 800;
+      letter-spacing: -0.7px;
     }
 
-    .aura {
+    .brand-aura {
       color: #33b86b;
     }
 
-    .spot {
+    .brand-spot {
       color: #36a7e8;
     }
 
-    .loading {
-      margin-bottom: 8px;
-      font-size: 16px;
-      font-weight: 700;
-    }
-
-    .description {
-      margin-bottom: 26px;
-      color: #81888b;
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
     .spinner {
-      width: 34px;
-      height: 34px;
-      margin: 0 auto 24px;
+      width: 40px;
+      height: 40px;
+
+      margin: 0 auto 22px;
 
       border: 3px solid rgba(54, 167, 232, 0.13);
-      border-top-color: #51b996;
+      border-top-color: #4fbd91;
+
       border-radius: 50%;
 
-      animation: spin 0.85s linear infinite;
+      animation: spin 0.8s linear infinite;
     }
 
     @keyframes spin {
@@ -195,48 +207,99 @@
       }
     }
 
+    .title {
+      margin-bottom: 8px;
+
+      font-size: 17px;
+      font-weight: 750;
+    }
+
+    .description {
+      margin-bottom: 26px;
+
+      color: #858d90;
+
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
     .fallback {
       padding: 20px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.82);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+
+      background: rgba(255, 255, 255, 0.78);
+
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+
+      box-shadow:
+        0 12px 36px rgba(65, 80, 85, 0.07);
+
+      backdrop-filter: blur(12px);
     }
 
     .fallback-title {
-      margin-bottom: 14px;
+      margin-bottom: 13px;
+
+      color: #989fa2;
+
       font-size: 12px;
-      color: #959b9e;
     }
 
     .button {
       display: block;
+
       width: 100%;
 
       margin-top: 9px;
-      padding: 13px 14px;
+      padding: 14px 15px;
 
-      border-radius: 11px;
+      border-radius: 12px;
+
       text-decoration: none;
 
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 750;
+
+      transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
     }
 
     .google {
-      background: #252a2d;
       color: #ffffff;
+      background: #252a2d;
     }
 
     .apple {
-      border: 1px solid #d7dbdc;
-      background: #ffffff;
       color: #252a2d;
+
+      background: #ffffff;
+      border: 1px solid #dadee0;
     }
 
     .web {
-      border: 1px solid #cce9dc;
-      background: #edf8f3;
-      color: #28805c;
+      color: #297b5c;
+
+      background:
+        linear-gradient(
+          135deg,
+          #eaf8f1,
+          #edf5ff
+        );
+
+      border: 1px solid #cce8dc;
+    }
+
+    .small {
+      margin-top: 20px;
+
+      color: #a0a6a8;
+
+      font-size: 11px;
     }
   </style>
 </head>
@@ -246,24 +309,25 @@
   <main class="wrap">
 
     <div class="brand">
-      <span class="aura">아우라</span><span class="spot">스팟</span>
+      <span class="brand-aura">아우라</span><span class="brand-spot">스팟</span>
     </div>
 
     <div class="spinner"></div>
 
-    <div class="loading">
+    <div class="title">
       AuraSpot으로 이동하고 있어요 ✨
     </div>
 
     <div class="description">
-      사용 중인 기기에 맞는 페이지로 자동 연결됩니다.
+      사용 중인 기기에 맞는 AuraSpot으로<br>
+      자동 연결됩니다.
     </div>
 
     <!--
-      JavaScript가 차단되거나
-      자동 이동이 되지 않는 경우를 위한 버튼
+      자동 이동이 차단되거나
+      JavaScript 실행이 지연되는 경우를 위한 수동 버튼
     -->
-    <div class="fallback">
+    <section class="fallback">
 
       <div class="fallback-title">
         자동으로 이동하지 않나요?
@@ -285,11 +349,15 @@
 
       <a
         class="button web"
-        href="https://sites.google.com/view/auraspot"
+        href="https://app.auraspot.kr/"
       >
-        AuraSpot 웹에서 보기
+        AuraSpot 웹에서 이용하기
       </a>
 
+    </section>
+
+    <div class="small">
+      © AuraSpot
     </div>
 
   </main>
