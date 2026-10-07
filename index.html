@@ -10,6 +10,26 @@
 
   <title>아우라스팟 | 오늘의운세</title>
 
+  <!-- =====================================================
+       AuraSpot 사이트 아이콘
+  ====================================================== -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="https://auraspot.kr/icon.png?v=20261007"
+  >
+
+  <link
+    rel="shortcut icon"
+    type="image/png"
+    href="https://auraspot.kr/icon.png?v=20261007"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="https://auraspot.kr/icon.png?v=20261007"
+  >
+
   <!--
     auraspot.kr은 광고 / 앱 다운로드 / 자동분기 전용 주소입니다.
     검색 노출은 info.auraspot.kr에서 담당합니다.
@@ -122,10 +142,6 @@
 
   <!-- =====================================================
        기기 자동 감지 및 이동
-
-       Android → Google Play 자동 이동
-       iPhone/iPad → 이동하지 않고 다운로드 화면 표시
-       PC/Mac/Linux → AuraSpot Web 자동 이동
   ====================================================== -->
   <script>
     (function () {
@@ -142,21 +158,12 @@
         window.opera ||
         "";
 
-      /*
-       * Android
-       */
       const isAndroid =
         /android/i.test(userAgent);
 
-      /*
-       * iPhone / iPad / iPod
-       */
       const isIOSDevice =
         /iPhone|iPad|iPod/i.test(userAgent);
 
-      /*
-       * 최근 iPadOS는 Mac처럼 표시되는 경우 대응
-       */
       const isIPadOS =
         (
           navigator.platform === "MacIntel" ||
@@ -201,7 +208,6 @@
     body {
       margin: 0;
       padding: 0;
-
       width: 100%;
       min-height: 100%;
     }
@@ -248,11 +254,6 @@
         #f7f8f5;
     }
 
-
-    /* =====================================================
-       Android / PC 이동 중 화면
-    ====================================================== */
-
     .redirect-screen {
       width: 100%;
       max-width: 430px;
@@ -261,7 +262,6 @@
 
     .brand {
       margin-bottom: 18px;
-
       font-size: 25px;
       font-weight: 800;
       letter-spacing: -0.7px;
@@ -283,7 +283,6 @@
 
       border: 3px solid rgba(54, 167, 232, 0.13);
       border-top-color: #4fbd91;
-
       border-radius: 50%;
 
       animation: spin 0.8s linear infinite;
@@ -297,16 +296,13 @@
 
     .title {
       margin-bottom: 8px;
-
       font-size: 17px;
       font-weight: 750;
     }
 
     .description {
       margin-bottom: 26px;
-
       color: #858d90;
-
       font-size: 13px;
       line-height: 1.65;
     }
@@ -328,15 +324,12 @@
 
     .fallback-title {
       margin-bottom: 13px;
-
       color: #989fa2;
-
       font-size: 12px;
     }
 
     .button {
       display: block;
-
       width: 100%;
 
       margin-top: 9px;
@@ -392,9 +385,7 @@
 
     .small {
       margin-top: 20px;
-
       color: #a0a6a8;
-
       font-size: 11px;
     }
 
@@ -405,10 +396,8 @@
 
     .ios-screen {
       display: none;
-
       width: 100%;
       max-width: 520px;
-
       text-align: center;
     }
 
@@ -423,12 +412,9 @@
     .ios-card {
       overflow: hidden;
 
-      background:
-        rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.88);
 
-      border:
-        1px solid rgba(255, 255, 255, 0.96);
-
+      border: 1px solid rgba(255, 255, 255, 0.96);
       border-radius: 28px;
 
       box-shadow:
@@ -440,20 +426,15 @@
 
     .ios-hero {
       display: block;
-
       width: 100%;
       height: auto;
 
       aspect-ratio: 1792 / 877;
-
       object-fit: cover;
     }
 
     .ios-content {
-      padding:
-        25px
-        22px
-        24px;
+      padding: 25px 22px 24px;
     }
 
     .ios-brand {
@@ -461,7 +442,6 @@
 
       font-size: 29px;
       font-weight: 850;
-
       letter-spacing: -1px;
     }
 
@@ -500,7 +480,6 @@
       justify-content: center;
 
       width: 100%;
-
       min-height: 56px;
 
       padding: 15px 18px;
@@ -564,10 +543,7 @@
       }
 
       .ios-content {
-        padding:
-          22px
-          18px
-          21px;
+        padding: 22px 18px 21px;
       }
 
       .ios-brand {
@@ -584,10 +560,6 @@
 
 <body>
 
-  <!-- =====================================================
-       Android / PC용 이동 화면
-       정상 상황에서는 거의 보이지 않고 바로 이동
-  ====================================================== -->
   <main class="redirect-screen">
 
     <div class="brand">
@@ -641,9 +613,6 @@
   </main>
 
 
-  <!-- =====================================================
-       iPhone / iPad 전용 화면
-  ====================================================== -->
   <main class="ios-screen">
 
     <section class="ios-card">
