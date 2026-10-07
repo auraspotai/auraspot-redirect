@@ -5,7 +5,7 @@
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   >
 
   <title>아우라스팟 | 오늘의운세</title>
@@ -25,6 +25,14 @@
   <meta
     name="facebook-domain-verification"
     content="16l4ntfa8tw276iexhyz3fzh8c2pzj"
+  >
+
+  <!-- =====================================================
+       iOS Safari Smart App Banner
+  ====================================================== -->
+  <meta
+    name="apple-itunes-app"
+    content="app-id=6760815307"
   >
 
   <!-- =====================================================
@@ -114,15 +122,16 @@
 
   <!-- =====================================================
        기기 자동 감지 및 이동
+
+       Android → Google Play 자동 이동
+       iPhone/iPad → 이동하지 않고 다운로드 화면 표시
+       PC/Mac/Linux → AuraSpot Web 자동 이동
   ====================================================== -->
   <script>
     (function () {
 
       const androidUrl =
         "https://play.google.com/store/apps/details?id=com.ybong.mdai";
-
-      const iosUrl =
-        "https://apps.apple.com/kr/app/auraspot/id6760815307";
 
       const webUrl =
         "https://app.auraspot.kr/";
@@ -135,8 +144,6 @@
 
       /*
        * Android
-       * Chrome / Samsung Internet /
-       * Instagram / Facebook / KakaoTalk 등 포함
        */
       const isAndroid =
         /android/i.test(userAgent);
@@ -151,11 +158,14 @@
        * 최근 iPadOS는 Mac처럼 표시되는 경우 대응
        */
       const isIPadOS =
-        navigator.platform === "MacIntel" &&
+        (
+          navigator.platform === "MacIntel" ||
+          /Macintosh/i.test(userAgent)
+        ) &&
         navigator.maxTouchPoints > 1;
 
       /*
-       * Android → Google Play
+       * Android → Google Play 자동 이동
        */
       if (isAndroid) {
         window.location.replace(androidUrl);
@@ -163,16 +173,18 @@
       }
 
       /*
-       * iPhone / iPad → App Store
+       * iPhone / iPad
+       * → 자동 App Store 이동하지 않음
+       * → iOS 전용 다운로드 화면 표시
        */
       if (isIOSDevice || isIPadOS) {
-        window.location.replace(iosUrl);
+        document.documentElement.classList.add("ios-mode");
         return;
       }
 
       /*
        * Windows / Mac / Linux / 기타
-       * → AuraSpot Web
+       * → AuraSpot Web 자동 이동
        */
       window.location.replace(webUrl);
 
@@ -185,14 +197,27 @@
       box-sizing: border-box;
     }
 
+    html,
     body {
       margin: 0;
+      padding: 0;
 
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
       min-height: 100vh;
+      min-height: 100svh;
 
       display: flex;
       align-items: center;
       justify-content: center;
+
+      padding:
+        max(20px, env(safe-area-inset-top))
+        20px
+        max(20px, env(safe-area-inset-bottom));
 
       font-family:
         -apple-system,
@@ -223,14 +248,20 @@
         #f7f8f5;
     }
 
-    .wrap {
-      width: calc(100% - 40px);
+
+    /* =====================================================
+       Android / PC 이동 중 화면
+    ====================================================== */
+
+    .redirect-screen {
+      width: 100%;
       max-width: 430px;
       text-align: center;
     }
 
     .brand {
       margin-bottom: 18px;
+
       font-size: 25px;
       font-weight: 800;
       letter-spacing: -0.7px;
@@ -266,13 +297,16 @@
 
     .title {
       margin-bottom: 8px;
+
       font-size: 17px;
       font-weight: 750;
     }
 
     .description {
       margin-bottom: 26px;
+
       color: #858d90;
+
       font-size: 13px;
       line-height: 1.65;
     }
@@ -289,11 +323,14 @@
         0 12px 36px rgba(65, 80, 85, 0.07);
 
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
 
     .fallback-title {
       margin-bottom: 13px;
+
       color: #989fa2;
+
       font-size: 12px;
     }
 
@@ -327,9 +364,17 @@
     }
 
     .apple {
-      color: #252a2d;
-      background: #ffffff;
-      border: 1px solid #dadee0;
+      color: #ffffff;
+
+      background:
+        linear-gradient(
+          135deg,
+          #25282b,
+          #111315
+        );
+
+      box-shadow:
+        0 9px 24px rgba(20, 25, 30, 0.15);
     }
 
     .web {
@@ -347,15 +392,203 @@
 
     .small {
       margin-top: 20px;
+
       color: #a0a6a8;
+
       font-size: 11px;
+    }
+
+
+    /* =====================================================
+       iPhone / iPad 전용 다운로드 화면
+    ====================================================== */
+
+    .ios-screen {
+      display: none;
+
+      width: 100%;
+      max-width: 520px;
+
+      text-align: center;
+    }
+
+    .ios-mode .redirect-screen {
+      display: none;
+    }
+
+    .ios-mode .ios-screen {
+      display: block;
+    }
+
+    .ios-card {
+      overflow: hidden;
+
+      background:
+        rgba(255, 255, 255, 0.88);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.96);
+
+      border-radius: 28px;
+
+      box-shadow:
+        0 18px 60px rgba(66, 83, 90, 0.12);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .ios-hero {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      aspect-ratio: 1792 / 877;
+
+      object-fit: cover;
+    }
+
+    .ios-content {
+      padding:
+        25px
+        22px
+        24px;
+    }
+
+    .ios-brand {
+      margin-bottom: 11px;
+
+      font-size: 29px;
+      font-weight: 850;
+
+      letter-spacing: -1px;
+    }
+
+    .ios-brand-aura {
+      color: #25b874;
+    }
+
+    .ios-brand-spot {
+      color: #269bea;
+    }
+
+    .ios-title {
+      margin: 0 0 9px;
+
+      color: #252a2d;
+
+      font-size: 22px;
+      font-weight: 800;
+
+      letter-spacing: -0.7px;
+      line-height: 1.35;
+    }
+
+    .ios-description {
+      margin: 0 0 22px;
+
+      color: #7a8387;
+
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .ios-app-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+
+      min-height: 56px;
+
+      padding: 15px 18px;
+
+      color: #ffffff;
+
+      background:
+        linear-gradient(
+          135deg,
+          #24282b,
+          #101214
+        );
+
+      border-radius: 16px;
+
+      box-shadow:
+        0 9px 24px rgba(24, 28, 32, 0.16);
+
+      text-decoration: none;
+
+      font-size: 15px;
+      font-weight: 800;
+
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .ios-app-button:active {
+      transform: scale(0.985);
+    }
+
+    .ios-web-link {
+      display: inline-block;
+
+      margin-top: 18px;
+
+      color: #7e888b;
+
+      font-size: 12px;
+      font-weight: 650;
+
+      text-decoration: none;
+    }
+
+    .ios-note {
+      margin-top: 17px;
+
+      color: #a2a9ab;
+
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .ios-card {
+        border-radius: 24px;
+      }
+
+      .ios-content {
+        padding:
+          22px
+          18px
+          21px;
+      }
+
+      .ios-brand {
+        font-size: 27px;
+      }
+
+      .ios-title {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 
+
 <body>
 
-  <main class="wrap">
+  <!-- =====================================================
+       Android / PC용 이동 화면
+       정상 상황에서는 거의 보이지 않고 바로 이동
+  ====================================================== -->
+  <main class="redirect-screen">
 
     <div class="brand">
       <span class="brand-aura">아우라</span><span class="brand-spot">스팟</span>
@@ -402,6 +635,59 @@
     </section>
 
     <div class="small">
+      © AuraSpot
+    </div>
+
+  </main>
+
+
+  <!-- =====================================================
+       iPhone / iPad 전용 화면
+  ====================================================== -->
+  <main class="ios-screen">
+
+    <section class="ios-card">
+
+      <img
+        class="ios-hero"
+        src="https://auraspot.kr/auraspot_market.webp"
+        alt="AuraSpot"
+      >
+
+      <div class="ios-content">
+
+        <div class="ios-brand">
+          <span class="ios-brand-aura">Aura</span><span class="ios-brand-spot">Spot</span>
+        </div>
+
+        <h1 class="ios-title">
+          지금, 나에게 들어올 운은?
+        </h1>
+
+        <p class="ios-description">
+          오늘의 운과 행운의 신호를<br>
+          AuraSpot에서 확인해보세요.
+        </p>
+
+        <a
+          class="ios-app-button"
+          href="https://apps.apple.com/kr/app/auraspot/id6760815307"
+        >
+          App Store에서 다운로드
+        </a>
+
+        <a
+          class="ios-web-link"
+          href="https://app.auraspot.kr/"
+        >
+          웹에서 이용하기
+        </a>
+
+      </div>
+
+    </section>
+
+    <div class="ios-note">
       © AuraSpot
     </div>
 
