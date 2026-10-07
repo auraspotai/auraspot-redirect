@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
 
@@ -8,18 +10,26 @@
 
   <title>아우라스팟 | 오늘의운세</title>
 
+  <!--
+    auraspot.kr은 광고 / 앱 다운로드 / 자동분기 전용 주소입니다.
+    검색 노출은 info.auraspot.kr에서 담당합니다.
+  -->
   <meta
     name="robots"
     content="noindex, nofollow"
   >
 
-  <!-- Meta / Facebook 도메인 인증 -->
+  <!-- =====================================================
+       Meta / Facebook 도메인 인증
+  ====================================================== -->
   <meta
     name="facebook-domain-verification"
     content="16l4ntfa8tw276iexhyz3fzh8c2pzj"
   >
 
-  <!-- SNS 공유 정보 -->
+  <!-- =====================================================
+       SNS 공유 정보
+  ====================================================== -->
   <meta
     property="og:type"
     content="website"
@@ -100,4 +110,303 @@
     name="theme-color"
     content="#F7F8F5"
   >
+
+
+  <!-- =====================================================
+       기기 자동 감지 및 이동
+       ★ 이 부분이 빠져서 리다이렉트가 안 됐던 것
+  ====================================================== -->
+  <script>
+    (function () {
+
+      const androidUrl =
+        "https://play.google.com/store/apps/details?id=com.ybong.mdai";
+
+      const iosUrl =
+        "https://apps.apple.com/kr/app/auraspot/id6760815307";
+
+      const webUrl =
+        "https://app.auraspot.kr/";
+
+      const userAgent =
+        navigator.userAgent ||
+        navigator.vendor ||
+        window.opera ||
+        "";
+
+      /*
+       * Android
+       * Chrome / Samsung Internet /
+       * Instagram / Facebook / KakaoTalk 등 포함
+       */
+      const isAndroid =
+        /android/i.test(userAgent);
+
+      /*
+       * iPhone / iPad / iPod
+       */
+      const isIOSDevice =
+        /iPhone|iPad|iPod/i.test(userAgent);
+
+      /*
+       * 최근 iPadOS는 Mac처럼 표시되는 경우 대응
+       */
+      const isIPadOS =
+        navigator.platform === "MacIntel" &&
+        navigator.maxTouchPoints > 1;
+
+      /*
+       * Android → Google Play
+       */
+      if (isAndroid) {
+        window.location.replace(androidUrl);
+        return;
+      }
+
+      /*
+       * iPhone / iPad → App Store
+       */
+      if (isIOSDevice || isIPadOS) {
+        window.location.replace(iosUrl);
+        return;
+      }
+
+      /*
+       * Windows / Mac / Linux / 기타
+       * → AuraSpot Web
+       */
+      window.location.replace(webUrl);
+
+    })();
+  </script>
+
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans KR",
+        Arial,
+        sans-serif;
+
+      color: #252a2d;
+
+      background:
+        radial-gradient(
+          circle at 20% 18%,
+          rgba(83, 203, 156, 0.18),
+          transparent 34%
+        ),
+        radial-gradient(
+          circle at 82% 18%,
+          rgba(157, 139, 239, 0.17),
+          transparent 34%
+        ),
+        radial-gradient(
+          circle at 50% 90%,
+          rgba(239, 157, 185, 0.13),
+          transparent 32%
+        ),
+        #f7f8f5;
+    }
+
+    .wrap {
+      width: calc(100% - 40px);
+      max-width: 430px;
+      text-align: center;
+    }
+
+    .brand {
+      margin-bottom: 18px;
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -0.7px;
+    }
+
+    .brand-aura {
+      color: #33b86b;
+    }
+
+    .brand-spot {
+      color: #36a7e8;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+
+      margin: 0 auto 22px;
+
+      border: 3px solid rgba(54, 167, 232, 0.13);
+      border-top-color: #4fbd91;
+
+      border-radius: 50%;
+
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .title {
+      margin-bottom: 8px;
+      font-size: 17px;
+      font-weight: 750;
+    }
+
+    .description {
+      margin-bottom: 26px;
+      color: #858d90;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .fallback {
+      padding: 20px;
+
+      background: rgba(255, 255, 255, 0.78);
+
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+
+      box-shadow:
+        0 12px 36px rgba(65, 80, 85, 0.07);
+
+      backdrop-filter: blur(12px);
+    }
+
+    .fallback-title {
+      margin-bottom: 13px;
+      color: #989fa2;
+      font-size: 12px;
+    }
+
+    .button {
+      display: block;
+
+      width: 100%;
+
+      margin-top: 9px;
+      padding: 14px 15px;
+
+      border-radius: 12px;
+
+      text-decoration: none;
+
+      font-size: 13px;
+      font-weight: 750;
+
+      transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .google {
+      color: #ffffff;
+      background: #252a2d;
+    }
+
+    .apple {
+      color: #252a2d;
+      background: #ffffff;
+      border: 1px solid #dadee0;
+    }
+
+    .web {
+      color: #297b5c;
+
+      background:
+        linear-gradient(
+          135deg,
+          #eaf8f1,
+          #edf5ff
+        );
+
+      border: 1px solid #cce8dc;
+    }
+
+    .small {
+      margin-top: 20px;
+      color: #a0a6a8;
+      font-size: 11px;
+    }
+  </style>
 </head>
+
+<body>
+
+  <main class="wrap">
+
+    <div class="brand">
+      <span class="brand-aura">아우라</span><span class="brand-spot">스팟</span>
+    </div>
+
+    <div class="spinner"></div>
+
+    <div class="title">
+      AuraSpot으로 이동하고 있어요 ✨
+    </div>
+
+    <div class="description">
+      사용 중인 기기에 맞는 AuraSpot으로<br>
+      자동 연결됩니다.
+    </div>
+
+    <section class="fallback">
+
+      <div class="fallback-title">
+        자동으로 이동하지 않나요?
+      </div>
+
+      <a
+        class="button google"
+        href="https://play.google.com/store/apps/details?id=com.ybong.mdai"
+      >
+        Google Play에서 다운로드
+      </a>
+
+      <a
+        class="button apple"
+        href="https://apps.apple.com/kr/app/auraspot/id6760815307"
+      >
+        App Store에서 다운로드
+      </a>
+
+      <a
+        class="button web"
+        href="https://app.auraspot.kr/"
+      >
+        AuraSpot 웹에서 이용하기
+      </a>
+
+    </section>
+
+    <div class="small">
+      © AuraSpot
+    </div>
+
+  </main>
+
+</body>
+</html>
