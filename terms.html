@@ -1,77 +1,739 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>AuraSpot 서비스 이용약관</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="AuraSpot Terms of Service — Available in 13 languages">
+  <title>AuraSpot Terms of Service</title>
   <style>
-    body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; }
-    h1, h2 { margin-top: 24px; }
+    :root { color-scheme: light; --bg:#f7f8fb; --surface:#fff; --text:#242734; --muted:#697386; --border:#e8ebf1; --shadow:0 8px 30px rgba(27,37,62,.055); }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { margin:0; padding:26px 18px 42px; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Segoe UI",Arial,sans-serif; line-height:1.78; overflow-wrap:break-word; }
+    .wrap { width:100%; max-width:880px; margin:0 auto; padding:34px 40px 44px; background:var(--surface); border:1px solid var(--border); border-radius:18px; box-shadow:var(--shadow); }
+    .topbar { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; margin-bottom:26px; padding-bottom:20px; border-bottom:1px solid var(--border); }
+    .brand { font-size:19px; font-weight:800; letter-spacing:-.035em; color:#000; white-space:nowrap; }
+    .brand .spot { color:#000; }
+    .language-control { display:flex; align-items:center; gap:9px; }
+    .language-control label { color:var(--muted); font-size:13px; font-weight:600; }
+    .language-control select { appearance:auto; -webkit-appearance:menulist; color:#293241; background:#f7f9fc; border:1px solid #dce2ed; border-radius:10px; font-size:14px; font-weight:600; font-family:inherit; padding:9px 12px; width:180px; max-width:65vw; cursor:pointer; }
+    .language-control select:focus-visible { outline:3px solid #8bb8fa; outline-offset:2px; }
+    h1 { margin:0 0 6px; font-size:clamp(25px,4.5vw,32px); line-height:1.33; letter-spacing:-.035em; }
+    .date { margin:0 0 24px; font-size:14px; color:var(--muted); }
+    h2 { margin:32px 0 10px; font-size:20px; line-height:1.5; letter-spacing:-.025em; }
+    p { margin:0 0 12px; font-size:15px; }
+    ul { margin:6px 0 17px; padding-left:22px; }
+    li { margin:5px 0; font-size:15px; }
+    li::marker { color:#8795b1; }
+    [hidden] { display:none !important; }
+    @media (max-width:620px) {
+      body { padding:12px 10px 22px; }
+      .wrap { padding:24px 20px 30px; border-radius:14px; }
+      .topbar { margin-bottom:22px; }
+      .brand { font-size:18px; }
+      .language-control label { display:none; }
+      .language-control select { width:155px; padding:8px; font-size:13px; }
+      h2 { font-size:18px; margin-top:28px; }
+      p,li { font-size:14.5px; }
+    }
+    @media print { body { background:#fff; padding:0; } .wrap { border:0; box-shadow:none; max-width:none; padding:0; } .language-control { display:none; } }
   </style>
 </head>
 <body>
+  <main class="wrap">
+    <header class="topbar">
+      <div class="brand" aria-label="AuraSpot">Aura<span class="spot">Spot</span></div>
+      <div class="language-control">
+        <label for="language-select">Language</label>
+        <select id="language-select" aria-label="Select terms of service language">
+            <option value="ko">한국어</option>
+            <option value="en" selected>English</option>
+            <option value="ja">日本語</option>
+            <option value="zh-Hans">简体中文</option>
+            <option value="zh-Hant">繁體中文</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="pt">Português</option>
+            <option value="it">Italiano</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="th">ไทย</option>
+            <option value="vi">Tiếng Việt</option>
+        </select>
+      </div>
+    </header>
+    <article id="terms-ko" lang="ko" aria-labelledby="title-ko" hidden>
+      <h1 id="title-ko">AuraSpot 서비스 이용약관</h1>
+      <p class="date">2026년 3월 18일부터 시행</p>
+      <p>본 약관은 양봉 주식회사(이하 “회사”)가 제공하는 AuraSpot 서비스(이하 “서비스”)의 이용과 관련하여 회사와 이용자 간의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+      <h2>제1조 (목적)</h2>
+      <p>본 약관은 회사가 제공하는 AuraSpot 서비스의 이용조건 및 절차, 회사와 이용자 간의 권리와 의무를 규정합니다.</p>
+      <h2>제2조 (정의)</h2>
+      <ul>
+        <li>“서비스”란 AI 기반 공간 분석, 방향 분석 및 관련 정보 제공 서비스를 의미합니다.</li>
+        <li>“이용자”란 본 약관에 따라 서비스를 이용하는 회원 및 비회원을 의미합니다.</li>
+        <li>“회원”이란 외부 인증(Google 등)을 통해 로그인하여 서비스를 이용하는 자를 의미합니다.</li>
+      </ul>
+      <h2>제3조 (약관의 효력 및 변경)</h2>
+      <p>회사는 관련 법령을 위반하지 않는 범위에서 본 약관을 변경할 수 있으며, 변경 시 서비스 내 또는 관련 페이지에 공지합니다.</p>
+      <h2>제4조 (서비스의 제공)</h2>
+      <p>회사는 다음과 같은 서비스를 제공합니다.</p>
+      <ul>
+        <li>AI 기반 공간 분석 및 명당 추천 서비스</li>
+        <li>방향, 위치 및 환경 기반 분석 정보 제공</li>
+        <li>사용자 입력 데이터를 기반으로 한 개인 맞춤형 분석</li>
+        <li>기타 회사가 추가 개발하거나 제공하는 서비스</li>
+      </ul>
+      <h2>제5조 (서비스 이용)</h2>
+      <p>서비스는 연중무휴 제공함을 원칙으로 하나, 시스템 점검 또는 기술적 필요에 따라 일시 중단될 수 있습니다.</p>
+      <h2>제6조 (회원가입 및 계정 관리)</h2>
+      <p>이용자는 Google 등 외부 인증을 통해 회원가입을 할 수 있습니다.</p>
+      <p>회원은 자신의 계정 정보를 안전하게 관리해야 하며, 이에 대한 책임은 회원에게 있습니다.</p>
+      <h2>제7조 (이용자의 의무)</h2>
+      <ul>
+        <li>허위 정보 입력 금지</li>
+        <li>서비스의 정상적인 운영을 방해하는 행위 금지</li>
+        <li>관련 법령 및 본 약관을 준수할 의무</li>
+      </ul>
+      <h2>제8조 (회사의 의무)</h2>
+      <p>회사는 안정적인 서비스 제공을 위해 노력하며, 이용자의 개인정보를 보호하기 위해 관련 법령을 준수합니다.</p>
+      <h2>제9조 (서비스의 변경 및 중단)</h2>
+      <p>회사는 서비스의 내용, 운영 방식 등을 변경하거나 중단할 수 있으며, 사전에 공지합니다.</p>
+      <h2>제10조 (책임의 제한)</h2>
+      <p>서비스에서 제공되는 명당 분석, 방향 추천, 공간 분석 결과 등은 참고용 정보이며, 과학적 또는 법적 보장을 의미하지 않습니다.</p>
+      <p>이용자는 이를 기반으로 한 의사결정에 대해 전적으로 본인의 책임 하에 판단해야 합니다.</p>
+      <h2>제11조 (지적재산권)</h2>
+      <p>서비스 내 제공되는 모든 콘텐츠 및 데이터에 대한 권리는 회사에 있으며, 무단 복제 및 이용을 금지합니다.</p>
+      <h2>제12조 (약관 외 준칙)</h2>
+      <p>본 약관에 명시되지 않은 사항은 관련 법령 및 일반 상관례에 따릅니다.</p>
+      <h2>제13조 (관할법원)</h2>
+      <p>본 서비스와 관련된 분쟁은 대한민국 법을 따르며, 관할 법원은 회사 본점 소재지를 관할하는 법원으로 합니다.</p>
+      <h2>부칙</h2>
+      <p>본 약관은 2026년 3월 18일부터 시행됩니다.</p>
+    </article>
+    <article id="terms-en" lang="en" aria-labelledby="title-en">
+      <h1 id="title-en">AuraSpot Terms of Service</h1>
+      <p class="date">Effective Date: March 18, 2026</p>
+      <p>These Terms of Service (the “Terms”) set out the rights, obligations, and responsibilities of Yangbong Co., Ltd. (the “Company”) and users in connection with their use of the AuraSpot service (the “Service”).</p>
+      <h2>Article 1 (Purpose)</h2>
+      <p>These Terms govern the conditions and procedures for using the Service provided by the Company, as well as the rights and obligations of the Company and users.</p>
+      <h2>Article 2 (Definitions)</h2>
+      <ul>
+        <li>“Service” means AI-based space analysis, directional analysis, and the provision of related information.</li>
+        <li>“User” means any member or non-member who uses the Service under these Terms.</li>
+        <li>“Member” means a person who signs in to use the Service through an external authentication provider, such as Google.</li>
+      </ul>
+      <h2>Article 3 (Effect and Changes to the Terms)</h2>
+      <p>The Company may amend these Terms to the extent permitted by applicable laws. Changes will be announced within the Service or on a related page.</p>
+      <h2>Article 4 (Services Provided)</h2>
+      <p>The Company provides the following services:</p>
+      <ul>
+        <li>AI-based space analysis and recommendations of favorable places.</li>
+        <li>Analysis and information based on direction, location, and environment.</li>
+        <li>Personalized analysis based on data entered by users.</li>
+        <li>Other services subsequently developed or provided by the Company.</li>
+      </ul>
+      <h2>Article 5 (Availability of the Service)</h2>
+      <p>The Service is generally available year-round, but may be temporarily suspended for system maintenance or technical reasons.</p>
+      <h2>Article 6 (Registration and Account Management)</h2>
+      <p>Users may register through external authentication providers, such as Google.</p>
+      <p>Members are responsible for keeping their account information secure and for managing that information appropriately.</p>
+      <h2>Article 7 (User Obligations)</h2>
+      <ul>
+        <li>Do not submit false information.</li>
+        <li>Do not interfere with the normal operation of the Service.</li>
+        <li>Comply with applicable laws and these Terms.</li>
+      </ul>
+      <h2>Article 8 (Company Obligations)</h2>
+      <p>The Company endeavors to provide a stable Service and complies with applicable laws to protect users’ personal information.</p>
+      <h2>Article 9 (Changes or Suspension of the Service)</h2>
+      <p>The Company may change or suspend the content or operation of the Service and will provide advance notice.</p>
+      <h2>Article 10 (Limitation of Liability)</h2>
+      <p>Recommendations of favorable places, directions, space analysis results, and similar information provided through the Service are for reference only and do not constitute scientific or legal guarantees.</p>
+      <p>Users are solely responsible for making their own decisions based on such information.</p>
+      <h2>Article 11 (Intellectual Property Rights)</h2>
+      <p>Rights to all content and data provided within the Service belong to the Company. Unauthorized copying or use is prohibited.</p>
+      <h2>Article 12 (Matters Not Covered by These Terms)</h2>
+      <p>Matters not addressed in these Terms are governed by applicable laws and generally accepted practices.</p>
+      <h2>Article 13 (Governing Law and Jurisdiction)</h2>
+      <p>Disputes relating to the Service are governed by the laws of the Republic of Korea. The court having jurisdiction over the location of the Company’s head office shall have jurisdiction.</p>
+      <h2>Supplementary Provision</h2>
+      <p>These Terms take effect on March 18, 2026.</p>
+    </article>
+    <article id="terms-ja" lang="ja" aria-labelledby="title-ja" hidden>
+      <h1 id="title-ja">AuraSpot 利用規約</h1>
+      <p class="date">施行日：2026年3月18日</p>
+      <p>本利用規約（以下「本規約」）は、Yangbong Co., Ltd.（以下「当社」）が提供するAuraSpot（以下「本サービス」）の利用に関し、当社と利用者の権利、義務および責任を定めるものです。</p>
+      <h2>第1条（目的）</h2>
+      <p>本規約は、当社が提供する本サービスの利用条件および手続き、ならびに当社と利用者の権利・義務を定めます。</p>
+      <h2>第2条（定義）</h2>
+      <ul>
+        <li>「本サービス」とは、AIを活用した空間分析、方位分析および関連情報の提供をいいます。</li>
+        <li>「利用者」とは、本規約に基づいて本サービスを利用する会員および非会員をいいます。</li>
+        <li>「会員」とは、Googleなどの外部認証を通じてログインし、本サービスを利用する方をいいます。</li>
+      </ul>
+      <h2>第3条（規約の効力および変更）</h2>
+      <p>当社は、関係法令に違反しない範囲で本規約を変更できるものとし、変更時には本サービス内または関連ページでお知らせします。</p>
+      <h2>第4条（本サービスの内容）</h2>
+      <p>当社は、以下のサービスを提供します。</p>
+      <ul>
+        <li>AIによる空間分析および縁起の良い場所のおすすめ</li>
+        <li>方位・位置・周辺環境に基づく分析情報の提供</li>
+        <li>利用者が入力したデータに基づく個別分析</li>
+        <li>その他、当社が新たに開発または提供するサービス</li>
+      </ul>
+      <h2>第5条（本サービスの利用）</h2>
+      <p>本サービスは原則として年中無休で提供しますが、システム保守や技術上の必要により一時的に停止する場合があります。</p>
+      <h2>第6条（会員登録およびアカウント管理）</h2>
+      <p>利用者は、Googleなどの外部認証を利用して会員登録できます。</p>
+      <p>会員は自身のアカウント情報を適切かつ安全に管理する責任を負います。</p>
+      <h2>第7条（利用者の義務）</h2>
+      <ul>
+        <li>虚偽の情報を入力しないこと</li>
+        <li>本サービスの正常な運営を妨げないこと</li>
+        <li>関係法令および本規約を遵守すること</li>
+      </ul>
+      <h2>第8条（当社の義務）</h2>
+      <p>当社は安定したサービスの提供に努め、利用者の個人情報を保護するために関係法令を遵守します。</p>
+      <h2>第9条（本サービスの変更・停止）</h2>
+      <p>当社は、本サービスの内容や運営方法を変更または停止する場合があり、その際は事前にお知らせします。</p>
+      <h2>第10条（責任の制限）</h2>
+      <p>本サービスで提供する縁起の良い場所の分析、方位のおすすめ、空間分析結果などは参考情報であり、科学的または法的な保証を意味するものではありません。</p>
+      <p>利用者は、これらの情報に基づく判断について、自らの責任で意思決定を行うものとします。</p>
+      <h2>第11条（知的財産権）</h2>
+      <p>本サービス内で提供されるすべてのコンテンツおよびデータに関する権利は当社に帰属し、無断での複製・利用を禁止します。</p>
+      <h2>第12条（本規約に定めのない事項）</h2>
+      <p>本規約に定めのない事項は、関係法令および一般的な慣行に従います。</p>
+      <h2>第13条（準拠法・管轄裁判所）</h2>
+      <p>本サービスに関する紛争には大韓民国の法律を適用し、当社本店所在地を管轄する裁判所を管轄裁判所とします。</p>
+      <h2>附則</h2>
+      <p>本規約は2026年3月18日から施行します。</p>
+    </article>
+    <article id="terms-zh-Hans" lang="zh-Hans" aria-labelledby="title-zh-Hans" hidden>
+      <h1 id="title-zh-Hans">AuraSpot 服务条款</h1>
+      <p class="date">生效日期：2026年3月18日</p>
+      <p>本服务条款（以下简称“本条款”）旨在规定 Yangbong Co., Ltd.（以下简称“公司”）提供 AuraSpot 服务（以下简称“服务”）过程中，公司与用户之间的权利、义务及责任。</p>
+      <h2>第1条（目的）</h2>
+      <p>本条款规定服务的使用条件与程序，以及公司与用户各自的权利和义务。</p>
+      <h2>第2条（定义）</h2>
+      <ul>
+        <li>“服务”是指基于人工智能的空间分析、方位分析及相关信息提供服务。</li>
+        <li>“用户”是指依据本条款使用服务的会员及非会员。</li>
+        <li>“会员”是指通过 Google 等第三方身份验证方式登录并使用服务的人员。</li>
+      </ul>
+      <h2>第3条（条款的效力及修改）</h2>
+      <p>公司可在不违反适用法律法规的前提下修改本条款，并将在服务内或相关页面公布修改内容。</p>
+      <h2>第4条（服务内容）</h2>
+      <p>公司提供以下服务：</p>
+      <ul>
+        <li>基于人工智能的空间分析及有利地点推荐</li>
+        <li>基于方位、位置和环境的分析信息</li>
+        <li>根据用户输入的数据提供个性化分析</li>
+        <li>公司后续开发或提供的其他服务</li>
+      </ul>
+      <h2>第5条（服务使用）</h2>
+      <p>服务原则上全年提供，但可能因系统维护或技术需要而暂时中断。</p>
+      <h2>第6条（注册与账户管理）</h2>
+      <p>用户可通过 Google 等第三方身份验证方式注册。</p>
+      <p>会员应妥善保管自己的账户信息，并自行承担相应的管理责任。</p>
+      <h2>第7条（用户义务）</h2>
+      <ul>
+        <li>不得提交虚假信息</li>
+        <li>不得妨碍服务的正常运行</li>
+        <li>应遵守适用法律法规及本条款</li>
+      </ul>
+      <h2>第8条（公司义务）</h2>
+      <p>公司努力提供稳定的服务，并遵守适用法律法规以保护用户个人信息。</p>
+      <h2>第9条（服务变更与中断）</h2>
+      <p>公司可变更或中断服务内容及运营方式，并将提前公告。</p>
+      <h2>第10条（责任限制）</h2>
+      <p>服务提供的有利地点分析、方位推荐、空间分析结果等仅供参考，不构成科学或法律上的保证。</p>
+      <p>用户应自行判断，并对基于这些信息作出的决定承担全部责任。</p>
+      <h2>第11条（知识产权）</h2>
+      <p>服务内提供的所有内容及数据的相关权利归公司所有，未经授权不得复制或使用。</p>
+      <h2>第12条（其他规定）</h2>
+      <p>本条款未规定的事项，依照适用法律法规及一般惯例处理。</p>
+      <h2>第13条（适用法律与管辖法院）</h2>
+      <p>与服务有关的争议适用大韩民国法律，并由公司总部所在地有管辖权的法院管辖。</p>
+      <h2>附则</h2>
+      <p>本条款自2026年3月18日起生效。</p>
+    </article>
+    <article id="terms-zh-Hant" lang="zh-Hant" aria-labelledby="title-zh-Hant" hidden>
+      <h1 id="title-zh-Hant">AuraSpot 服務條款</h1>
+      <p class="date">生效日期：2026年3月18日</p>
+      <p>本服務條款（以下稱「本條款」）旨在規範 Yangbong Co., Ltd.（以下稱「本公司」）所提供的 AuraSpot 服務（以下稱「本服務」）之使用，以及本公司與使用者之間的權利、義務與責任。</p>
+      <h2>第1條（目的）</h2>
+      <p>本條款規定本服務的使用條件與程序，以及本公司與使用者的權利及義務。</p>
+      <h2>第2條（定義）</h2>
+      <ul>
+        <li>「本服務」係指以人工智慧為基礎的空間分析、方位分析及相關資訊提供服務。</li>
+        <li>「使用者」係指依本條款使用本服務的會員及非會員。</li>
+        <li>「會員」係指透過 Google 等外部身分驗證方式登入並使用本服務之人。</li>
+      </ul>
+      <h2>第3條（條款效力與修訂）</h2>
+      <p>本公司得於不違反適用法令的範圍內修訂本條款，並於本服務內或相關頁面公告。</p>
+      <h2>第4條（服務內容）</h2>
+      <p>本公司提供下列服務：</p>
+      <ul>
+        <li>以人工智慧進行空間分析及推薦有利地點</li>
+        <li>提供依方位、位置及環境分析的相關資訊</li>
+        <li>依使用者輸入資料進行個人化分析</li>
+        <li>本公司日後開發或提供的其他服務</li>
+      </ul>
+      <h2>第5條（服務使用）</h2>
+      <p>本服務原則上全年提供，但可能因系統維護或技術需求而暫時中斷。</p>
+      <h2>第6條（註冊與帳戶管理）</h2>
+      <p>使用者得透過 Google 等外部身分驗證方式註冊。</p>
+      <p>會員應妥善保管並管理自己的帳戶資訊，且自行承擔相關責任。</p>
+      <h2>第7條（使用者義務）</h2>
+      <ul>
+        <li>不得提供虛假資訊</li>
+        <li>不得妨礙本服務的正常運作</li>
+        <li>應遵守適用法令及本條款</li>
+      </ul>
+      <h2>第8條（本公司義務）</h2>
+      <p>本公司致力於穩定提供本服務，並遵守適用法令以保護使用者的個人資料。</p>
+      <h2>第9條（服務變更或中斷）</h2>
+      <p>本公司得變更或中斷服務內容、營運方式等，並將事先公告。</p>
+      <h2>第10條（責任限制）</h2>
+      <p>本服務提供的有利地點分析、方位建議、空間分析結果等僅供參考，不構成科學或法律上的保證。</p>
+      <p>使用者應自行判斷，並對依據這些資訊所作的決定承擔全部責任。</p>
+      <h2>第11條（智慧財產權）</h2>
+      <p>本服務內提供的所有內容及資料之權利歸本公司所有，未經授權不得複製或使用。</p>
+      <h2>第12條（未盡事宜）</h2>
+      <p>本條款未規定之事項，依適用法令及一般慣例辦理。</p>
+      <h2>第13條（準據法與管轄法院）</h2>
+      <p>與本服務相關的爭議適用大韓民國法律，並由本公司總部所在地有管轄權的法院管轄。</p>
+      <h2>附則</h2>
+      <p>本條款自2026年3月18日起生效。</p>
+    </article>
+    <article id="terms-es" lang="es" aria-labelledby="title-es" hidden>
+      <h1 id="title-es">Condiciones de uso de AuraSpot</h1>
+      <p class="date">Fecha de entrada en vigor: 18 de marzo de 2026</p>
+      <p>Estas Condiciones de uso (en adelante, las «Condiciones») establecen los derechos, las obligaciones y las responsabilidades de Yangbong Co., Ltd. (en adelante, la «Empresa») y de las personas que utilizan AuraSpot (en adelante, el «Servicio»).</p>
+      <h2>Artículo 1 (Objeto)</h2>
+      <p>Estas Condiciones regulan los requisitos y procedimientos de uso del Servicio, así como los derechos y las obligaciones de la Empresa y de los usuarios.</p>
+      <h2>Artículo 2 (Definiciones)</h2>
+      <ul>
+        <li>«Servicio» hace referencia al análisis de espacios y orientaciones mediante inteligencia artificial y al suministro de información relacionada.</li>
+        <li>«Usuario» es cualquier persona, registrada o no, que utiliza el Servicio con arreglo a estas Condiciones.</li>
+        <li>«Miembro» es quien accede al Servicio mediante autenticación externa, por ejemplo, con Google.</li>
+      </ul>
+      <h2>Artículo 3 (Vigencia y modificaciones)</h2>
+      <p>La Empresa podrá modificar estas Condiciones siempre que respete la legislación aplicable. Los cambios se comunicarán dentro del Servicio o en una página relacionada.</p>
+      <h2>Artículo 4 (Servicios ofrecidos)</h2>
+      <p>La Empresa ofrece los siguientes servicios:</p>
+      <ul>
+        <li>Análisis de espacios mediante inteligencia artificial y recomendaciones de lugares favorables.</li>
+        <li>Información y análisis basados en la orientación, la ubicación y el entorno.</li>
+        <li>Análisis personalizados a partir de los datos introducidos por los usuarios.</li>
+        <li>Otros servicios que la Empresa desarrolle u ofrezca en el futuro.</li>
+      </ul>
+      <h2>Artículo 5 (Disponibilidad del Servicio)</h2>
+      <p>En principio, el Servicio está disponible todos los días del año, aunque podrá interrumpirse temporalmente por mantenimiento del sistema o necesidades técnicas.</p>
+      <h2>Artículo 6 (Registro y gestión de cuentas)</h2>
+      <p>Los usuarios podrán registrarse mediante proveedores de autenticación externos, como Google.</p>
+      <p>Los miembros deben proteger y gestionar de forma segura los datos de su cuenta y asumen la responsabilidad correspondiente.</p>
+      <h2>Artículo 7 (Obligaciones de los usuarios)</h2>
+      <ul>
+        <li>No introducir información falsa.</li>
+        <li>No obstaculizar el funcionamiento normal del Servicio.</li>
+        <li>Cumplir la legislación aplicable y estas Condiciones.</li>
+      </ul>
+      <h2>Artículo 8 (Obligaciones de la Empresa)</h2>
+      <p>La Empresa se esfuerza por ofrecer un Servicio estable y cumple la legislación aplicable para proteger los datos personales de los usuarios.</p>
+      <h2>Artículo 9 (Cambios y suspensión del Servicio)</h2>
+      <p>La Empresa podrá modificar o suspender el contenido o el funcionamiento del Servicio y lo comunicará con antelación.</p>
+      <h2>Artículo 10 (Limitación de responsabilidad)</h2>
+      <p>Los análisis de lugares favorables, las recomendaciones de orientación, los resultados del análisis de espacios y otros contenidos similares son meramente orientativos y no constituyen garantías científicas ni jurídicas.</p>
+      <p>Cada usuario es plenamente responsable de las decisiones que tome basándose en esta información.</p>
+      <h2>Artículo 11 (Propiedad intelectual)</h2>
+      <p>Los derechos sobre todos los contenidos y datos proporcionados dentro del Servicio pertenecen a la Empresa. Se prohíbe su reproducción o uso sin autorización.</p>
+      <h2>Artículo 12 (Cuestiones no previstas)</h2>
+      <p>Las cuestiones no contempladas en estas Condiciones se regirán por la legislación aplicable y las prácticas generalmente aceptadas.</p>
+      <h2>Artículo 13 (Ley aplicable y jurisdicción)</h2>
+      <p>Las controversias relacionadas con el Servicio se rigen por las leyes de la República de Corea. Será competente el tribunal con jurisdicción en el lugar donde se encuentre la sede principal de la Empresa.</p>
+      <h2>Disposición final</h2>
+      <p>Estas Condiciones entran en vigor el 18 de marzo de 2026.</p>
+    </article>
+    <article id="terms-fr" lang="fr" aria-labelledby="title-fr" hidden>
+      <h1 id="title-fr">Conditions d’utilisation d’AuraSpot</h1>
+      <p class="date">Date d’entrée en vigueur : 18 mars 2026</p>
+      <p>Les présentes Conditions d’utilisation (les « Conditions ») définissent les droits, obligations et responsabilités de Yangbong Co., Ltd. (la « Société ») et des utilisateurs dans le cadre de l’utilisation d’AuraSpot (le « Service »).</p>
+      <h2>Article 1 (Objet)</h2>
+      <p>Les présentes Conditions régissent les modalités et procédures d’utilisation du Service ainsi que les droits et obligations de la Société et des utilisateurs.</p>
+      <h2>Article 2 (Définitions)</h2>
+      <ul>
+        <li>« Service » désigne les analyses d’espaces et d’orientations fondées sur l’intelligence artificielle ainsi que la fourniture d’informations connexes.</li>
+        <li>« Utilisateur » désigne toute personne, inscrite ou non, qui utilise le Service conformément aux présentes Conditions.</li>
+        <li>« Membre » désigne toute personne qui se connecte au Service par l’intermédiaire d’un service d’authentification externe, tel que Google.</li>
+      </ul>
+      <h2>Article 3 (Entrée en vigueur et modifications)</h2>
+      <p>La Société peut modifier les présentes Conditions dans le respect des lois applicables. Toute modification sera annoncée dans le Service ou sur une page associée.</p>
+      <h2>Article 4 (Prestations proposées)</h2>
+      <p>La Société propose les services suivants :</p>
+      <ul>
+        <li>Analyse d’espaces par intelligence artificielle et recommandations de lieux favorables.</li>
+        <li>Informations et analyses fondées sur la direction, la localisation et l’environnement.</li>
+        <li>Analyses personnalisées à partir des données saisies par les utilisateurs.</li>
+        <li>Tout autre service développé ou proposé ultérieurement par la Société.</li>
+      </ul>
+      <h2>Article 5 (Disponibilité du Service)</h2>
+      <p>Le Service est en principe disponible toute l’année, mais peut être temporairement interrompu pour maintenance ou pour des raisons techniques.</p>
+      <h2>Article 6 (Inscription et gestion du compte)</h2>
+      <p>Les utilisateurs peuvent s’inscrire au moyen d’un service d’authentification externe, tel que Google.</p>
+      <p>Les membres doivent protéger et gérer leurs informations de compte de manière sécurisée et en assument la responsabilité.</p>
+      <h2>Article 7 (Obligations des utilisateurs)</h2>
+      <ul>
+        <li>Ne pas fournir de fausses informations.</li>
+        <li>Ne pas perturber le fonctionnement normal du Service.</li>
+        <li>Respecter les lois applicables et les présentes Conditions.</li>
+      </ul>
+      <h2>Article 8 (Obligations de la Société)</h2>
+      <p>La Société s’efforce d’assurer un Service stable et respecte les lois applicables afin de protéger les données personnelles des utilisateurs.</p>
+      <h2>Article 9 (Modification et interruption du Service)</h2>
+      <p>La Société peut modifier ou interrompre le contenu ou le fonctionnement du Service, sous réserve d’une information préalable.</p>
+      <h2>Article 10 (Limitation de responsabilité)</h2>
+      <p>Les analyses de lieux favorables, les recommandations de direction, les résultats d’analyse d’espaces et les informations similaires sont fournis à titre indicatif et ne constituent aucune garantie scientifique ou juridique.</p>
+      <p>Chaque utilisateur demeure seul responsable des décisions qu’il prend sur la base de ces informations.</p>
+      <h2>Article 11 (Propriété intellectuelle)</h2>
+      <p>Les droits sur l’ensemble des contenus et données fournis dans le Service appartiennent à la Société. Toute reproduction ou utilisation non autorisée est interdite.</p>
+      <h2>Article 12 (Dispositions complémentaires)</h2>
+      <p>Les questions non prévues par les présentes Conditions sont régies par les lois applicables et les usages généralement admis.</p>
+      <h2>Article 13 (Loi applicable et juridiction compétente)</h2>
+      <p>Les litiges liés au Service sont régis par le droit de la République de Corée. Le tribunal territorialement compétent pour le siège social de la Société sera compétent.</p>
+      <h2>Disposition finale</h2>
+      <p>Les présentes Conditions entrent en vigueur le 18 mars 2026.</p>
+    </article>
+    <article id="terms-de" lang="de" aria-labelledby="title-de" hidden>
+      <h1 id="title-de">AuraSpot-Nutzungsbedingungen</h1>
+      <p class="date">Gültig ab: 18. März 2026</p>
+      <p>Diese Nutzungsbedingungen („Bedingungen“) regeln die Rechte, Pflichten und Verantwortlichkeiten der Yangbong Co., Ltd. („Unternehmen“) und der Nutzer im Zusammenhang mit der Nutzung von AuraSpot („Dienst“).</p>
+      <h2>Artikel 1 (Zweck)</h2>
+      <p>Diese Bedingungen legen die Voraussetzungen und Verfahren für die Nutzung des Dienstes sowie die Rechte und Pflichten des Unternehmens und der Nutzer fest.</p>
+      <h2>Artikel 2 (Begriffsbestimmungen)</h2>
+      <ul>
+        <li>„Dienst“ bezeichnet KI-gestützte Raum- und Richtungsanalysen sowie die Bereitstellung damit zusammenhängender Informationen.</li>
+        <li>„Nutzer“ sind Mitglieder und Nichtmitglieder, die den Dienst im Rahmen dieser Bedingungen verwenden.</li>
+        <li>„Mitglied“ ist eine Person, die sich über einen externen Authentifizierungsdienst wie Google anmeldet und den Dienst nutzt.</li>
+      </ul>
+      <h2>Artikel 3 (Geltung und Änderungen)</h2>
+      <p>Das Unternehmen kann diese Bedingungen im Rahmen der geltenden Gesetze ändern. Änderungen werden innerhalb des Dienstes oder auf einer zugehörigen Seite bekannt gegeben.</p>
+      <h2>Artikel 4 (Leistungsumfang)</h2>
+      <p>Das Unternehmen bietet folgende Leistungen an:</p>
+      <ul>
+        <li>KI-gestützte Raumanalysen und Empfehlungen günstiger Orte.</li>
+        <li>Analysen und Informationen auf Grundlage von Richtung, Standort und Umgebung.</li>
+        <li>Personalisierte Analysen auf Grundlage von Nutzereingaben.</li>
+        <li>Weitere Dienste, die das Unternehmen künftig entwickelt oder bereitstellt.</li>
+      </ul>
+      <h2>Artikel 5 (Verfügbarkeit)</h2>
+      <p>Der Dienst steht grundsätzlich ganzjährig zur Verfügung, kann jedoch aufgrund von Wartungsarbeiten oder technischen Erfordernissen vorübergehend unterbrochen werden.</p>
+      <h2>Artikel 6 (Registrierung und Kontoverwaltung)</h2>
+      <p>Nutzer können sich über externe Authentifizierungsdienste wie Google registrieren.</p>
+      <p>Mitglieder sind verpflichtet, ihre Kontodaten sicher aufzubewahren und zu verwalten, und tragen hierfür die Verantwortung.</p>
+      <h2>Artikel 7 (Pflichten der Nutzer)</h2>
+      <ul>
+        <li>Keine falschen Angaben machen.</li>
+        <li>Den ordnungsgemäßen Betrieb des Dienstes nicht stören.</li>
+        <li>Geltende Gesetze und diese Bedingungen einhalten.</li>
+      </ul>
+      <h2>Artikel 8 (Pflichten des Unternehmens)</h2>
+      <p>Das Unternehmen bemüht sich um eine stabile Bereitstellung des Dienstes und hält zum Schutz personenbezogener Nutzerdaten die geltenden Gesetze ein.</p>
+      <h2>Artikel 9 (Änderung und Einstellung des Dienstes)</h2>
+      <p>Das Unternehmen kann Inhalte oder Betriebsabläufe des Dienstes ändern oder den Dienst unterbrechen und wird dies im Voraus ankündigen.</p>
+      <h2>Artikel 10 (Haftungsbeschränkung)</h2>
+      <p>Analysen günstiger Orte, Richtungsempfehlungen, Ergebnisse von Raumanalysen und ähnliche Angaben dienen ausschließlich der Orientierung und stellen keine wissenschaftliche oder rechtliche Garantie dar.</p>
+      <p>Nutzer treffen darauf gestützte Entscheidungen ausschließlich in eigener Verantwortung.</p>
+      <h2>Artikel 11 (Geistiges Eigentum)</h2>
+      <p>Die Rechte an sämtlichen im Dienst bereitgestellten Inhalten und Daten liegen beim Unternehmen. Unerlaubte Vervielfältigung oder Nutzung ist untersagt.</p>
+      <h2>Artikel 12 (Nicht geregelte Angelegenheiten)</h2>
+      <p>Für Angelegenheiten, die in diesen Bedingungen nicht geregelt sind, gelten die einschlägigen Gesetze und allgemein anerkannten Gepflogenheiten.</p>
+      <h2>Artikel 13 (Anwendbares Recht und Gerichtsstand)</h2>
+      <p>Für Streitigkeiten im Zusammenhang mit dem Dienst gilt das Recht der Republik Korea. Zuständig ist das Gericht am Sitz der Hauptniederlassung des Unternehmens.</p>
+      <h2>Schlussbestimmung</h2>
+      <p>Diese Bedingungen treten am 18. März 2026 in Kraft.</p>
+    </article>
+    <article id="terms-pt" lang="pt" aria-labelledby="title-pt" hidden>
+      <h1 id="title-pt">Termos de Utilização do AuraSpot</h1>
+      <p class="date">Data de entrada em vigor: 18 de março de 2026</p>
+      <p>Os presentes Termos de Utilização (os «Termos») estabelecem os direitos, deveres e responsabilidades da Yangbong Co., Ltd. (a «Empresa») e dos utilizadores no âmbito da utilização do AuraSpot (o «Serviço»).</p>
+      <h2>Artigo 1.º (Objeto)</h2>
+      <p>Estes Termos regulam as condições e os procedimentos de utilização do Serviço, bem como os direitos e deveres da Empresa e dos utilizadores.</p>
+      <h2>Artigo 2.º (Definições)</h2>
+      <ul>
+        <li>«Serviço» significa a análise de espaços e direções baseada em inteligência artificial e a disponibilização de informações relacionadas.</li>
+        <li>«Utilizador» significa qualquer membro ou não membro que utilize o Serviço nos termos deste documento.</li>
+        <li>«Membro» significa uma pessoa que inicia sessão no Serviço através de autenticação externa, como a Google.</li>
+      </ul>
+      <h2>Artigo 3.º (Vigência e alterações)</h2>
+      <p>A Empresa pode alterar estes Termos desde que respeite a legislação aplicável. As alterações serão comunicadas no Serviço ou numa página relacionada.</p>
+      <h2>Artigo 4.º (Serviços disponibilizados)</h2>
+      <p>A Empresa disponibiliza os seguintes serviços:</p>
+      <ul>
+        <li>Análise de espaços através de inteligência artificial e recomendações de locais favoráveis.</li>
+        <li>Informações e análises baseadas na direção, localização e envolvente.</li>
+        <li>Análises personalizadas com base nos dados introduzidos pelos utilizadores.</li>
+        <li>Outros serviços que a Empresa venha a desenvolver ou disponibilizar.</li>
+      </ul>
+      <h2>Artigo 5.º (Disponibilidade do Serviço)</h2>
+      <p>O Serviço está, em princípio, disponível durante todo o ano, mas pode ser temporariamente interrompido para manutenção do sistema ou por motivos técnicos.</p>
+      <h2>Artigo 6.º (Registo e gestão de contas)</h2>
+      <p>Os utilizadores podem registar-se através de fornecedores de autenticação externos, como a Google.</p>
+      <p>Os membros são responsáveis por manter e gerir de forma segura as informações das respetivas contas.</p>
+      <h2>Artigo 7.º (Deveres dos utilizadores)</h2>
+      <ul>
+        <li>Não fornecer informações falsas.</li>
+        <li>Não perturbar o funcionamento normal do Serviço.</li>
+        <li>Cumprir a legislação aplicável e estes Termos.</li>
+      </ul>
+      <h2>Artigo 8.º (Deveres da Empresa)</h2>
+      <p>A Empresa esforça-se por disponibilizar um Serviço estável e cumpre a legislação aplicável para proteger os dados pessoais dos utilizadores.</p>
+      <h2>Artigo 9.º (Alterações e interrupção do Serviço)</h2>
+      <p>A Empresa pode alterar ou interromper o conteúdo ou o funcionamento do Serviço, mediante aviso prévio.</p>
+      <h2>Artigo 10.º (Limitação de responsabilidade)</h2>
+      <p>As análises de locais favoráveis, recomendações de direção, resultados de análise de espaços e informações semelhantes são meramente indicativos e não constituem garantias científicas ou jurídicas.</p>
+      <p>Os utilizadores são inteiramente responsáveis pelas decisões que tomem com base nessas informações.</p>
+      <h2>Artigo 11.º (Propriedade intelectual)</h2>
+      <p>Os direitos sobre todos os conteúdos e dados disponibilizados no Serviço pertencem à Empresa. É proibida a sua reprodução ou utilização sem autorização.</p>
+      <h2>Artigo 12.º (Questões não previstas)</h2>
+      <p>As questões não previstas nestes Termos regem-se pela legislação aplicável e pelas práticas geralmente aceites.</p>
+      <h2>Artigo 13.º (Lei aplicável e tribunal competente)</h2>
+      <p>Os litígios relacionados com o Serviço são regidos pelas leis da República da Coreia. É competente o tribunal da área da sede principal da Empresa.</p>
+      <h2>Disposição final</h2>
+      <p>Estes Termos entram em vigor em 18 de março de 2026.</p>
+    </article>
+    <article id="terms-it" lang="it" aria-labelledby="title-it" hidden>
+      <h1 id="title-it">Termini di servizio di AuraSpot</h1>
+      <p class="date">Data di entrata in vigore: 18 marzo 2026</p>
+      <p>I presenti Termini di servizio (i «Termini») disciplinano i diritti, gli obblighi e le responsabilità di Yangbong Co., Ltd. (la «Società») e degli utenti in relazione all’utilizzo di AuraSpot (il «Servizio»).</p>
+      <h2>Articolo 1 (Finalità)</h2>
+      <p>I presenti Termini stabiliscono le condizioni e le procedure per l’utilizzo del Servizio, nonché i diritti e gli obblighi della Società e degli utenti.</p>
+      <h2>Articolo 2 (Definizioni)</h2>
+      <ul>
+        <li>Per «Servizio» si intendono l’analisi di spazi e direzioni basata sull’intelligenza artificiale e la fornitura di informazioni correlate.</li>
+        <li>Per «Utente» si intende qualsiasi iscritto o non iscritto che utilizzi il Servizio ai sensi dei presenti Termini.</li>
+        <li>Per «Membro» si intende chi accede al Servizio mediante un sistema di autenticazione esterno, ad esempio Google.</li>
+      </ul>
+      <h2>Articolo 3 (Efficacia e modifiche)</h2>
+      <p>La Società può modificare i presenti Termini nel rispetto delle leggi applicabili. Le modifiche saranno comunicate all’interno del Servizio o su una pagina dedicata.</p>
+      <h2>Articolo 4 (Servizi offerti)</h2>
+      <p>La Società offre i seguenti servizi:</p>
+      <ul>
+        <li>Analisi di spazi mediante intelligenza artificiale e suggerimenti di luoghi favorevoli.</li>
+        <li>Informazioni e analisi basate su direzione, posizione e ambiente.</li>
+        <li>Analisi personalizzate basate sui dati inseriti dagli utenti.</li>
+        <li>Altri servizi successivamente sviluppati o offerti dalla Società.</li>
+      </ul>
+      <h2>Articolo 5 (Disponibilità del Servizio)</h2>
+      <p>Il Servizio è generalmente disponibile tutto l’anno, ma può essere temporaneamente sospeso per manutenzione dei sistemi o esigenze tecniche.</p>
+      <h2>Articolo 6 (Registrazione e gestione dell’account)</h2>
+      <p>Gli utenti possono registrarsi tramite sistemi di autenticazione esterni, come Google.</p>
+      <p>I membri devono custodire e gestire in modo sicuro le informazioni del proprio account e ne sono responsabili.</p>
+      <h2>Articolo 7 (Obblighi degli utenti)</h2>
+      <ul>
+        <li>Non inserire informazioni false.</li>
+        <li>Non ostacolare il normale funzionamento del Servizio.</li>
+        <li>Rispettare le leggi applicabili e i presenti Termini.</li>
+      </ul>
+      <h2>Articolo 8 (Obblighi della Società)</h2>
+      <p>La Società si impegna a fornire un Servizio stabile e rispetta le leggi applicabili per proteggere i dati personali degli utenti.</p>
+      <h2>Articolo 9 (Modifica e sospensione del Servizio)</h2>
+      <p>La Società può modificare o sospendere i contenuti o il funzionamento del Servizio, dandone preventiva comunicazione.</p>
+      <h2>Articolo 10 (Limitazione di responsabilità)</h2>
+      <p>Le analisi di luoghi favorevoli, i suggerimenti sulle direzioni, i risultati delle analisi degli spazi e informazioni analoghe hanno esclusivamente scopo orientativo e non costituiscono garanzie scientifiche o legali.</p>
+      <p>Gli utenti sono gli unici responsabili delle decisioni prese sulla base di tali informazioni.</p>
+      <h2>Articolo 11 (Proprietà intellettuale)</h2>
+      <p>I diritti su tutti i contenuti e i dati forniti nel Servizio appartengono alla Società. Ne sono vietati la riproduzione e l’uso non autorizzati.</p>
+      <h2>Articolo 12 (Aspetti non disciplinati)</h2>
+      <p>Le questioni non previste dai presenti Termini sono regolate dalle leggi applicabili e dalle prassi generalmente accettate.</p>
+      <h2>Articolo 13 (Legge applicabile e foro competente)</h2>
+      <p>Le controversie relative al Servizio sono disciplinate dalle leggi della Repubblica di Corea. È competente il tribunale del luogo in cui si trova la sede principale della Società.</p>
+      <h2>Disposizione finale</h2>
+      <p>I presenti Termini entrano in vigore il 18 marzo 2026.</p>
+    </article>
+    <article id="terms-id" lang="id" aria-labelledby="title-id" hidden>
+      <h1 id="title-id">Ketentuan Layanan AuraSpot</h1>
+      <p class="date">Tanggal Berlaku: 18 Maret 2026</p>
+      <p>Ketentuan Layanan ini (&quot;Ketentuan&quot;) mengatur hak, kewajiban, dan tanggung jawab Yangbong Co., Ltd. (&quot;Perusahaan&quot;) dan pengguna dalam penggunaan layanan AuraSpot (&quot;Layanan&quot;).</p>
+      <h2>Pasal 1 (Tujuan)</h2>
+      <p>Ketentuan ini mengatur syarat dan tata cara penggunaan Layanan serta hak dan kewajiban Perusahaan dan pengguna.</p>
+      <h2>Pasal 2 (Definisi)</h2>
+      <ul>
+        <li>&quot;Layanan&quot; adalah layanan analisis ruang dan arah berbasis AI serta penyediaan informasi terkait.</li>
+        <li>&quot;Pengguna&quot; adalah anggota maupun bukan anggota yang menggunakan Layanan berdasarkan Ketentuan ini.</li>
+        <li>&quot;Anggota&quot; adalah orang yang masuk dan menggunakan Layanan melalui autentikasi pihak ketiga, seperti Google.</li>
+      </ul>
+      <h2>Pasal 3 (Keberlakuan dan Perubahan Ketentuan)</h2>
+      <p>Perusahaan dapat mengubah Ketentuan ini sepanjang tidak melanggar hukum yang berlaku. Perubahan akan diumumkan dalam Layanan atau di halaman terkait.</p>
+      <h2>Pasal 4 (Layanan yang Disediakan)</h2>
+      <p>Perusahaan menyediakan layanan berikut:</p>
+      <ul>
+        <li>Analisis ruang berbasis AI dan rekomendasi lokasi yang dianggap menguntungkan.</li>
+        <li>Informasi analisis berdasarkan arah, lokasi, dan lingkungan.</li>
+        <li>Analisis yang dipersonalisasi berdasarkan data yang dimasukkan pengguna.</li>
+        <li>Layanan lain yang dikembangkan atau disediakan Perusahaan di kemudian hari.</li>
+      </ul>
+      <h2>Pasal 5 (Ketersediaan Layanan)</h2>
+      <p>Pada prinsipnya, Layanan tersedia sepanjang tahun, tetapi dapat dihentikan sementara untuk pemeliharaan sistem atau kebutuhan teknis.</p>
+      <h2>Pasal 6 (Pendaftaran dan Pengelolaan Akun)</h2>
+      <p>Pengguna dapat mendaftar melalui penyedia autentikasi pihak ketiga, seperti Google.</p>
+      <p>Anggota bertanggung jawab untuk menjaga keamanan dan mengelola informasi akunnya.</p>
+      <h2>Pasal 7 (Kewajiban Pengguna)</h2>
+      <ul>
+        <li>Tidak memasukkan informasi palsu.</li>
+        <li>Tidak mengganggu operasional normal Layanan.</li>
+        <li>Mematuhi hukum yang berlaku dan Ketentuan ini.</li>
+      </ul>
+      <h2>Pasal 8 (Kewajiban Perusahaan)</h2>
+      <p>Perusahaan berupaya menyediakan Layanan yang stabil dan mematuhi hukum yang berlaku untuk melindungi data pribadi pengguna.</p>
+      <h2>Pasal 9 (Perubahan dan Penghentian Layanan)</h2>
+      <p>Perusahaan dapat mengubah atau menghentikan isi maupun operasional Layanan dengan memberikan pemberitahuan sebelumnya.</p>
+      <h2>Pasal 10 (Batasan Tanggung Jawab)</h2>
+      <p>Analisis lokasi yang dianggap menguntungkan, rekomendasi arah, hasil analisis ruang, dan informasi sejenis hanya bersifat referensi dan bukan merupakan jaminan ilmiah atau hukum.</p>
+      <p>Pengguna sepenuhnya bertanggung jawab atas keputusan yang dibuat berdasarkan informasi tersebut.</p>
+      <h2>Pasal 11 (Hak Kekayaan Intelektual)</h2>
+      <p>Hak atas seluruh konten dan data yang disediakan dalam Layanan adalah milik Perusahaan. Penyalinan atau penggunaan tanpa izin dilarang.</p>
+      <h2>Pasal 12 (Hal yang Tidak Diatur)</h2>
+      <p>Hal-hal yang tidak diatur dalam Ketentuan ini tunduk pada hukum yang berlaku dan praktik umum.</p>
+      <h2>Pasal 13 (Hukum yang Berlaku dan Yurisdiksi)</h2>
+      <p>Sengketa yang berkaitan dengan Layanan tunduk pada hukum Republik Korea. Pengadilan yang berwenang di wilayah kantor pusat Perusahaan memiliki yurisdiksi.</p>
+      <h2>Ketentuan Penutup</h2>
+      <p>Ketentuan ini mulai berlaku pada 18 Maret 2026.</p>
+    </article>
+    <article id="terms-th" lang="th" aria-labelledby="title-th" hidden>
+      <h1 id="title-th">ข้อกำหนดการใช้บริการ AuraSpot</h1>
+      <p class="date">วันที่มีผลบังคับใช้: 18 มีนาคม 2026</p>
+      <p>ข้อกำหนดการใช้บริการฉบับนี้ (&quot;ข้อกำหนด&quot;) กำหนดสิทธิ หน้าที่ และความรับผิดชอบระหว่าง Yangbong Co., Ltd. (&quot;บริษัท&quot;) กับผู้ใช้งานบริการ AuraSpot (&quot;บริการ&quot;)</p>
+      <h2>ข้อ 1 (วัตถุประสงค์)</h2>
+      <p>ข้อกำหนดนี้ระบุเงื่อนไขและขั้นตอนในการใช้บริการ รวมถึงสิทธิและหน้าที่ของบริษัทและผู้ใช้งาน</p>
+      <h2>ข้อ 2 (คำจำกัดความ)</h2>
+      <ul>
+        <li>&quot;บริการ&quot; หมายถึงบริการวิเคราะห์พื้นที่และทิศทางด้วย AI รวมถึงการให้ข้อมูลที่เกี่ยวข้อง</li>
+        <li>&quot;ผู้ใช้งาน&quot; หมายถึงสมาชิกและผู้ที่ไม่ได้เป็นสมาชิกซึ่งใช้บริการตามข้อกำหนดนี้</li>
+        <li>&quot;สมาชิก&quot; หมายถึงผู้ที่เข้าสู่ระบบและใช้บริการผ่านการยืนยันตัวตนจากผู้ให้บริการภายนอก เช่น Google</li>
+      </ul>
+      <h2>ข้อ 3 (การมีผลใช้บังคับและการเปลี่ยนแปลงข้อกำหนด)</h2>
+      <p>บริษัทอาจแก้ไขข้อกำหนดนี้ได้ภายในขอบเขตที่ไม่ขัดต่อกฎหมายที่เกี่ยวข้อง โดยจะแจ้งการเปลี่ยนแปลงผ่านบริการหรือหน้าเว็บไซต์ที่เกี่ยวข้อง</p>
+      <h2>ข้อ 4 (บริการที่ให้บริการ)</h2>
+      <p>บริษัทให้บริการดังต่อไปนี้</p>
+      <ul>
+        <li>การวิเคราะห์พื้นที่ด้วย AI และการแนะนำสถานที่ที่ถือว่าเป็นมงคล</li>
+        <li>ข้อมูลวิเคราะห์ตามทิศทาง ตำแหน่งที่ตั้ง และสภาพแวดล้อม</li>
+        <li>การวิเคราะห์เฉพาะบุคคลจากข้อมูลที่ผู้ใช้งานป้อน</li>
+        <li>บริการอื่นที่บริษัทพัฒนาหรือให้บริการเพิ่มเติมในอนาคต</li>
+      </ul>
+      <h2>ข้อ 5 (การใช้บริการ)</h2>
+      <p>โดยหลักการแล้ว บริการเปิดให้ใช้งานตลอดทั้งปี แต่อาจหยุดให้บริการชั่วคราวเพื่อบำรุงรักษาระบบหรือด้วยเหตุผลทางเทคนิค</p>
+      <h2>ข้อ 6 (การสมัครสมาชิกและการจัดการบัญชี)</h2>
+      <p>ผู้ใช้งานสามารถสมัครสมาชิกผ่านระบบยืนยันตัวตนภายนอก เช่น Google</p>
+      <p>สมาชิกมีหน้าที่เก็บรักษาและจัดการข้อมูลบัญชีของตนให้ปลอดภัย และต้องรับผิดชอบในเรื่องดังกล่าว</p>
+      <h2>ข้อ 7 (หน้าที่ของผู้ใช้งาน)</h2>
+      <ul>
+        <li>ห้ามให้ข้อมูลอันเป็นเท็จ</li>
+        <li>ห้ามกระทำการที่รบกวนการดำเนินงานตามปกติของบริการ</li>
+        <li>ต้องปฏิบัติตามกฎหมายที่เกี่ยวข้องและข้อกำหนดนี้</li>
+      </ul>
+      <h2>ข้อ 8 (หน้าที่ของบริษัท)</h2>
+      <p>บริษัทมุ่งมั่นให้บริการอย่างมีเสถียรภาพ และปฏิบัติตามกฎหมายที่เกี่ยวข้องเพื่อคุ้มครองข้อมูลส่วนบุคคลของผู้ใช้งาน</p>
+      <h2>ข้อ 9 (การเปลี่ยนแปลงและการระงับบริการ)</h2>
+      <p>บริษัทอาจเปลี่ยนแปลงหรือระงับเนื้อหาและรูปแบบการดำเนินงานของบริการ โดยจะแจ้งให้ทราบล่วงหน้า</p>
+      <h2>ข้อ 10 (ข้อจำกัดความรับผิด)</h2>
+      <p>ผลวิเคราะห์สถานที่ที่ถือว่าเป็นมงคล คำแนะนำด้านทิศทาง ผลการวิเคราะห์พื้นที่ และข้อมูลลักษณะเดียวกันมีไว้เพื่อประกอบการพิจารณาเท่านั้น และไม่ถือเป็นการรับประกันทางวิทยาศาสตร์หรือทางกฎหมาย</p>
+      <p>ผู้ใช้งานต้องใช้ดุลยพินิจและรับผิดชอบต่อการตัดสินใจที่อาศัยข้อมูลดังกล่าวด้วยตนเองทั้งหมด</p>
+      <h2>ข้อ 11 (สิทธิในทรัพย์สินทางปัญญา)</h2>
+      <p>สิทธิในเนื้อหาและข้อมูลทั้งหมดที่ให้บริการภายในระบบเป็นของบริษัท ห้ามทำซ้ำหรือใช้งานโดยไม่ได้รับอนุญาต</p>
+      <h2>ข้อ 12 (กรณีที่ไม่ได้ระบุไว้)</h2>
+      <p>เรื่องที่ไม่ได้กำหนดไว้ในข้อกำหนดนี้ ให้เป็นไปตามกฎหมายที่เกี่ยวข้องและแนวปฏิบัติที่ยอมรับกันโดยทั่วไป</p>
+      <h2>ข้อ 13 (กฎหมายที่ใช้บังคับและศาลที่มีเขตอำนาจ)</h2>
+      <p>ข้อพิพาทที่เกี่ยวข้องกับบริการอยู่ภายใต้กฎหมายของสาธารณรัฐเกาหลี และให้ศาลที่มีเขตอำนาจในพื้นที่ตั้งสำนักงานใหญ่ของบริษัทเป็นศาลที่มีอำนาจพิจารณา</p>
+      <h2>บทเฉพาะกาล</h2>
+      <p>ข้อกำหนดนี้มีผลบังคับใช้ตั้งแต่วันที่ 18 มีนาคม 2026</p>
+    </article>
+    <article id="terms-vi" lang="vi" aria-labelledby="title-vi" hidden>
+      <h1 id="title-vi">Điều khoản sử dụng AuraSpot</h1>
+      <p class="date">Ngày có hiệu lực: 18/03/2026</p>
+      <p>Điều khoản sử dụng này (&quot;Điều khoản&quot;) quy định quyền, nghĩa vụ và trách nhiệm giữa Yangbong Co., Ltd. (&quot;Công ty&quot;) và người dùng khi sử dụng dịch vụ AuraSpot (&quot;Dịch vụ&quot;).</p>
+      <h2>Điều 1 (Mục đích)</h2>
+      <p>Điều khoản này quy định điều kiện, quy trình sử dụng Dịch vụ cũng như quyền và nghĩa vụ của Công ty và người dùng.</p>
+      <h2>Điều 2 (Giải thích thuật ngữ)</h2>
+      <ul>
+        <li>&quot;Dịch vụ&quot; là dịch vụ phân tích không gian, phương hướng bằng AI và cung cấp thông tin liên quan.</li>
+        <li>&quot;Người dùng&quot; là thành viên và người không phải thành viên sử dụng Dịch vụ theo Điều khoản này.</li>
+        <li>&quot;Thành viên&quot; là người đăng nhập và sử dụng Dịch vụ thông qua phương thức xác thực bên ngoài, chẳng hạn như Google.</li>
+      </ul>
+      <h2>Điều 3 (Hiệu lực và sửa đổi Điều khoản)</h2>
+      <p>Công ty có thể sửa đổi Điều khoản này trong phạm vi không trái pháp luật hiện hành. Mọi thay đổi sẽ được thông báo trong Dịch vụ hoặc trên trang liên quan.</p>
+      <h2>Điều 4 (Nội dung Dịch vụ)</h2>
+      <p>Công ty cung cấp các dịch vụ sau:</p>
+      <ul>
+        <li>Phân tích không gian bằng AI và gợi ý những địa điểm được xem là thuận lợi.</li>
+        <li>Cung cấp thông tin phân tích dựa trên phương hướng, vị trí và môi trường.</li>
+        <li>Phân tích cá nhân hóa dựa trên dữ liệu do người dùng nhập.</li>
+        <li>Các dịch vụ khác do Công ty phát triển hoặc cung cấp trong tương lai.</li>
+      </ul>
+      <h2>Điều 5 (Sử dụng Dịch vụ)</h2>
+      <p>Về nguyên tắc, Dịch vụ được cung cấp quanh năm nhưng có thể tạm gián đoạn để bảo trì hệ thống hoặc vì nhu cầu kỹ thuật.</p>
+      <h2>Điều 6 (Đăng ký và quản lý tài khoản)</h2>
+      <p>Người dùng có thể đăng ký thông qua dịch vụ xác thực bên ngoài, chẳng hạn như Google.</p>
+      <p>Thành viên có trách nhiệm bảo mật và quản lý thông tin tài khoản của mình.</p>
+      <h2>Điều 7 (Nghĩa vụ của người dùng)</h2>
+      <ul>
+        <li>Không cung cấp thông tin sai sự thật.</li>
+        <li>Không thực hiện hành vi cản trở hoạt động bình thường của Dịch vụ.</li>
+        <li>Tuân thủ pháp luật hiện hành và Điều khoản này.</li>
+      </ul>
+      <h2>Điều 8 (Nghĩa vụ của Công ty)</h2>
+      <p>Công ty nỗ lực cung cấp Dịch vụ ổn định và tuân thủ pháp luật hiện hành để bảo vệ dữ liệu cá nhân của người dùng.</p>
+      <h2>Điều 9 (Thay đổi và tạm ngừng Dịch vụ)</h2>
+      <p>Công ty có thể thay đổi hoặc tạm ngừng nội dung, phương thức vận hành Dịch vụ và sẽ thông báo trước.</p>
+      <h2>Điều 10 (Giới hạn trách nhiệm)</h2>
+      <p>Thông tin phân tích địa điểm được xem là thuận lợi, gợi ý phương hướng, kết quả phân tích không gian và những nội dung tương tự chỉ mang tính tham khảo, không phải sự bảo đảm về mặt khoa học hay pháp lý.</p>
+      <p>Người dùng hoàn toàn chịu trách nhiệm đối với các quyết định của mình dựa trên những thông tin đó.</p>
+      <h2>Điều 11 (Quyền sở hữu trí tuệ)</h2>
+      <p>Quyền đối với toàn bộ nội dung và dữ liệu được cung cấp trong Dịch vụ thuộc về Công ty. Nghiêm cấm sao chép hoặc sử dụng khi chưa được cho phép.</p>
+      <h2>Điều 12 (Những vấn đề chưa được quy định)</h2>
+      <p>Những vấn đề không được nêu trong Điều khoản này sẽ được giải quyết theo pháp luật hiện hành và thông lệ chung.</p>
+      <h2>Điều 13 (Luật áp dụng và thẩm quyền giải quyết tranh chấp)</h2>
+      <p>Các tranh chấp liên quan đến Dịch vụ được điều chỉnh bởi pháp luật Đại Hàn Dân Quốc. Tòa án có thẩm quyền tại địa điểm đặt trụ sở chính của Công ty là tòa án có thẩm quyền giải quyết.</p>
+      <h2>Điều khoản thi hành</h2>
+      <p>Điều khoản này có hiệu lực từ ngày 18/03/2026.</p>
+    </article>
+  </main>
 
-<h1>AuraSpot 서비스 이용약관</h1>
-
-<p>본 약관은 양봉 주식회사(이하 “회사”)가 제공하는 AuraSpot 서비스(이하 “서비스”)의 이용과 관련하여 회사와 이용자 간의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
-
-<h2>제1조 (목적)</h2>
-<p>본 약관은 회사가 제공하는 AuraSpot 서비스의 이용조건 및 절차, 회사와 이용자 간의 권리와 의무를 규정합니다.</p>
-
-<h2>제2조 (정의)</h2>
-<ul>
-<li>“서비스”란 AI 기반 공간 분석, 방향 분석 및 관련 정보 제공 서비스를 의미합니다.</li>
-<li>“이용자”란 본 약관에 따라 서비스를 이용하는 회원 및 비회원을 의미합니다.</li>
-<li>“회원”이란 외부 인증(Google 등)을 통해 로그인하여 서비스를 이용하는 자를 의미합니다.</li>
-</ul>
-
-<h2>제3조 (약관의 효력 및 변경)</h2>
-<p>회사는 관련 법령을 위반하지 않는 범위에서 본 약관을 변경할 수 있으며, 변경 시 서비스 내 또는 관련 페이지에 공지합니다.</p>
-
-<h2>제4조 (서비스의 제공)</h2>
-<p>회사는 다음과 같은 서비스를 제공합니다.</p>
-<ul>
-<li>AI 기반 공간 분석 및 명당 추천 서비스</li>
-<li>방향, 위치 및 환경 기반 분석 정보 제공</li>
-<li>사용자 입력 데이터를 기반으로 한 개인 맞춤형 분석</li>
-<li>기타 회사가 추가 개발하거나 제공하는 서비스</li>
-</ul>
-
-<h2>제5조 (서비스 이용)</h2>
-<p>서비스는 연중무휴 제공함을 원칙으로 하나, 시스템 점검 또는 기술적 필요에 따라 일시 중단될 수 있습니다.</p>
-
-<h2>제6조 (회원가입 및 계정 관리)</h2>
-<p>이용자는 Google 등 외부 인증을 통해 회원가입을 할 수 있습니다.</p>
-<p>회원은 자신의 계정 정보를 안전하게 관리해야 하며, 이에 대한 책임은 회원에게 있습니다.</p>
-
-<h2>제7조 (이용자의 의무)</h2>
-<ul>
-<li>허위 정보 입력 금지</li>
-<li>서비스의 정상적인 운영을 방해하는 행위 금지</li>
-<li>관련 법령 및 본 약관을 준수할 의무</li>
-</ul>
-
-<h2>제8조 (회사의 의무)</h2>
-<p>회사는 안정적인 서비스 제공을 위해 노력하며, 이용자의 개인정보를 보호하기 위해 관련 법령을 준수합니다.</p>
-
-<h2>제9조 (서비스의 변경 및 중단)</h2>
-<p>회사는 서비스의 내용, 운영 방식 등을 변경하거나 중단할 수 있으며, 사전에 공지합니다.</p>
-
-<h2>제10조 (책임의 제한)</h2>
-<p>서비스에서 제공되는 명당 분석, 방향 추천, 공간 분석 결과 등은 참고용 정보이며, 과학적 또는 법적 보장을 의미하지 않습니다.</p>
-<p>이용자는 이를 기반으로 한 의사결정에 대해 전적으로 본인의 책임 하에 판단해야 합니다.</p>
-
-<h2>제11조 (지적재산권)</h2>
-<p>서비스 내 제공되는 모든 콘텐츠 및 데이터에 대한 권리는 회사에 있으며, 무단 복제 및 이용을 금지합니다.</p>
-
-<h2>제12조 (약관 외 준칙)</h2>
-<p>본 약관에 명시되지 않은 사항은 관련 법령 및 일반 상관례에 따릅니다.</p>
-
-<h2>제13조 (관할법원)</h2>
-<p>본 서비스와 관련된 분쟁은 대한민국 법을 따르며, 관할 법원은 회사 본점 소재지를 관할하는 법원으로 합니다.</p>
-
-<h2>부칙</h2>
-<p>본 약관은 2026년 3월 18일부터 시행됩니다.</p>
-
+  <script>
+    (function () {
+      'use strict';
+      var supported = ['ko','en','ja','zh-Hans','zh-Hant','es','fr','de','pt','it','id','th','vi'];
+      var select = document.getElementById('language-select');
+      var key = 'auraspot_terms_language_v13';
+      function valid(code) { return supported.indexOf(code) !== -1; }
+      function changeLanguage(code, remember) {
+        if (!valid(code)) code = 'en';
+        supported.forEach(function (c) {
+          document.getElementById('terms-' + c).hidden = c !== code;
+        });
+        select.value = code;
+        document.documentElement.lang = code;
+        var heading = document.querySelector('#terms-' + code + ' h1');
+        document.title = heading ? heading.textContent : 'AuraSpot Terms of Service';
+        if (remember) {
+          try { localStorage.setItem(key, code); } catch (e) { /* storage optional */ }
+        }
+      }
+      select.addEventListener('change', function () { changeLanguage(select.value, true); });
+      // English is the default on the first visit; an explicit ?lang= value takes priority.
+      var initial = 'en';
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var requested = params.get('lang');
+        var saved = localStorage.getItem(key);
+        if (valid(requested)) initial = requested;
+        else if (valid(saved)) initial = saved;
+      } catch (e) { /* use English in restrictive browsers */ }
+      changeLanguage(initial, false);
+    })();
+  </script>
 </body>
 </html>
