@@ -1,781 +1,391 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AuraSpot - 당신만의 아우라를 발견하세요</title>
-    
-    <!-- 폰트: 프리텐다드 -->
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- 아이콘 (Phosphor Icons) -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="지금, 나에게 들어올 운은? K-Astrology와 Birth Energy로 만나는 오늘의 운세, 행운의 단서, 오라 카드, 관계운. AuraSpot을 무료로 만나보세요.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AuraSpot | FORTUNE REVEALED">
+  <meta property="og:description" content="지금, 나에게 들어올 운은? 매일 새로운 운세와 행운을 만나는 가장 빛나는 순간.">
+  <meta property="og:site_name" content="AuraSpot">
+  <title>AuraSpot — FORTUNE REVEALED</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23bff4d0%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%238eabff%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2217%22%20fill%3D%22%23081729%22%2F%3E%3Cpath%20d%3D%22M32%207%2038%2026%2057%2032%2038%2038%2032%2057%2026%2038%207%2032%2026%2026Z%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%224%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E%0A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+:root{--night:#07111f;--night-2:#0d1c33;--night-3:#142a48;--text:#f7f8ff;--muted:#aab9cc;--faded:#8191aa;--mint:#b3f5d6;--blue:#a6c2ff;--lilac:#bdacf9;--gold:#ffecbd;--line:rgba(221,232,255,.14);--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:92px}body{margin:0;min-width:320px;background:var(--night);color:var(--text);font-family:'DM Sans','Noto Sans KR',sans-serif;font-weight:400;word-break:keep-all;-webkit-font-smoothing:antialiased}body:before{content:"";position:fixed;inset:0;z-index:-2;background:linear-gradient(130deg,#07111f 0%,#0d1c33 58%,#142a48 100%)}body.menu-open{overflow:hidden}::selection{background:#9bbdf1;color:#07111f}a{text-decoration:none;color:inherit}button{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible{outline:2px solid #c5fadf;outline-offset:4px}h1,h2,h3,p{margin-top:0}h1,h2,h3{letter-spacing:-.052em}img,svg{display:block}em{font-style:normal}.container{width:min(1280px,calc(100% - 100px));margin-inline:auto}.section-pad{padding-block:140px}.skip{position:absolute;top:-60px;left:12px;z-index:999;background:white;color:#07111f;padding:12px}.skip:focus{top:12px}#wish-sky{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.84}.page-aura{position:fixed;z-index:-1;border-radius:50%;pointer-events:none;filter:blur(95px);opacity:.17}.page-aura-one{width:530px;height:530px;top:3%;right:-200px;background:#4768aa}.page-aura-two{width:550px;height:550px;bottom:-260px;left:-160px;background:#406b83}.eyebrow{font-size:11px;font-family:Manrope,sans-serif;letter-spacing:.22em;font-weight:700;color:#c2ccdc;line-height:1.8}.eyebrow-dot{color:#d4c48a;margin:0 4px}.site-header{position:fixed;top:0;left:0;right:0;z-index:70;height:86px;transition:background .4s,border-color .4s,box-shadow .4s;border-bottom:1px solid transparent}.site-header.scrolled,.site-header.open{background:rgba(6,15,29,.78);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-color:rgba(255,255,255,.075);box-shadow:0 10px 35px rgba(0,0,0,.10)}.nav-shell{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:inline-flex;align-items:center;gap:11px;font:800 24px/1 'Manrope',sans-serif;letter-spacing:-.065em;white-space:nowrap}.brand>span>span{background:linear-gradient(90deg,#aaf5db,#9bb5ff);color:transparent;background-clip:text;-webkit-background-clip:text}.brand-icon{width:28px;height:28px;filter:drop-shadow(0 0 11px rgba(171,222,224,.3))}.main-nav{display:flex;align-items:center;gap:39px;margin-left:auto;margin-right:40px}.main-nav>a{font-size:13px;font-weight:500;color:#bbcadc;transition:color .22s}.main-nav>a:hover{color:white}.nav-actions{display:flex;align-items:center;gap:12px}.nav-download{display:inline-flex;align-items:center;justify-content:center;gap:24px;border:1px solid rgba(208,227,255,.22);border-radius:100px;background:rgba(255,255,255,.07);padding:13px 20px;font-size:12px;font-weight:700;transition:background .25s,border-color .25s}.nav-download:hover{background:rgba(169,240,212,.13);border-color:#8ee5c8}.nav-download span{font-size:18px;font-weight:400;color:var(--mint)}.menu-toggle{display:none;border:1px solid var(--line);height:42px;width:42px;border-radius:50%;background:rgba(255,255,255,.05);align-items:center;justify-content:center;flex-direction:column;gap:4px;cursor:pointer}.menu-toggle span{height:1px;width:16px;background:#fff;transition:transform .2s,opacity .2s}.menu-open .menu-toggle span:first-child{transform:translateY(5px) rotate(45deg)}.menu-open .menu-toggle span:nth-child(2){opacity:0}.menu-open .menu-toggle span:last-child{transform:translateY(-5px) rotate(-45deg)}
+/* HERO */
+.hero{position:relative;min-height:860px;min-height:min(960px,100svh);display:grid;grid-template-columns:.97fr 1.03fr;align-items:center;padding-top:120px;padding-bottom:90px;gap:20px}.hero-copy{position:relative;z-index:4;padding-bottom:20px}.hero-eyebrow{display:flex;align-items:center;gap:10px;white-space:nowrap;color:#b7d9dd;margin-bottom:37px}.eyebrow-line{display:inline-block;width:30px;height:1px;background:#9de5d2;margin-right:3px}.hero h1{font-family:'Noto Sans KR',sans-serif;font-weight:700;font-size:clamp(52px,5.2vw,79px);line-height:1.29;letter-spacing:-.081em;margin:0 0 33px;white-space:nowrap}.serif-effect{font-weight:400}.title-illume{background:linear-gradient(100deg,#c2ffdc 10%,#d6e5ff 53%,#c5b4ff 87%);background-clip:text;-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 2px 18px rgba(158,208,248,.11))}.hero-description{font-size:16px;line-height:2.1;letter-spacing:-.025em;color:#b9c8d9;margin-bottom:35px}.hero-cta{display:flex;align-items:center;gap:27px}.button{display:inline-flex;align-items:center;justify-content:center;border-radius:100px;white-space:nowrap;transition:transform .3s var(--ease),box-shadow .3s,background .3s}.button:hover{transform:translateY(-3px)}.button-primary{gap:38px;color:#0d1c2c;padding:18px 23px 18px 27px;background:linear-gradient(105deg,#c6f7de 0%,#c7e5ed 54%,#c4c5fc 100%);box-shadow:0 14px 45px rgba(142,226,210,.2);font-size:14px;font-weight:800}.button-primary:hover{box-shadow:0 16px 46px rgba(142,226,210,.34)}.button-arrow{height:27px;width:27px;border-radius:50%;display:grid;place-items:center;background:rgba(11,32,46,.11);font-size:19px;font-weight:400}.button-text{font-weight:600;font-size:13px;gap:20px;color:#c6d4e5}.button-text span{font-size:19px}.hero-proof{display:flex;align-items:center;gap:12px;margin-top:40px;color:#95a8be;font-size:11px;white-space:nowrap}.proof-stars{color:#d0eec1;font-size:17px}.proof-separator{height:11px;width:1px;background:rgba(205,222,245,.24)}.hero-visual{position:relative;height:675px;display:flex;align-items:center;justify-content:center;isolation:isolate}.visual-halo{position:absolute;pointer-events:none;border-radius:50%;filter:blur(55px)}.halo-a{width:550px;height:550px;background:radial-gradient(circle,rgba(95,123,230,.22),transparent 68%);left:6%;top:8%}.halo-b{width:400px;height:440px;background:radial-gradient(circle,rgba(147,113,176,.2),transparent 65%);right:-4%;bottom:2%}.celestial-orbit{position:absolute;border:1px solid rgba(194,219,255,.12);border-radius:50%;transform:rotate(-23deg)}.orbit-outer{width:610px;height:610px;box-shadow:inset 0 0 70px rgba(143,180,255,.018),0 0 100px rgba(152,185,255,.02)}.orbit-inner{width:525px;height:525px;border-style:dashed;border-color:rgba(201,228,255,.09);transform:rotate(17deg)}.orbit-point{width:6px;height:6px;position:absolute;background:#fff2cf;box-shadow:0 0 18px 5px rgba(247,232,191,.4);border-radius:50%;z-index:1}.orbit-point-one{top:63px;right:110px}.orbit-point-two{bottom:70px;left:85px;width:3px;height:3px}.hero-phone{transform:rotate(-6deg);animation:phone-float 9s ease-in-out infinite}.phone-frame{position:relative;width:288px;height:592px;border-radius:44px;padding:8px;background:linear-gradient(140deg,#354b6c 0%,#c1c8ce 12%,#23334d 29%,#657b9c 55%,#1a2238 76%,#8592a7 100%);box-shadow:0 20px 15px rgba(0,0,0,.17),0 45px 90px rgba(0,0,0,.58),0 0 0 1px rgba(228,233,249,.29),inset 0 0 0 1px rgba(255,255,255,.24);z-index:3}.phone-edge{position:absolute;inset:3px;border-radius:42px;border:2px solid rgba(0,0,0,.7);pointer-events:none;z-index:7}.phone-island{position:absolute;z-index:8;top:14px;left:50%;transform:translateX(-50%);width:93px;height:25px;background:#060813;border-radius:30px;box-shadow:0 0 0 2px #15233d}.phone-screen{position:relative;width:100%;height:100%;overflow:hidden;border-radius:36px;background:linear-gradient(160deg,#070f23,#152a4a 50%,#0e1531)}.asset-image{display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:4}.asset-slot.has-asset>.asset-image{display:block}.asset-slot.has-asset .screen-fallback,.asset-slot.has-asset .preview-fallback{display:none}.phone-status{height:49px;padding:16px 23px 0;display:flex;align-items:flex-start;justify-content:space-between;font:600 10px/1 Manrope,sans-serif;color:#e1ecff}.phone-brand{display:flex;align-items:center;padding:0 18px 8px;font:800 16px Manrope,sans-serif;letter-spacing:-1px}.phone-brand span:not(.mini-fourpoint):not(.phone-top-dots){color:#a4befa}.mini-fourpoint{font-size:14px;color:#b9f6d7;margin-right:5px}.phone-top-dots{margin-left:auto;font-size:13px;letter-spacing:1px;color:#c0cad7}.phone-content{padding:23px 19px 0;text-align:center}.phone-tag{font:700 8px/1 Manrope,sans-serif;letter-spacing:.26em;color:#accbe1}.phone-content h2{font-size:21px;line-height:1.5;letter-spacing:-.05em;margin:10px 0 5px;font-weight:700}.phone-content>p{font-size:9px;color:#aabdd3;margin:0}.phone-cosmos{position:relative;height:177px;margin:8px auto 0;isolation:isolate}.cosmos-bloom{position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);width:160px;height:160px;border-radius:50%;background:radial-gradient(circle at 46% 40%,#fffddf 0%,#f5dbdd 7%,#adbadd 18%,#6573b5 35%,#45529c 47%,rgba(57,89,147,.38) 60%,transparent 72%);filter:drop-shadow(0 0 25px rgba(150,179,235,.4))}.cosmos-bloom:before{content:"";position:absolute;inset:-12px;border:1px solid rgba(241,222,196,.32);border-radius:50%;transform:rotate(-36deg) scaleY(.75)}.cosmos-bloom:after{content:"";position:absolute;inset:-28px;border:1px solid rgba(186,198,231,.18);border-radius:50%;transform:rotate(38deg) scaleY(.82)}.cosmos-inner{position:absolute;left:50%;top:45%;width:63px;height:63px;border:1px solid rgba(242,243,255,.45);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 45px rgba(255,250,238,.24),inset 0 0 30px rgba(255,255,255,.3)}.phone-cosmos-dust{position:absolute;inset:10px;background-image:radial-gradient(circle at 10% 30%,#fff 1px,transparent 2px),radial-gradient(circle at 90% 23%,#fff 1px,transparent 2px),radial-gradient(circle at 20% 80%,#fff 1px,transparent 2px),radial-gradient(circle at 70% 85%,#fff 1px,transparent 2px);opacity:.65}.cosmos-star{position:absolute;color:#ffebc1;text-shadow:0 0 15px #ffecba}.star-one{top:20px;left:29px;font-size:14px}.star-two{bottom:27px;right:22px;font-size:15px}.phone-reading{display:flex;align-items:center;text-align:left;gap:9px;border:1px solid rgba(199,222,255,.2);border-radius:15px;padding:11px;background:linear-gradient(135deg,rgba(242,239,255,.13),rgba(198,225,255,.035));box-shadow:0 7px 20px rgba(0,0,0,.12)}.reading-star{width:28px;height:28px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(130deg,#aacef2,#c7aadf);color:#18213d;flex:none}.phone-reading div,.phone-reading span:nth-child(2){flex:1}.phone-reading small{display:block;font-size:6.7px;letter-spacing:.04em;color:#a7bedb;margin-bottom:3px}.phone-reading strong{font-size:10px;font-weight:700;white-space:nowrap}.phone-reading span:last-child{color:#cbd5ff;font-size:14px}.phone-pills{display:flex;gap:5px;margin-top:13px}.phone-pills span{border:1px solid rgba(255,255,255,.15);border-radius:30px;color:#bacbe4;font-size:8px;flex:1;padding:7px 0}.phone-bottom-nav{position:absolute;bottom:20px;left:9px;right:9px;display:flex;justify-content:space-around;align-items:center;border-top:1px solid rgba(255,255,255,.12);padding-top:10px;color:#8b9cba}.phone-bottom-nav span{display:flex;flex-direction:column;gap:2px;align-items:center;font-size:16px}.phone-bottom-nav small{font:500 7px Manrope,sans-serif}.phone-bottom-nav .active{color:#bcf4d6}.phone-homebar{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:90px;height:3px;border-radius:6px;background:#d2d8e3}.floating-note{position:absolute;z-index:5;display:flex;align-items:center;gap:10px;min-width:177px;padding:12px 16px;border:1px solid rgba(255,255,255,.24);border-radius:15px;background:rgba(23,37,66,.68);backdrop-filter:blur(17px);-webkit-backdrop-filter:blur(17px);box-shadow:0 14px 35px rgba(0,0,0,.25)}.floating-note small{font:700 8px Manrope,sans-serif;letter-spacing:.16em;color:#aec2d4;display:block;margin-bottom:4px}.floating-note strong{font-size:11px;font-weight:700;color:#eef5ff}.note-symbol{font-size:27px}.mint{color:#a7efd5}.gold{color:#ffeac4}.note-left{left:-27px;top:197px;transform:rotate(7deg);animation:note-drift 8s ease-in-out infinite}.note-right{right:-6px;bottom:156px;transform:rotate(7deg);animation:note-drift 8s ease-in-out -3s infinite}.hero-visual-caption{position:absolute;bottom:10px;right:3%;font:700 9px Manrope,sans-serif;letter-spacing:.24em;color:#667e9b}.hero-visual-caption span{color:#cce8d0;font-size:15px;margin-left:9px}.hero-scroll{position:absolute;bottom:39px;left:0;font:700 9px Manrope,sans-serif;letter-spacing:.22em;color:#869ab2;display:flex;align-items:center;gap:16px}.hero-scroll span{height:1px;width:50px;background:#6e8ba1}
+/* IDENTITY / EDITORIAL */
+.ticker{border-top:1px solid rgba(215,232,255,.1);border-bottom:1px solid rgba(215,232,255,.1);height:65px;overflow:hidden;background:rgba(255,255,255,.018);display:flex;align-items:center;position:relative}.ticker-track{display:flex;align-items:center;gap:40px;width:max-content;white-space:nowrap;animation:marquee 38s linear infinite;color:#a3b9cc;letter-spacing:.19em;font:700 12px Manrope,sans-serif}.ticker-track b{font-size:15px;font-weight:400;color:#d3c6a6}.story{position:relative}.story-top{display:flex;justify-content:space-between;align-items:flex-start}.story-micro{font-size:12px;line-height:1.8;color:#758eab;text-align:right}.story-title{font-size:clamp(46px,7.6vw,114px);font-weight:600;letter-spacing:-.079em;line-height:1.36;margin:66px 0 35px}.story-title em,.section-heading h2 em,.birth h2 em,.download-content h2 em{background:linear-gradient(90deg,#b5f2db,#c2dbff 55%,#c8b5f2);color:transparent;background-clip:text;-webkit-background-clip:text}.story-bottom{display:flex;align-items:flex-start;justify-content:space-between;gap:30px;margin-top:32px}.story-glyph{font-size:79px;font-weight:100;color:#cce5ce;line-height:1;animation:spin-slow 28s linear infinite}.story-bottom p{max-width:480px;color:#aabdd2;font-size:15px;line-height:2.12;letter-spacing:-.03em}.story-metrics{display:grid;grid-template-columns:1fr 1fr 1fr;margin-top:90px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.story-metrics>div{padding:33px 5px 33px 30px;display:flex;flex-direction:column;gap:9px}.story-metrics>div+div{border-left:1px solid var(--line)}.story-metrics strong{font:700 26px/1.3 Manrope,sans-serif;letter-spacing:-.04em}.story-metrics strong span{color:#92a9c2;font-size:12px;font-weight:600;letter-spacing:.03em}.story-metrics small{color:#8aa1bb;font-size:11px}.story-metrics i{font-style:normal;color:#a1efd3}
+/* BENTO */
+.features{position:relative;background:linear-gradient(180deg,rgba(14,30,52,.12),rgba(4,11,25,.25) 40%,rgba(13,26,48,.07));border-top:1px solid rgba(255,255,255,.035)}.section-heading{margin-bottom:57px}.section-heading-flex{display:flex;justify-content:space-between;gap:30px;align-items:flex-end}.section-heading h2,.birth h2{font-size:clamp(42px,4.4vw,66px);font-weight:600;letter-spacing:-.075em;line-height:1.43;margin:20px 0 0}.section-heading-flex>p{font-size:14px;color:#99aec6;line-height:1.95;margin:0 0 11px}.features-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:360px;gap:18px}.feature-card{position:relative;overflow:hidden;border:1px solid rgba(202,224,255,.13);border-radius:24px;background:rgba(17,36,63,.86);transition:transform .5s var(--ease),border-color .4s,box-shadow .4s;isolation:isolate}.feature-card:hover{transform:translateY(-7px);border-color:rgba(199,241,224,.38);box-shadow:0 26px 56px rgba(0,0,0,.21)}.feature-card:after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:linear-gradient(150deg,rgba(255,255,255,.065),transparent 40%,rgba(0,0,0,.08));z-index:5}.card-radar{grid-column:span 2}.card-radar{background:radial-gradient(circle at 70% 39%,rgba(85,149,173,.25),transparent 53%),linear-gradient(115deg,#112a43,#091b31)}.card-spark{background:radial-gradient(circle at 58% 36%,rgba(148,103,208,.23),transparent 54%),linear-gradient(140deg,#1b1839,#11162d)}.card-cards{background:linear-gradient(125deg,#172a3c,#121c35)}.card-charms{background:radial-gradient(circle at 50% 35%,rgba(113,164,146,.22),transparent 55%),#0d2735}.card-match{background:radial-gradient(circle at 50% 39%,rgba(170,114,156,.2),transparent 57%),#211a33}.card-forecast{background:linear-gradient(145deg,#0c2a3b,#18263d)}.feature-front{height:100%;width:100%;position:relative;padding:26px 29px 29px;display:flex;flex-direction:column;justify-content:space-between}.card-top{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:3}.card-num{font:700 10px Manrope,sans-serif;color:#afc4d7;letter-spacing:.12em}.card-mark{font:400 20px Manrope,sans-serif;color:#b8cedd;opacity:.8}.feature-label{position:relative;z-index:3}.feature-label p{font-size:12px;color:#aec3d5;line-height:1.7;margin:0 0 7px}.feature-label h3{font:700 28px/1.25 Manrope,sans-serif;letter-spacing:-.05em;margin:0}.feature-label h3 span{font-weight:400;font-size:17px;color:#89b0c8;margin-left:5px;vertical-align:2px;opacity:0;transition:opacity .3s,margin-left .3s}.feature-card:hover h3 span{opacity:1;margin-left:14px}.radar-art{position:absolute;left:43%;top:0;width:54%;height:100%}.radar-outer{position:absolute;left:20%;top:7%;width:277px;max-width:75%;aspect-ratio:1;border:1px solid rgba(165,226,221,.24);border-radius:50%;background:radial-gradient(circle,rgba(104,194,216,.12),transparent 64%);box-shadow:0 0 0 22px rgba(199,230,247,.015),0 0 0 47px rgba(199,230,247,.018),inset 0 0 60px rgba(172,213,231,.06)}.radar-outer:before{content:"";position:absolute;inset:18%;border:1px dashed rgba(198,238,234,.22);border-radius:50%}.radar-outer:after{content:"";position:absolute;inset:36%;border:1px solid rgba(194,221,223,.18);border-radius:50%}.radar-core{position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);font-size:43px;color:#ddf4e3;text-shadow:0 0 22px rgba(176,241,225,.5)}.radar-outer>span:not(.radar-sweep){position:absolute;color:#b4c4d4;font:600 11px Manrope,sans-serif}.radar-n{top:8px;left:calc(50% - 4px)}.radar-s{bottom:8px;left:calc(50% - 4px)}.radar-e{right:10px;top:49%}.radar-w{left:8px;top:49%}.radar-sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,transparent 0deg,rgba(140,222,212,.08) 34deg,transparent 66deg,transparent 360deg);animation:spin-slow 18s linear infinite}.radar-chip{position:absolute;display:flex;align-items:center;gap:8px;border-radius:35px;border:1px solid rgba(209,238,240,.21);padding:9px 12px;background:rgba(24,58,73,.7);backdrop-filter:blur(8px);font:700 12px Manrope,sans-serif;color:#e6f4f3;box-shadow:0 6px 19px rgba(0,0,0,.2)}.radar-chip small{font-size:8px;color:#a9c2ca}.radar-chip-a{right:17px;top:80px}.radar-chip-b{left:6px;top:178px;font-size:9px;letter-spacing:.09em}.radar-chip-b i{width:13px;height:13px;background:#a5dfcf;border-radius:50%}.radar-chip-c{right:0;bottom:64px}.spark-art{position:absolute;inset:0}.spark-orb{width:160px;height:160px;position:absolute;top:57px;left:50%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 32% 23%,#fff8fc,#e0c8f2 14%,#b9a4ea 31%,#786ab4 63%,#353366 82%);box-shadow:inset -14px -20px 38px rgba(27,18,68,.43),0 0 50px rgba(172,136,242,.2),0 0 0 22px rgba(204,184,255,.035),0 0 0 48px rgba(205,180,255,.025)}.spark-orb:after{content:"";position:absolute;top:14px;left:20px;transform:rotate(-28deg);width:75px;height:30px;background:rgba(255,255,255,.4);border-radius:50%;filter:blur(12px)}.spark-asterisk{position:absolute;color:#ecddff;z-index:2}.spark-a{left:17%;top:60px;font-size:24px}.spark-b{right:17%;top:125px;font-size:18px}.spark-c{left:25%;top:205px;font-size:14px}.cards-art{position:absolute;left:0;right:0;top:46px;height:218px}.fortune-card{width:129px;height:174px;position:absolute;left:50%;top:10px;border:1px solid rgba(255,232,188,.64);border-radius:10px;background:linear-gradient(150deg,#293754,#101c38);box-shadow:0 13px 22px rgba(0,0,0,.32);display:flex;align-items:center;justify-content:center;color:#f4e0b4;overflow:hidden}.fortune-card:before{content:"";position:absolute;inset:6px;border:1px solid rgba(232,212,161,.3);border-radius:6px}.fc-left{transform:translateX(-98%) rotate(-17deg);top:29px;background:radial-gradient(circle at center,#466576,#1a264b)}.fc-right{transform:translateX(-3%) rotate(17deg);top:29px;background:radial-gradient(circle at center,#78619d,#1c2550)}.fc-left>span,.fc-right>span{font-size:59px}.fc-center{transform:translateX(-50%);z-index:1;background:radial-gradient(circle at 50% 45%,#685c91,#222c56 62%,#101b37)}.fc-center>strong{font-size:68px;font-weight:400;text-shadow:0 0 25px rgba(238,223,185,.5)}.fc-top,.fc-bottom{position:absolute;font:600 6px Manrope,sans-serif;letter-spacing:.21em}.fc-top{top:23px}.fc-bottom{bottom:17px;font-size:11px;letter-spacing:-.03em}.charms-art{position:absolute;top:42px;left:0;width:100%;height:218px}.charm{position:absolute;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;width:97px;height:97px;border-radius:28px;backdrop-filter:blur(2px);box-shadow:0 14px 26px rgba(0,0,0,.16);text-shadow:0 5px 14px rgba(0,0,0,.3)}.charm-flower{top:5px;left:calc(50% - 98px);color:#f5d7de;font-size:65px;background:linear-gradient(145deg,#557f83,#3a5f73);transform:rotate(-12deg)}.charm-gem{top:26px;left:calc(50% + 15px);color:#e8debc;font-size:51px;background:linear-gradient(145deg,#596c93,#323f70);transform:rotate(11deg)}.charm-star{top:116px;left:calc(50% - 101px);color:#c0f0d0;font-size:58px;background:linear-gradient(145deg,#3f806e,#315566);transform:rotate(8deg)}.charm-lucky{top:117px;left:calc(50% + 18px);color:#e1b9d4;font-size:63px;background:linear-gradient(145deg,#766789,#534868);transform:rotate(-11deg)}.match-art{position:absolute;inset:24px 0 0;display:flex;align-items:center;justify-content:center}.match-orbit{position:absolute;border-radius:50%;width:175px;height:175px;top:33px;border:1px solid rgba(249,208,224,.3);box-shadow:inset 0 0 50px rgba(229,150,184,.11),0 0 55px rgba(198,121,162,.045)}.match-orbit-a{left:calc(50% - 119px);background:radial-gradient(circle at 50% 50%,rgba(229,168,203,.18),rgba(122,77,146,.04))}.match-orbit-b{left:calc(50% - 53px);border-color:rgba(178,190,243,.3);background:radial-gradient(circle at 50% 50%,rgba(145,163,232,.2),rgba(89,91,156,.04))}.match-art>span{position:absolute;top:110px;font:700 12px Manrope,sans-serif;letter-spacing:.17em;color:#eee4f4;z-index:2}.match-art i{color:#fff3c7;margin-inline:13px;font-size:16px;font-style:normal}.match-spark{position:absolute;top:35px;left:50%;font-size:29px;color:#f5dfd4}.forecast-art{position:absolute;inset:64px 30px auto;height:190px}.forecast-art svg{width:100%;height:100%;filter:drop-shadow(0 0 8px rgba(183,208,232,.2))}.forecast-halo{position:absolute;top:6px;right:1%;font-size:25px;color:#ffebc5;text-shadow:0 0 15px rgba(245,225,188,.5)}
+/* BIRTH ENERGY */
+.birth{overflow:hidden;position:relative}.birth-grid{display:grid;grid-template-columns:1fr 1.08fr;min-height:560px;align-items:center;gap:30px}.birth h2{margin-top:26px}.birth-desc{font-size:15px;line-height:2.1;color:#a8bed3;max-width:450px;margin:29px 0 35px}.elements-legend{display:flex;gap:16px 20px;flex-wrap:wrap;max-width:455px;margin-bottom:40px}.elements-legend span{display:inline-flex;gap:8px;align-items:center;color:#c1d2e0;font:600 12px Manrope,sans-serif}.elements-legend i{width:9px;height:9px;border-radius:50%;box-shadow:0 0 12px currentColor}.wood{background:#8ed2ab;color:#8ed2ab}.fire{background:#e9aaa4;color:#e9aaa4}.earth{background:#e4d0a2;color:#e4d0a2}.metal{background:#d1dae6;color:#d1dae6}.aqua{background:#7db8dc;color:#7db8dc}.inline-link{display:inline-flex;align-items:center;gap:20px;border-bottom:1px solid rgba(181,241,218,.54);padding-bottom:9px;font-size:13px;font-weight:700;color:#c9f4de}.inline-link span{font-size:21px;font-weight:300;transition:transform .3s}.inline-link:hover span{transform:translate(4px,-4px)}.energy-scene{position:relative;min-height:585px;display:grid;place-items:center;isolation:isolate}.energy-backdrop{position:absolute;inset:10%;border-radius:50%;background:radial-gradient(circle,rgba(143,150,236,.09),transparent 65%);filter:blur(20px)}.energy-circles{position:relative;width:490px;height:490px;max-width:100%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center}.ec{position:absolute;border:1px solid rgba(190,216,251,.14);border-radius:50%;inset:0}.ec-1{inset:7%;border-style:dashed;animation:spin-slow 100s linear infinite}.ec-2{inset:17%;border-color:rgba(211,225,246,.16)}.ec-3{inset:28%;border-color:rgba(206,231,246,.2)}.ec-4{inset:39%;background:radial-gradient(circle,rgba(212,224,255,.10),transparent 71%);border-color:rgba(227,245,255,.4)}.energy-center{position:relative;z-index:2;display:flex;align-items:center;flex-direction:column;color:#e7eff7;text-align:center}.energy-center span{font:600 10px Manrope,sans-serif;letter-spacing:.28em;color:#d6dfeb}.energy-center strong{font:600 28px/1.25 Manrope,sans-serif;letter-spacing:-.045em;margin:10px 0}.energy-center span:last-child{color:#ffe5ae;font-size:25px}.energy-node{position:absolute;display:flex;align-items:center;flex-direction:column;gap:5px;z-index:3}.energy-node b{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;font-weight:400;font-size:23px;border:1px solid rgba(255,255,255,.24);backdrop-filter:blur(15px)}.energy-node small{font:600 9px Manrope,sans-serif;letter-spacing:.1em;color:#b1c4d6}.node-wood{top:3%;left:calc(50% - 28px);color:#a8efbb}.node-fire{top:29%;right:3%;color:#f0bbb2}.node-earth{bottom:7%;right:16%;color:#eddea8}.node-metal{bottom:7%;left:16%;color:#dce8fa}.node-aqua{top:29%;left:3%;color:#a3d6f3}.node-wood b{background:rgba(91,154,114,.15)}.node-fire b{background:rgba(202,107,117,.16)}.node-earth b{background:rgba(203,180,106,.13)}.node-metal b{background:rgba(168,187,212,.12)}.node-aqua b{background:rgba(84,136,199,.17)}.energy-caption{position:absolute;bottom:4%;font:600 9px Manrope,sans-serif;letter-spacing:.22em;color:#768da7}
+/* BEYOND */
+.beyond{background:linear-gradient(180deg,transparent,rgba(8,22,42,.43),transparent)}.beyond-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.beyond-card{position:relative;min-height:440px;overflow:hidden;border:1px solid rgba(194,221,255,.16);border-radius:25px;background:#10263e;isolation:isolate;transition:transform .5s var(--ease),border-color .3s}.beyond-card:hover{transform:translateY(-5px);border-color:rgba(200,243,232,.34)}.beyond-card:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 5%,rgba(7,16,31,.16) 35%,rgba(5,14,28,.94));z-index:1;pointer-events:none}.beyond-scan{background:radial-gradient(ellipse at 50% 20%,rgba(89,180,214,.15),transparent 68%),#142c42}.beyond-wish{background:radial-gradient(ellipse at 56% 22%,rgba(141,149,239,.17),transparent 68%),#1d2140}.beyond-content{position:absolute;z-index:3;left:38px;bottom:37px;right:30px}.beyond-content>span{font:700 10px Manrope,sans-serif;letter-spacing:.12em;color:#b8d6df}.beyond-content h3{font-size:27px;line-height:1.4;font-weight:600;margin:14px 0 10px}.beyond-content p{font-size:13px;color:#abc1d6;line-height:1.8;margin:0}.beyond-drawing{position:absolute;inset:0}.scan-lines{position:absolute;inset:7% 10% 25%;background:repeating-linear-gradient(0deg,transparent,transparent 34px,rgba(127,203,231,.11) 35px),repeating-linear-gradient(90deg,transparent,transparent 45px,rgba(127,203,231,.09) 46px);transform:perspective(500px) rotateX(55deg);mask-image:linear-gradient(to bottom,transparent,black 30%,transparent)}.scan-floor{position:absolute;top:51px;left:calc(50% - 100px);width:200px;height:168px;border:1px solid rgba(182,233,233,.4);transform:skewY(-10deg) rotate(12deg);box-shadow:0 0 0 1px rgba(122,230,238,.06),0 0 60px rgba(83,178,210,.1)}.scan-floor:before,.scan-floor:after{content:"";position:absolute;inset:25px 70px 70px 20px;border:1px solid rgba(175,228,241,.55)}.scan-floor:after{inset:95px 15px 18px 100px}.scan-floor span{display:block;position:absolute;background:rgba(158,225,236,.56);height:1px;width:70px;transform:rotate(90deg)}.scan-floor span:nth-child(1){left:40px;top:95px}.scan-floor span:nth-child(2){right:23px;top:54px}.scan-floor span:nth-child(3){left:78px;top:24px}.scan-rays{position:absolute;left:50%;top:67px;height:140px;width:1px;background:linear-gradient(transparent,#b6ebee,transparent);box-shadow:0 0 30px 3px rgba(104,201,223,.3)}.wish-visual{position:absolute;inset:0}.wish-core{position:absolute;top:42px;left:50%;transform:translateX(-50%);font-size:160px;line-height:1;color:#f5e4bb;text-shadow:0 0 18px rgba(250,233,184,.78),0 0 75px rgba(193,170,237,.35);animation:wish-pulse 6s ease-in-out infinite}.wish-core:before{content:"";position:absolute;inset:6%;border-radius:50%;box-shadow:0 0 110px 42px rgba(211,194,244,.1);z-index:-1}.wish-small{position:absolute;color:#f0e3c3}.ws-1{top:23px;left:25%;font-size:23px}.ws-2{top:92px;right:21%;font-size:25px}.ws-3{top:191px;left:14%;font-size:13px}.ws-4{top:213px;right:19%;font-size:16px}
+/* DOWNLOAD */
+.download-section{padding-top:35px;padding-bottom:105px}.download-panel{position:relative;overflow:hidden;min-height:595px;border:1px solid rgba(207,237,255,.21);border-radius:35px;background:radial-gradient(ellipse at 50% 83%,rgba(48,79,127,.56),transparent 57%),radial-gradient(ellipse at 50% 25%,rgba(124,115,187,.20),transparent 50%),linear-gradient(130deg,#112a43,#101a34 55%,#132541);display:grid;place-items:center;isolation:isolate;box-shadow:0 30px 80px rgba(0,0,0,.18)}.download-panel:before{content:"";position:absolute;inset:16px;border:1px solid rgba(206,232,250,.12);border-radius:25px;pointer-events:none}.dl-aura{position:absolute;width:440px;height:440px;border-radius:50%;filter:blur(80px);opacity:.12}.dl-aura-left{left:-120px;top:35px;background:#6cd6cc}.dl-aura-right{right:-120px;bottom:5px;background:#9799f0}.dl-particles{position:absolute;inset:0;pointer-events:none}.dl-particles span{position:absolute;color:#faf2d7;text-shadow:0 0 15px #fcf2cf}.dl-particles span:nth-child(1){top:20%;left:21%;font-size:36px}.dl-particles span:nth-child(2){top:17%;right:19%;font-size:21px}.dl-particles span:nth-child(3){bottom:26%;left:14%;font-size:22px}.dl-particles span:nth-child(4){bottom:17%;right:15%;font-size:20px}.dl-particles span:nth-child(5){top:40%;right:8%;font-size:13px}.download-content{position:relative;z-index:2;text-align:center;padding:68px 20px 62px}.dl-symbol{font-size:47px;color:#f4ebc8;text-shadow:0 0 32px rgba(239,222,177,.35);margin-bottom:14px}.download-content h2{font-size:clamp(46px,5vw,74px);line-height:1.34;letter-spacing:-.076em;margin:22px 0}.download-desc{color:#bcd0e0;font-size:15px;line-height:2;margin-bottom:32px}.store-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px}.store-button{display:inline-flex;align-items:center;gap:10px;min-width:176px;justify-content:center;padding:13px 19px;border:1px solid rgba(248,251,255,.6);background:#fafbff;color:#101b2e;border-radius:12px;transition:transform .3s,box-shadow .3s}.store-button:hover{transform:translateY(-4px);box-shadow:0 11px 34px rgba(189,216,238,.25)}.store-button svg{width:27px;height:27px}.store-button span{display:flex;flex-direction:column;text-align:left}.store-button small{font:600 9px Manrope,sans-serif;letter-spacing:.01em;line-height:1.3}.store-button strong{font:800 20px/1.2 Manrope,sans-serif;letter-spacing:-.03em}.download-note{font-size:11px;color:#819eb5;margin:23px 0 0}
+/* FOOTER */
+.footer{border-top:1px solid rgba(218,230,252,.12);background:rgba(7,15,28,.45);padding-top:50px;padding-bottom:35px}.footer-upper{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:44px}.footer-brand{font-size:27px}.footer-upper>p{font:600 10px/1.9 Manrope,sans-serif;color:#acbed1;letter-spacing:.21em;margin:0 0 0 -20%;text-align:center}.footer-upper>p span{letter-spacing:.04em;font-size:10px;color:#6e889f}.back-to-top{font:700 10px Manrope,sans-serif;letter-spacing:.16em;color:#c9ddd9}.footer-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;padding-top:20px;border-top:1px solid rgba(228,241,255,.1)}.footer-bottom>div{font-size:11px;color:#8295ac;display:flex;align-items:center;gap:12px}.footer-divider{height:11px;width:1px;background:#4e6683}.footer-bottom p{margin:0;text-align:right;font-size:10px;line-height:1.9;color:#71849c}
+/* REVEAL + ANIMATION */
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity 1.05s var(--ease),transform 1.05s var(--ease)}[data-reveal].is-visible{opacity:1;transform:translateY(0)}.hero-visual[data-reveal]{transition-delay:.15s}.features-grid [data-reveal]:nth-child(2),.beyond-grid [data-reveal]:nth-child(2){transition-delay:.09s}.features-grid [data-reveal]:nth-child(3){transition-delay:.14s}@keyframes phone-float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-14px) rotate(-5deg)}}@keyframes note-drift{0%,100%{translate:0 0}50%{translate:0 -8px}}@keyframes marquee{to{transform:translateX(-50%)}}@keyframes spin-slow{to{transform:rotate(360deg)}}@keyframes wish-pulse{50%{filter:brightness(1.2);scale:1.05}}
+/* TABLET */
+@media(max-width:1150px){.container{width:min(1120px,calc(100% - 64px))}.main-nav{gap:23px;margin-right:15px}.hero h1{font-size:clamp(48px,5vw,64px)}.hero-visual{scale:.9;transform-origin:center}.floating-note.note-left{left:-35px}.floating-note.note-right{right:-43px}.feature-label h3{font-size:25px}.feature-front{padding:25px}.story-bottom p{max-width:460px}}@media(max-width:900px){.site-header{height:75px}.container{width:calc(100% - 48px)}.main-nav{position:fixed;top:75px;left:0;right:0;display:flex;flex-direction:column;align-items:stretch;gap:0;margin:0;padding:15px 24px 30px;background:rgba(6,15,30,.98);border-bottom:1px solid var(--line);opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .25s,transform .25s,visibility .25s}.main-nav>a{padding:16px 10px;border-bottom:1px solid rgba(255,255,255,.065);font-size:16px}.menu-open .main-nav{opacity:1;visibility:visible;transform:translateY(0)}.menu-toggle{display:flex}.hero{min-height:unset;padding-top:160px;padding-bottom:90px;grid-template-columns:1fr 1fr}.hero h1{font-size:clamp(46px,5.7vw,60px)}.hero-description{font-size:14px}.hero-visual{scale:.77;height:580px;transform-origin:left center}.floating-note.note-right{right:-70px}.floating-note.note-left{left:-80px}.hero-proof{flex-wrap:wrap;row-gap:8px}.hero-scroll{bottom:32px}.features-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:340px}.card-radar{grid-column:span 2}.story-title{font-size:clamp(55px,8vw,84px)}.birth-grid{grid-template-columns:1fr 1fr}.energy-circles{width:360px;height:360px}.energy-scene{min-height:430px}.energy-node b{width:46px;height:46px}.energy-node small{font-size:8px}.birth h2{font-size:43px}.beyond-card{min-height:400px}.beyond-content{left:25px;right:20px}.beyond-content h3{font-size:22px}.section-pad{padding-block:108px}.download-section{padding-top:15px;padding-bottom:90px}}@media(max-width:680px){.container{width:calc(100% - 38px)}.section-pad{padding-block:86px}.nav-shell{gap:10px}.brand{font-size:22px;gap:9px}.brand-icon{width:25px;height:25px}.nav-download{font-size:11px;padding:10px 13px;gap:10px}.nav-download span{font-size:14px}.hero{display:flex;flex-direction:column;align-items:stretch;gap:2px;min-height:unset;padding-top:135px;padding-bottom:90px}.hero-copy{padding-bottom:0}.hero-eyebrow{font-size:9px;margin-bottom:25px;letter-spacing:.14em}.eyebrow-line{width:22px}.hero h1{font-size:clamp(44px,10.4vw,64px);line-height:1.34;letter-spacing:-.075em;margin-bottom:24px}.hero-description{font-size:13px;line-height:2.05;margin-bottom:27px}.hero-description br{display:none}.hero-cta{gap:18px}.button-primary{padding:15px 15px 15px 19px;gap:19px;font-size:12px}.button-arrow{width:25px;height:25px}.button-text{font-size:12px;gap:9px}.hero-proof{font-size:10px;margin-top:29px;gap:7px}.hero-visual{scale:1;height:515px;margin-top:18px;transform:none;width:100%}.hero-phone{width:228px;height:470px;border-radius:36px;padding:6px}.phone-edge{border-radius:34px}.phone-screen{border-radius:31px}.phone-island{width:70px;height:20px;top:13px}.phone-status{height:41px;padding:13px 18px 0;font-size:8px}.phone-brand{font-size:13px;padding:0 14px 7px}.phone-content{padding:13px 16px 0}.phone-tag{font-size:7px}.phone-content h2{font-size:18px;margin:7px 0 3px}.phone-content>p{font-size:7.5px}.phone-cosmos{height:140px}.cosmos-bloom{width:135px;height:135px}.cosmos-inner{width:51px;height:51px}.phone-reading{padding:7px 9px;border-radius:11px}.reading-star{width:25px;height:25px}.phone-reading small{font-size:5.5px}.phone-reading strong{font-size:8px}.phone-pills{margin-top:8px}.phone-pills span{font-size:7px;padding:6px 0}.phone-bottom-nav{bottom:17px;padding-top:8px}.phone-bottom-nav span{font-size:14px}.phone-bottom-nav small{font-size:6px}.phone-homebar{bottom:6px}.celestial-orbit.orbit-outer{width:430px;height:430px}.celestial-orbit.orbit-inner{width:360px;height:360px}.orbit-point-one{right:16px;top:60px}.orbit-point-two{bottom:47px;left:13px}.floating-note{padding:9px 10px;min-width:125px;border-radius:12px;gap:7px}.floating-note small{font-size:6px;letter-spacing:.1em}.floating-note strong{font-size:8px}.note-symbol{font-size:18px}.floating-note.note-left{left:-4px;top:118px}.floating-note.note-right{right:-4px;bottom:103px}.hero-visual-caption{bottom:-5px;right:0;font-size:6.5px}.hero-scroll{bottom:38px;left:0}.ticker{height:51px}.ticker-track{font-size:9px;gap:26px}.story-top .eyebrow{font-size:9px}.story-micro{font-size:10px}.story-title{font-size:clamp(44px,11vw,70px);margin:41px 0 25px}.story-bottom{flex-direction:column;gap:16px}.story-glyph{font-size:48px}.story-bottom p{font-size:13px;line-height:2.1}.story-metrics{margin-top:52px;grid-template-columns:1fr}.story-metrics>div{padding:20px 8px 20px 0}.story-metrics>div+div{border-left:0;border-top:1px solid var(--line)}.story-metrics strong{font-size:24px}.section-heading{margin-bottom:35px}.section-heading .eyebrow{font-size:9px}.section-heading-flex{display:block}.section-heading h2{font-size:clamp(37px,9vw,52px);margin-top:15px;line-height:1.43}.section-heading-flex>p{margin-top:17px;font-size:12px}.features-grid{display:grid;grid-template-columns:1fr;grid-auto-rows:320px;gap:14px}.card-radar{grid-column:auto}.card-radar .radar-art{left:27%;width:74%}.radar-outer{width:218px;left:30%;top:32px}.radar-chip-a{right:7px;top:60px}.radar-chip-b{left:12%;top:152px}.radar-chip-c{right:8%;bottom:60px}.feature-label h3{font-size:25px}.feature-label p{font-size:11px}.feature-front{padding:23px}.feature-card{border-radius:22px}.birth-grid{display:flex;flex-direction:column;align-items:stretch;gap:30px}.birth h2{font-size:clamp(36px,8.4vw,52px)}.birth-desc{font-size:13px;margin:24px 0}.elements-legend{gap:13px 17px;margin-bottom:28px}.energy-scene{min-height:360px}.energy-circles{width:min(355px,90vw);height:auto;aspect-ratio:1}.energy-caption{bottom:0}.beyond-grid{grid-template-columns:1fr;gap:15px}.beyond-card{min-height:380px}.beyond-content h3{font-size:25px}.beyond-content p{font-size:12px}.download-section{padding-top:0;padding-bottom:70px}.download-panel{min-height:520px;border-radius:23px}.download-panel:before{inset:10px;border-radius:17px}.download-content{padding:70px 22px 56px}.download-content h2{font-size:clamp(40px,10vw,55px)}.download-desc{font-size:13px}.dl-particles span:nth-child(1){left:10%;top:21%}.dl-particles span:nth-child(2){right:10%;top:16%}.dl-particles span:nth-child(3){left:6%}.dl-particles span:nth-child(4){right:8%}.store-actions{gap:9px}.store-button{min-width:142px;padding:11px 13px;gap:6px}.store-button svg{width:22px;height:22px}.store-button strong{font-size:17px}.store-button small{font-size:8px}.download-note{font-size:9px;line-height:1.6}.footer{padding-top:35px}.footer-upper{align-items:flex-start;flex-wrap:wrap;padding-bottom:30px}.footer-upper>p{order:3;width:100%;text-align:left;margin:4px 0 0}.back-to-top{font-size:9px}.footer-bottom{display:block}.footer-bottom>div{flex-wrap:wrap;font-size:10px;gap:8px}.footer-bottom p{text-align:left;margin-top:16px;font-size:9px}}@media(max-width:375px){.hero h1{font-size:42px}.hero-proof{font-size:9px}.floating-note.note-left{left:-12px}.floating-note.note-right{right:-13px}.hero-visual{height:500px}.nav-download{gap:5px;padding:9px 10px}}@media(min-width:1500px){.hero{min-height:935px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}[data-reveal]{opacity:1;transform:none}}
+/* 4-column editorial bento: large Radar + Forecast cards balance the grid. */
+@media(min-width:901px){
+  .features-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .card-forecast{grid-column:span 2}
+  .card-forecast .forecast-art{left:37%;right:7%;top:44px;height:230px}
+}
+@media(min-width:681px) and (max-width:900px){
+  .card-forecast{grid-column:span 2}
+  .card-forecast .forecast-art{left:42%;right:8%;top:48px}
+}
+@media(max-width:680px){.card-forecast{grid-column:auto}}
+/* Replacement artwork stays beneath accessible, selectable feature titles. */
+.feature-card>.asset-image,.beyond-card>.asset-image{z-index:0}
+.feature-front{z-index:2}
+body{isolation:isolate}
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Pretendard Variable"', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
-                    },
-                    colors: {
-                        bgDark: '#070514', // 깊고 어두운 우주 느낌의 배경색
-                        auraPurple: '#9d4edd',
-                        auraPink: '#ff006e',
-                        auraCyan: '#00f5d4',
-                    }
-                }
-            }
-        }
-    </script>
+</style>
 
-    <style>
-        body {
-            background-color: #070514;
-            color: #ffffff;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        /* 글래스모피즘 (Glassmorphism) 유틸리티 */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-        }
-
-        .glass-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            border-left: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px -5px rgba(157, 78, 221, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        /* 텍스트 그라데이션 */
-        .text-gradient {
-            background: linear-gradient(to right, #00f5d4, #9d4edd, #ff006e);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: gradient-shift 5s ease infinite;
-            background-size: 200% 200%;
-        }
-
-        @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* 스크롤 애니메이션 셋업 */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
-        }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* 캔버스 (파티클) */
-        #particle-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2; /* 모든 요소의 맨 뒤 */
-            pointer-events: none;
-        }
-
-        /* 버튼 호버 효과 */
-        .glow-btn {
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        .glow-btn::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: all 0.5s ease;
-            z-index: -1;
-        }
-        .glow-btn:hover::before {
-            left: 100%;
-        }
-        .glow-btn:hover {
-            box-shadow: 0 0 20px rgba(0, 245, 212, 0.6);
-            transform: translateY(-2px);
-        }
-    </style>
 </head>
-<body class="antialiased selection:bg-auraPurple selection:text-white relative bg-[#07111F]">
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <canvas id="wish-sky" aria-hidden="true"></canvas>
+  <div class="page-aura page-aura-one" aria-hidden="true"></div>
+  <div class="page-aura page-aura-two" aria-hidden="true"></div>
 
-    <!-- 배경 파티클 캔버스 -->
-    <canvas id="particle-canvas"></canvas>
+  <header class="site-header" id="header">
+    <div class="nav-shell container">
+      <a href="#top" class="brand" aria-label="AuraSpot 홈">
+        <svg class="brand-icon" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="brand-g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eafbc1"/><stop offset=".55" stop-color="#9debd5"/><stop offset="1" stop-color="#9cabff"/></linearGradient></defs><path d="M24 1.5 29.9 18.1 46.5 24 29.9 29.9 24 46.5 18.1 29.9 1.5 24 18.1 18.1Z" fill="url(#brand-g)"/><circle cx="24" cy="24" r="4.2" fill="#ffffff"/></svg>
+        <span>Aura<span>Spot</span></span>
+      </a>
+      <nav id="main-nav" class="main-nav" aria-label="주 메뉴">
+        <a href="#story">아우라스팟</a>
+        <a href="#features">서비스</a>
+        <a href="#birth-energy">Birth Energy</a>
+        <a href="#wishing-star">Wishing Star</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#download" class="nav-download">앱 다운로드 <span aria-hidden="true">↗</span></a>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
 
-    <!-- 네비게이션바 -->
-    <nav class="fixed w-full z-50 glass-panel py-4 px-6 md:px-12 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-2 cursor-pointer">
-                <i class="ph-fill ph-sparkle text-3xl text-auraCyan animate-pulse"></i>
-                <span class="text-2xl font-bold tracking-wider">Aura<span class="text-transparent bg-clip-text bg-gradient-to-r from-auraPurple to-auraPink">Spot</span></span>
-            </div>
-            <div class="hidden md:flex gap-6 items-center font-medium text-sm text-gray-300">
-                <a href="#features" class="hover:text-white transition-colors">기능 소개</a>
-                <a href="#community" class="hover:text-white transition-colors">커뮤니티</a>
-                <button class="px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition-all text-white">
-                    사전예약
-                </button>
-            </div>
+  <main id="main">
+    <!-- 01 · HERO -->
+    <section id="top" class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow hero-eyebrow"><span class="eyebrow-line"></span> K-ASTROLOGY <span class="eyebrow-dot">·</span> BIRTH ENERGY</p>
+        <h1 id="hero-title">오늘의 운이,<br><span class="serif-effect">당신에게</span><br><span class="title-illume">빛나는 순간.</span></h1>
+        <p class="hero-description">연애, 재물, 관계 그리고 앞으로의 행운까지.<br>매일 새로운 설렘을 만나는 나만의 운세 공간.</p>
+        <div class="hero-cta">
+          <a class="button button-primary" href="#download">무료로 시작하기 <span class="button-arrow" aria-hidden="true">↗</span></a>
+          <a class="button button-text" href="#features">서비스 둘러보기 <span aria-hidden="true">↓</span></a>
         </div>
-    </nav>
-
-    <!-- 히어로 섹션 -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 px-6">
-        <div class="max-w-4xl mx-auto text-center z-10 reveal active">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-sm text-auraCyan mb-6 border border-auraCyan/30">
-                <span class="relative flex h-2 w-2">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-auraCyan opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-auraCyan"></span>
-                </span>
-                AuraSpot Beta 출시 예정
+        <div class="hero-proof"><span class="proof-stars" aria-hidden="true">✦</span><span>iOS & Android 출시</span><span class="proof-separator"></span><span>13개 언어 지원</span><span class="proof-separator"></span><span>매일 새로운 콘텐츠</span></div>
+      </div>
+      <div class="hero-visual" aria-label="아우라스팟 앱 화면을 표현한 디자인 미리보기" data-reveal>
+        <div class="visual-halo halo-a"></div><div class="visual-halo halo-b"></div>
+        <div class="celestial-orbit orbit-outer"></div><div class="celestial-orbit orbit-inner"></div>
+        <div class="orbit-point orbit-point-one"></div><div class="orbit-point orbit-point-two"></div>
+        <div class="floating-note note-left"><span class="note-symbol mint">✧</span><span><small>LUCKY MOMENT</small><strong>오늘의 작은 행운</strong></span></div>
+        <div class="floating-note note-right"><span class="note-symbol gold">✦</span><span><small>FORTUNE SIGNAL</small><strong>매일 새로운 발견</strong></span></div>
+        <div class="phone-frame hero-phone">
+          <div class="phone-edge"></div><div class="phone-island"></div>
+          <div class="phone-screen asset-slot" data-asset="heroScreen">
+            <img class="asset-image" alt="AuraSpot 실제 앱 스크린샷" loading="eager">
+            <div class="screen-fallback">
+              <div class="phone-status"><span>9:41</span><span>◖◖ &nbsp;●</span></div>
+              <div class="phone-brand"><span class="mini-fourpoint">✦</span> Aura<span>Spot</span><span class="phone-top-dots">•••</span></div>
+              <div class="phone-content">
+                <div class="phone-tag">FORTUNE REVEALED</div>
+                <h2>지금, 나에게<br>들어올 운은?</h2>
+                <p>오늘의 에너지를 만나보세요</p>
+                <div class="phone-cosmos"><div class="phone-cosmos-dust"></div><div class="cosmos-bloom"></div><div class="cosmos-inner"></div><div class="cosmos-star star-one">✦</div><div class="cosmos-star star-two">✧</div></div>
+                <div class="phone-reading"><span class="reading-star">✷</span><span><small>오늘의 운세 · AURA SPARK</small><strong>작은 시작이 특별한 하루로</strong></span><span>↗</span></div>
+                <div class="phone-pills"><span>연애운</span><span>재물운</span><span>관계운</span><span>행운</span></div>
+              </div>
+              <div class="phone-bottom-nav"><span class="active">⌂<small>Home</small></span><span>✧<small>Radar</small></span><span>◇<small>Cards</small></span><span>✦<small>Spark</small></span><span>☰<small>More</small></span></div>
+              <div class="phone-homebar"></div>
             </div>
-            
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-tight mb-6">
-                당신만의 <br class="md:hidden" />
-                <span class="text-gradient">아우라</span>를 발견하세요
-            </h1>
-            
-            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-                숨겨진 감성 스팟을 탐험하고, 당신의 기분과 색깔을 세상과 공유하세요.<br class="hidden md:block"/>
-                평범한 일상이 마법 같은 빛으로 물드는 순간.
-            </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <button class="glow-btn w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-auraPurple to-auraPink text-white font-bold text-lg shadow-[0_0_20px_rgba(157,78,221,0.4)]">
-                    <i class="ph-fill ph-apple-logo text-2xl"></i>
-                    App Store
-                </button>
-                <button class="glow-btn w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-full glass-panel hover:bg-white/10 text-white font-bold text-lg border border-white/20">
-                    <i class="ph-fill ph-google-play-logo text-2xl text-auraCyan"></i>
-                    Google Play
-                </button>
-            </div>
+          </div>
         </div>
-        
-        <!-- 마우스 스크롤 유도 아이콘 -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-400">
-            <i class="ph ph-caret-double-down text-3xl"></i>
-        </div>
+        <div class="hero-visual-caption">A LITTLE MAGIC, EVERY DAY. <span>✳</span></div>
+      </div>
+      <a class="hero-scroll" href="#story">SCROLL TO EXPLORE <span></span></a>
     </section>
 
-    <!-- 기능 소개 섹션 -->
-    <section id="features" class="py-32 px-6 relative z-10">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20 reveal">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">환상적인 아우라 경험</h2>
-                <p class="text-gray-400 text-lg">AuraSpot이 제공하는 특별한 세 가지 마법</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- 기능 카드 1 -->
-                <div class="glass-card rounded-3xl p-8 flex flex-col items-start reveal" style="transition-delay: 100ms;">
-                    <div class="w-16 h-16 rounded-2xl bg-auraPurple/20 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(157,78,221,0.5)] text-auraPurple">
-                        <i class="ph-fill ph-map-pin-line text-3xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">숨겨진 핫플 발견</h3>
-                    <p class="text-gray-300 leading-relaxed font-light">
-                        지도 위에 빛나는 다른 사람들의 아우라를 따라가보세요. 나만 몰랐던 환상적인 골목, 감성 카페, 비밀스러운 장소들이 당신을 기다립니다.
-                    </p>
-                </div>
-
-                <!-- 기능 카드 2 -->
-                <div class="glass-card rounded-3xl p-8 flex flex-col items-start reveal" style="transition-delay: 300ms;">
-                    <div class="w-16 h-16 rounded-2xl bg-auraPink/20 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(255,0,110,0.5)] text-auraPink">
-                        <i class="ph-fill ph-camera-rotate text-3xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">나만의 감성 기록</h3>
-                    <p class="text-gray-300 leading-relaxed font-light">
-                        지금 이 순간의 감정을 색상으로 변환하여 공간에 남기세요. 사진과 짧은 글, 그리고 고유한 아우라 컬러가 모여 당신만의 빛나는 일기장이 됩니다.
-                    </p>
-                </div>
-
-                <!-- 기능 카드 3 -->
-                <div class="glass-card rounded-3xl p-8 flex flex-col items-start reveal" style="transition-delay: 500ms;">
-                    <div class="w-16 h-16 rounded-2xl bg-auraCyan/20 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(0,245,212,0.5)] text-auraCyan">
-                        <i class="ph-fill ph-share-network text-3xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">실시간 아우라 공유</h3>
-                    <p class="text-gray-300 leading-relaxed font-light">
-                        지금 도시가 어떤 색으로 빛나고 있는지 확인하세요. 비슷한 주파수(감성)를 가진 사람들과 연결되고, 실시간으로 교감하는 마법 같은 경험.
-                    </p>
-                </div>
-            </div>
-        </div>
+    <!-- 02 · IDENTITY -->
+    <div class="ticker" aria-label="AuraSpot 키워드">
+      <div class="ticker-track" aria-hidden="true"><span>FORTUNE REVEALED</span><b>✳</b><span>DISCOVER YOUR LUCK</span><b>✳</b><span>K-ASTROLOGY</span><b>✳</b><span>BIRTH ENERGY</span><b>✳</b><span>FORTUNE REVEALED</span><b>✳</b><span>DISCOVER YOUR LUCK</span><b>✳</b><span>K-ASTROLOGY</span><b>✳</b><span>BIRTH ENERGY</span><b>✳</b></div>
+    </div>
+    <section class="story section-pad container" id="story">
+      <div class="story-top" data-reveal><p class="eyebrow">WELCOME TO AURASPOT <span class="eyebrow-dot">✦</span> 01 / THE STORY</p><span class="story-micro">우연처럼 찾아오는<br>작은 행운의 순간들.</span></div>
+      <h2 class="story-title" data-reveal>오늘이 조금 더<br><em>기대되는 이유.</em></h2>
+      <div class="story-bottom" data-reveal><div class="story-glyph" aria-hidden="true">✳</div><p>아우라스팟은 한국의 K-Astrology와 Birth Energy를 바탕으로, 매일의 운세를 더 쉽고 감각적으로 경험하는 공간입니다. 정해진 미래를 말하기보다, 오늘의 나를 돌아보고 새로운 가능성을 발견하는 즐거움을 전합니다.</p></div>
+      <div class="story-metrics" data-reveal><div><strong>13<span> LANGUAGES</span></strong><small>더 넓은 세계와 함께</small></div><div><strong>EVERY<span> DAY</span></strong><small>매일 새롭게 만나는 운세</small></div><div><strong>iOS <i>&</i> Android</strong><small>지금 무료로 시작해 보세요</small></div></div>
     </section>
 
-    <!-- AI 아우라 리딩 섹션 (Gemini API) -->
-    <section id="ai-aura" class="py-20 px-6 relative z-10">
-        <div class="max-w-5xl mx-auto glass-card rounded-[3rem] p-8 md:p-16 relative overflow-hidden reveal">
-            <!-- 배경 글로우 효과 -->
-            <div id="aura-glow-bg" class="absolute top-1/2 right-1/4 transform -translate-y-1/2 w-[300px] h-[300px] rounded-full filter blur-[100px] pointer-events-none transition-colors duration-1000 bg-white/5"></div>
-            
-            <div class="relative z-10 flex flex-col md:flex-row gap-12 items-center">
-                
-                <!-- 입력 영역 -->
-                <div class="flex-1 w-full text-center md:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel text-xs text-auraPurple mb-4 border border-auraPurple/30">
-                        <i class="ph-fill ph-magic-wand"></i> Powered by Gemini AI
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">지금 당신의 <br class="md:hidden"/><span class="text-transparent bg-clip-text bg-gradient-to-r from-auraCyan to-auraPurple">아우라</span>는 어떤 색일까요?</h2>
-                    <p class="text-gray-300 mb-6 font-light">AI가 당신의 기분과 생각을 분석하여 현재의 에너지를 읽어드립니다.</p>
-                    
-                    <textarea id="aura-input" rows="3" class="w-full bg-[#07111F]/50 glass-panel border border-white/10 rounded-2xl p-4 text-white placeholder-gray-500 focus:outline-none focus:border-auraPurple focus:ring-1 focus:ring-auraPurple transition-all mb-4 resize-none" placeholder="오늘 하루는 어땠나요? 지금 드는 생각이나 감정을 자유롭게 적어주세요."></textarea>
-                    
-                    <button id="analyze-btn" class="glow-btn w-full md:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-auraPurple to-auraPink text-white font-bold shadow-[0_0_15px_rgba(157,78,221,0.4)] flex justify-center items-center gap-2 mx-auto md:mx-0" onclick="readAura()">
-                        <i class="ph-fill ph-sparkle"></i> 내 아우라 분석하기
-                    </button>
-                </div>
-
-                <!-- 결과 출력 영역 -->
-                <div class="flex-1 w-full flex flex-col items-center justify-center min-h-[320px] glass-panel rounded-3xl p-8 border border-white/10 relative overflow-hidden">
-                    
-                    <!-- 로딩 상태 -->
-                    <div id="aura-loading" class="hidden absolute inset-0 flex-col items-center justify-center bg-[#07111F]/80 z-20 backdrop-blur-sm">
-                        <i class="ph-fill ph-spinner-gap text-4xl text-auraCyan animate-spin mb-4"></i>
-                        <p class="text-sm text-gray-300 animate-pulse">우주의 에너지를 읽는 중...</p>
-                    </div>
-
-                    <!-- 결과 상태 -->
-                    <div id="aura-result" class="flex flex-col items-center text-center opacity-40 transition-opacity duration-500">
-                        <div id="aura-orb" class="w-32 h-32 rounded-full bg-white/10 shadow-[0_0_30px_rgba(255,255,255,0.1)] mb-6 transition-all duration-1000 relative">
-                            <!-- 구슬 안쪽 하이라이트 효과 -->
-                            <div class="absolute top-2 left-4 w-8 h-4 bg-white/40 rounded-full blur-[2px] transform rotate-[-30deg]"></div>
-                        </div>
-                        <h3 id="aura-color-name" class="text-2xl font-bold mb-3">미확인 아우라</h3>
-                        <p id="aura-desc" class="text-sm text-gray-400 font-light leading-relaxed">자신의 이야기를 들려주시면, <br>당신을 감싸고 있는 빛의 색깔을 알려드릴게요.</p>
-                    </div>
-                </div>
-            </div>
+    <!-- 03 · BENTO FEATURES -->
+    <section class="features section-pad" id="features">
+      <div class="container">
+        <div class="section-heading" data-reveal><p class="eyebrow">YOUR EVERYDAY MAGIC <span class="eyebrow-dot">✦</span> 02 / EXPLORE</p><div class="section-heading-flex"><h2>하루를 빛내는<br><em>여섯 가지 발견.</em></h2><p>운세를 읽는 것에서 끝나지 않도록.<br>보고, 고르고, 나누며 매일 새롭게 즐기는 아우라스팟.</p></div></div>
+        <div class="features-grid">
+          <article class="feature-card card-radar asset-slot" data-asset="radar" data-reveal><img class="asset-image" alt="아우라레이더 이미지" loading="lazy"><div class="feature-front"><div class="card-top"><span class="card-num">01 / AURA RADAR</span><span class="card-mark">↗</span></div><div class="radar-art preview-fallback" aria-hidden="true"><div class="radar-outer"><span class="radar-n">N</span><span class="radar-e">E</span><span class="radar-s">S</span><span class="radar-w">W</span><div class="radar-core">✳</div><span class="radar-sweep"></span></div><span class="radar-chip radar-chip-a">07 <small>NUMBER</small></span><span class="radar-chip radar-chip-b"><i></i> COLOR</span><span class="radar-chip radar-chip-c">14:20 <small>TIME</small></span></div><div class="feature-label"><p>오늘 찾아온 다섯 가지 행운의 단서</p><h3>Aura Radar <span>↗</span></h3></div></div></article>
+          <article class="feature-card card-spark asset-slot" data-asset="spark" data-reveal><img class="asset-image" alt="아우라스파크 이미지" loading="lazy"><div class="feature-front"><div class="card-top"><span class="card-num">02 / AURA SPARK</span><span class="card-mark">↗</span></div><div class="spark-art preview-fallback" aria-hidden="true"><span class="spark-asterisk spark-a">✦</span><span class="spark-asterisk spark-b">✧</span><div class="spark-orb"></div><span class="spark-asterisk spark-c">✧</span></div><div class="feature-label"><p>오늘 나에게 찾아올 운의 흐름</p><h3>Aura Spark <span>↗</span></h3></div></div></article>
+          <article class="feature-card card-cards asset-slot" data-asset="cards" data-reveal><img class="asset-image" alt="아우라카드 이미지" loading="lazy"><div class="feature-front"><div class="card-top"><span class="card-num">03 / AURA CARDS</span><span class="card-mark">↗</span></div><div class="cards-art preview-fallback" aria-hidden="true"><div class="fortune-card fc-left"><span>✧</span></div><div class="fortune-card fc-right"><span>✳</span></div><div class="fortune-card fc-center"><span class="fc-top">FORTUNE REVEALED</span><strong>✦</strong><span class="fc-bottom">AuraSpot</span></div></div><div class="feature-label"><p>마음이 끌리는 오늘의 행운 카드</p><h3>Aura Cards <span>↗</span></h3></div></div></article>
+          <article class="feature-card card-charms asset-slot" data-asset="charms" data-reveal><img class="asset-image" alt="아우라참스 이미지" loading="lazy"><div class="feature-front"><div class="card-top"><span class="card-num">04 / AURA CHARMS</span><span class="card-mark">↗</span></div><div class="charms-art preview-fallback" aria-hidden="true"><div class="charm charm-flower">✿</div><div class="charm charm-gem">◆</div><div class="charm charm-star">✳</div><div class="charm charm-lucky">❀</div></div><div class="feature-label"><p>동물과 꽃, 보석처럼 반짝이는 행운</p><h3>Aura Charms <span>↗</span></h3></div></div></article>
+          <article class="feature-card card-match asset-slot" data-asset="match" data-reveal><img class="asset-image" alt="아우라매치 이미지" loading="lazy"><div class="feature-front"><div class="card-top"><span class="card-num">05 / AURA MATCH</span><span class="card-mark">↗</span></div><div class="match-art preview-fallback" aria-hidden="true"><div class="match-orbit match-orbit-a"></div><div class="match-orbit match-orbit-b"></div><span>YOU <i>✦</i> US</span><div class="match-spark">✧</div></div><div class="feature-label"><p>두 사람 사이, 서로 다른 에너지</p><h3>Aura Match <span>↗</span></h3></div></div></article>
+          <article class="feature-card card-forecast asset-slot" data-asset="forecast" data-reveal><img class="asset-image" alt="아우라포캐스트 이미지" loading="lazy"><div class="feature-front"><div class="card-top"><span class="card-num">06 / AURA FORECAST</span><span class="card-mark">↗</span></div><div class="forecast-art preview-fallback" aria-hidden="true"><svg viewBox="0 0 330 170" preserveAspectRatio="xMidYMid meet"><defs><linearGradient id="futureline" x1="0" x2="1"><stop stop-color="#87b7de"/><stop offset=".5" stop-color="#bda3f4"/><stop offset="1" stop-color="#fcdb9e"/></linearGradient></defs><path d="M2 135 C54 130 60 72 113 91 S198 131 243 61 S294 47 327 15" fill="none" stroke="url(#futureline)" stroke-width="1.8"/><path d="M2 135 C54 130 60 72 113 91 S198 131 243 61 S294 47 327 15 V170 H2Z" fill="url(#futureline)" opacity=".06"/><circle cx="243" cy="61" r="5" fill="#f6dca9"/><circle cx="243" cy="61" r="17" fill="#f6dca9" opacity=".08"/></svg><span class="forecast-halo">✦</span></div><div class="feature-label"><p>앞으로 펼쳐질 가능성을 살펴보는 시간</p><h3>Aura Forecast <span>↗</span></h3></div></div></article>
         </div>
+      </div>
     </section>
 
-    <!-- 하단 다운로드 섹션 -->
-    <section class="py-32 px-6 relative z-10">
-        <div class="max-w-5xl mx-auto glass-panel rounded-[3rem] p-10 md:p-20 text-center relative overflow-hidden reveal">
-            <!-- 섹션 내부 작은 블롭 효과 -->
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-auraPurple/30 rounded-full filter blur-[80px] pointer-events-none"></div>
+    <!-- 04 · BIRTH ENERGY -->
+    <section class="birth section-pad" id="birth-energy"><div class="container birth-grid"><div class="birth-copy" data-reveal><p class="eyebrow">K-ASTROLOGY · BIRTH ENERGY <span class="eyebrow-dot">✦</span> 03 / ORIGIN</p><h2>태어난 순간부터<br>이어진 <em>나만의 에너지.</em></h2><p class="birth-desc">나의 생년월일과 시간을 바탕으로 살펴보는 Birth Energy. 다섯 가지 에너지의 조화를 통해 나를 새로운 시선으로 만나보세요.</p><div class="elements-legend"><span><i class="wood"></i> Wood</span><span><i class="fire"></i> Fire</span><span><i class="earth"></i> Earth</span><span><i class="metal"></i> Metal</span><span><i class="aqua"></i> Aqua</span></div><a href="#download" class="inline-link">앱에서 나의 에너지 만나기 <span>↗</span></a></div><div class="energy-scene" data-reveal><div class="energy-backdrop"></div><div class="energy-circles"><div class="ec ec-1"></div><div class="ec ec-2"></div><div class="ec ec-3"></div><div class="ec ec-4"></div><div class="energy-center"><span>MY</span><strong>Birth<br>Energy</strong><span>✧</span></div><div class="energy-node node-wood"><b>✦</b><small>WOOD</small></div><div class="energy-node node-fire"><b>✦</b><small>FIRE</small></div><div class="energy-node node-earth"><b>✦</b><small>EARTH</small></div><div class="energy-node node-metal"><b>✦</b><small>METAL</small></div><div class="energy-node node-aqua"><b>✦</b><small>AQUA</small></div></div><span class="energy-caption">FIVE ENERGIES · INFINITE POSSIBILITIES</span></div></div></section>
 
-            <div class="relative z-10">
-                <i class="ph-fill ph-magic-wand text-5xl text-auraPink mb-6 inline-block animate-bounce"></i>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">지금 바로 빛의 여정을 시작하세요</h2>
-                <p class="text-xl text-gray-300 mb-10 font-light">AuraSpot은 무료로 제공됩니다. 당신의 첫 번째 아우라를 밝혀주세요.</p>
-                
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <button class="glow-btn w-full sm:w-auto px-8 py-4 rounded-full bg-white text-bgDark font-bold text-lg hover:bg-gray-200">
-                        앱 다운로드 (무료)
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- 05 · EXTENDED WORLD -->
+    <section class="beyond section-pad" id="wishing-star"><div class="container"><div class="section-heading" data-reveal><p class="eyebrow">BEYOND FORTUNE <span class="eyebrow-dot">✦</span> 04 / MORE TO DISCOVER</p><div class="section-heading-flex"><h2>행운의 이야기는<br><em>여기서 끝나지 않아요.</em></h2><p>내 공간을 새롭게 바라보는 경험부터,<br>마음을 담아 별에게 전하는 소원까지.</p></div></div><div class="beyond-grid"><article class="beyond-card beyond-scan asset-slot" data-asset="scan" data-reveal><img class="asset-image" alt="아우라스캔 이미지" loading="lazy"><div class="beyond-drawing preview-fallback"><div class="scan-lines"></div><div class="scan-floor"><span></span><span></span><span></span></div><div class="scan-rays"></div></div><div class="beyond-content"><span>AI SPACE EXPERIENCE · AURA SCAN</span><h3>당신의 공간에도<br>숨겨진 이야기가 있어요.</h3><p>공간의 방향과 배치, 분위기를 AI와 함께 살펴보는 새로운 경험.</p></div></article><article class="beyond-card beyond-wish asset-slot" data-asset="wishing" data-reveal><img class="asset-image" alt="위싱스타 이미지" loading="lazy"><div class="wish-visual preview-fallback" aria-hidden="true"><span class="wish-core">✦</span><span class="wish-small ws-1">✧</span><span class="wish-small ws-2">✧</span><span class="wish-small ws-3">✧</span><span class="wish-small ws-4">✧</span></div><div class="beyond-content"><span>SHARE A LITTLE WISH · WISHING STAR</span><h3>밤하늘의 별 하나에<br>당신의 소원을 담아보세요.</h3><p>나의 바람을 남기고, 다른 사람의 소원을 함께 응원해요.</p></div></article></div></div></section>
 
-    <!-- 푸터 -->
-    <footer class="border-t border-white/10 py-10 relative z-10 glass-panel">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <i class="ph-fill ph-sparkle text-xl text-auraCyan"></i>
-                <span class="text-xl font-bold">AuraSpot</span>
-            </div>
-            <p class="text-gray-500 text-sm">© 2026 AuraSpot Inc. All rights reserved. Fantastic vibes only.</p>
-            <div class="flex gap-4 text-gray-400">
-                <a href="#" class="hover:text-white transition-colors"><i class="ph-fill ph-instagram-logo text-2xl"></i></a>
-                <a href="#" class="hover:text-white transition-colors"><i class="ph-fill ph-twitter-logo text-2xl"></i></a>
-            </div>
-        </div>
-    </footer>
+    <!-- 06 · DOWNLOAD -->
+    <section class="download-section section-pad" id="download"><div class="container"><div class="download-panel" data-reveal><div class="dl-aura dl-aura-left"></div><div class="dl-aura dl-aura-right"></div><div class="dl-particles" aria-hidden="true"><span>✧</span><span>✦</span><span>✧</span><span>✷</span><span>✧</span></div><div class="download-content"><div class="dl-symbol" aria-hidden="true">✳</div><p class="eyebrow">IT'S YOUR TURN TO SHINE</p><h2>지금, 나에게<br><em>들어올 운은?</em></h2><p class="download-desc">오늘의 작은 설렘이 시작되는 곳.<br>AuraSpot에서 당신의 행운을 만나보세요.</p><div class="store-actions"><a class="store-button" href="https://apps.apple.com/kr/app/auraspot/id6760815307" target="_blank" rel="noopener noreferrer" aria-label="App Store에서 AuraSpot 다운로드"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.66 12.73c.02 2.09 1.85 2.78 1.87 2.79-.02.05-.29 1-.97 1.99-.59.86-1.2 1.71-2.16 1.73-.95.02-1.26-.56-2.35-.56-1.1 0-1.44.54-2.35.58-.94.03-1.66-.94-2.25-1.8-1.23-1.77-2.17-5-.91-7.18a3.47 3.47 0 0 1 2.9-1.76c.91-.02 1.78.62 2.34.62.56 0 1.61-.77 2.72-.66.47.02 1.81.19 2.67 1.46-.07.05-1.59.92-1.57 2.79ZM14.73 6.85a3.27 3.27 0 0 0 .76-2.53 3.28 3.28 0 0 0-2.19 1.3 3.14 3.14 0 0 0-.79 2.45 2.73 2.73 0 0 0 2.22-1.22Z" fill="currentColor"/></svg><span><small>Download on the</small><strong>App Store</strong></span></a><a class="store-button" href="https://play.google.com/store/apps/details?id=com.ybong.mdai" target="_blank" rel="noopener noreferrer" aria-label="Google Play에서 AuraSpot 다운로드"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 2.7c-.3.26-.48.69-.48 1.24v16.15c0 .54.18.98.49 1.24l9.06-9.28v-.05L4.5 2.7Z" fill="#65c4f2"/><path d="m16.63 15.2-3.06-3.15v-.05l3.06-3.15.07.04 3.63 2.08c1.03.6 1.03 1.57 0 2.16l-3.63 2.08-.07-.01Z" fill="#f7cc59"/><path d="m16.7 15.19-3.13-3.19-9.07 9.33c.33.35.88.39 1.5.04l10.7-6.18Z" fill="#f36a75"/><path d="M16.7 8.81 6 2.63c-.62-.35-1.17-.31-1.5.06L13.57 12l3.13-3.19Z" fill="#6bd1a0"/></svg><span><small>GET IT ON</small><strong>Google Play</strong></span></a></div><p class="download-note">무료 다운로드 · 일부 기능 및 콘텐츠는 앱 내 구매가 필요할 수 있어요.</p></div></div></div></section>
+  </main>
 
-    <!-- 자바스크립트 -->
-    <script>
-        // --- 스크롤 애니메이션 옵저버 ---
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100; // 요소가 보이기 시작할 지점
+  <footer class="footer"><div class="container footer-upper"><a href="#top" class="brand footer-brand"><svg class="brand-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 1.5 29.9 18.1 46.5 24 29.9 29.9 24 46.5 18.1 29.9 1.5 24 18.1 18.1Z" fill="#b7f2df"/></svg><span>Aura<span>Spot</span></span></a><p>FORTUNE REVEALED<br><span>K-Astrology · Birth Energy</span></p><a href="#top" class="back-to-top">BACK TO TOP ↑</a></div><div class="container footer-bottom"><div><span>© 2026 양봉 주식회사 · AuraSpot</span><span class="footer-divider"></span><span>All rights reserved.</span></div><p>운세 콘텐츠는 재미와 참고를 위한 것으로 미래의 결과를 보장하지 않습니다.<br>이 페이지의 앱 화면과 예시 값은 디자인 미리보기입니다.</p></div></footer>
+<script>
+'use strict';
 
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal(); // 초기 로드 시 실행
+/*
+  AURASPOT — WEBSITE V1
+  이미지 교체: 아래 경로에 실제 이미지 파일을 지정하면 CSS로 제작된 비주얼이 교체됩니다.
+  예: heroScreen: 'assets/auraspot-home.webp'
+  카드 이미지도 각 slot에서 동일하게 교체됩니다. 비워두면 현재 시각화가 나타납니다.
+*/
+const ASSET_CONFIG = {
+  heroScreen: '',
+  radar: '',
+  spark: '',
+  cards: '',
+  charms: '',
+  match: '',
+  forecast: '',
+  scan: '',
+  wishing: '',
+};
 
-        // 네비게이션 바 배경 투명도 조절
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-bgDark/80');
-                navbar.classList.remove('bg-transparent', 'border-transparent', 'shadow-none');
-            } else {
-                navbar.classList.remove('bg-bgDark/80');
-                navbar.classList.add('bg-transparent', 'border-transparent', 'shadow-none');
-            }
-        });
+for (const [slot, imagePath] of Object.entries(ASSET_CONFIG)) {
+  if (!imagePath) continue;
+  document.querySelectorAll(`[data-asset="${slot}"]`).forEach(element => {
+    const img = element.querySelector(':scope > img.asset-image');
+    if (!img) return;
+    img.onload = () => element.classList.add('has-asset');
+    img.onerror = () => console.warn(`AuraSpot: 이미지 확인 필요 (${imagePath})`);
+    img.src = imagePath;
+  });
+}
 
-        // --- WishSkyBackground 캔버스 (Flutter To HTML5) ---
-        const canvas = document.getElementById("particle-canvas");
-        const ctx = canvas.getContext("2d");
-        const staticCanvas = document.createElement('canvas'); // 성능 최적화를 위한 오프스크린 캔버스
-        const staticCtx = staticCanvas.getContext('2d');
+const header = document.getElementById('header');
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelectorAll('#main-nav a');
 
-        let width, height, shortestSide;
-        let stars = [], milkyWayDots = [], nebulas = [], glowParticles = [];
-        
-        function setCanvasSize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-            staticCanvas.width = width;
-            staticCanvas.height = height;
-            shortestSide = Math.min(width, height);
-            
-            initSkyElements();
-            renderStaticBackground(); // 배경 그라데이션과 고정된 은하수 렌더링
-        }
+function closeMenu() {
+  document.body.classList.remove('menu-open');
+  header.classList.remove('open');
+  menuToggle.setAttribute('aria-expanded', 'false');
+  menuToggle.setAttribute('aria-label', '메뉴 열기');
+}
+menuToggle.addEventListener('click', () => {
+  const opening = !document.body.classList.contains('menu-open');
+  document.body.classList.toggle('menu-open', opening);
+  header.classList.toggle('open', opening);
+  menuToggle.setAttribute('aria-expanded', String(opening));
+  menuToggle.setAttribute('aria-label', opening ? '메뉴 닫기' : '메뉴 열기');
+});
+navLinks.forEach(link => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+function updateHeader() { header.classList.toggle('scrolled', window.scrollY > 24); }
+window.addEventListener('scroll', updateHeader, { passive: true });
+updateHeader();
 
-        window.addEventListener('resize', setCanvasSize);
+const revealElements = document.querySelectorAll('[data-reveal]');
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -25px 0px', threshold: 0.09 });
+  revealElements.forEach(element => observer.observe(element));
+} else {
+  revealElements.forEach(element => element.classList.add('is-visible'));
+}
 
-        function initSkyElements() {
-            // 1. 800개의 다양한 별 세팅
-            stars = [];
-            for(let i=0; i<800; i++) {
-                stars.push({
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    type: Math.random() * 100,
-                    baseSize: 0.82 + Math.random() * 3.0,
-                    phase: Math.random() * Math.PI * 2,
-                    color: i % 13 === 0 ? [143, 170, 212] : [255, 255, 255] // Mint-ish or White
-                });
-            }
+/**
+ * WishSkyBackground 웹 변환
+ * 제공된 FlutterFlow WishSkyBackground의 팔레트(#07111F/#0D1C33/#142A48),
+ * 은하수/성운/별/별자리/유성/16초 순환 컨셉을 반영합니다.
+ * 웹에서는 스크롤을 방해하지 않도록 장면을 고정하고 클릭·드래그를 가로채지 않습니다.
+ */
+(function setupWishSky() {
+  const canvas = document.getElementById('wish-sky');
+  const ctx = canvas?.getContext('2d', { alpha: false });
+  if (!ctx) return;
+  const staticCanvas = document.createElement('canvas');
+  const bg = staticCanvas.getContext('2d', { alpha: false });
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let w = 0, h = 0, dpr = 1, stars = [], dots = [], glows = [], clock = performance.now();
+  let raf = 0, lastFrame = 0, active = true;
+  const TAU = Math.PI * 2;
+  let seed = 5292026;
+  const rand = () => ((seed = (1664525 * seed + 1013904223) >>> 0) / 4294967296);
+  const color = (rgb, a) => `rgba(${rgb},${Math.max(0, Math.min(1, a))})`;
+  function resize() {
+    const newW = window.innerWidth, newH = window.innerHeight;
+    if (newW === w && newH === h) return;
+    w = newW; h = newH;
+    dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+    staticCanvas.width = canvas.width; staticCanvas.height = canvas.height;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    bg.setTransform(dpr, 0, 0, dpr, 0, 0);
+    seed = 5292026;
+    stars = []; dots = []; glows = [];
+    const n = w < 700 ? 210 : 490;
+    for (let i = 0; i < n; i++) {
+      stars.push({x:rand()*w,y:rand()*h,r:.32+rand()*1.38,kind:rand(),phase:rand()*TAU,tint:rand()<.13?'143,170,212':'246,251,255'});
+    }
+    const side = Math.min(w,h);
+    for(let i=0;i<(w<700?140:330);i++) {
+      const p=rand();
+      dots.push({x:w*(-.05+1.1*p),y:h*(.88-.68*p)+Math.sin(p*Math.PI*3.2+.7)*h*.045+(rand()-.5)*side*.42,r:.3+rand()*.9,phase:rand()*TAU,gold:rand()<.08});
+    }
+    for(let i=0;i<(w<700?13:26);i++) glows.push({x:rand()*w,y:h*(.54+rand()*.41),r:1+rand()*1.7,phase:rand()*TAU,idx:i});
+    paintBackground();
+    if(reduceMotion.matches) drawFrame(0);
+  }
+  function paintBackground() {
+    const grad=bg.createLinearGradient(0,0,w,h);
+    grad.addColorStop(0,'#07111F'); grad.addColorStop(.55,'#0D1C33'); grad.addColorStop(1,'#142A48');
+    bg.fillStyle=grad;bg.fillRect(0,0,w,h);
+    function aura(x,y,r,rgb,opacity){
+      const g=bg.createRadialGradient(x,y,0,x,y,r);
+      g.addColorStop(0,color(rgb,opacity));g.addColorStop(.4,color(rgb,opacity*.4));g.addColorStop(1,color(rgb,0));
+      bg.fillStyle=g;bg.fillRect(x-r,y-r,r*2,r*2);
+    }
+    aura(w*.25,h*.15,w*.48,'49,87,121',.24);
+    aura(w*.75,h*.28,w*.48,'65,101,142',.18);
+    aura(w*.65,h*.86,w*.55,'74,86,122',.16);
+    // 은하수: 넓은 백색 / 청백색 / 은은한 금빛 3중 대역.
+    bg.save(); bg.lineCap='round';
+    const wave=new Path2D();
+    wave.moveTo(-w*.1,h*.88);
+    wave.bezierCurveTo(w*.27,h*.68,w*.6,h*.46,w*1.1,h*.14);
+    const side=Math.min(w,h);
+    for (const band of [
+      {width:side*.35,blur:34,shade:'rgba(255,255,255,.058)'},
+      {width:side*.19,blur:28,shade:'rgba(143,170,212,.055)'},
+      {width:side*.075,blur:18,shade:'rgba(255,231,163,.03)'}
+    ]){
+      bg.strokeStyle=band.shade;bg.lineWidth=band.width;bg.shadowBlur=band.blur;bg.shadowColor=band.shade;bg.stroke(wave);
+    }
+    bg.restore();
+    // 비네팅: 콘텐츠와 겹치는 중앙 가독성 향상.
+    const edge=bg.createRadialGradient(w*.50,h*.48,0,w*.5,h*.48,Math.max(w,h)*.79);
+    edge.addColorStop(0,'rgba(3,9,20,0)');edge.addColorStop(.66,'rgba(3,9,20,.07)');edge.addColorStop(1,'rgba(1,6,16,.49)');
+    bg.fillStyle=edge;bg.fillRect(0,0,w,h);
+  }
+  function star(x,y,r,opacity,bright=false) {
+    ctx.fillStyle=`rgba(255,246,213,${opacity})`;
+    ctx.beginPath();ctx.arc(x,y,Math.max(.55,r),0,TAU);ctx.fill();
+    const g=ctx.createRadialGradient(x,y,0,x,y,r*5.5);
+    g.addColorStop(0,`rgba(255,232,189,${opacity*.21})`);g.addColorStop(1,'rgba(255,232,189,0)');
+    ctx.fillStyle=g;ctx.fillRect(x-r*5.5,y-r*5.5,r*11,r*11);
+    if (bright) {
+      ctx.strokeStyle=`rgba(243,247,255,${opacity*.63})`;ctx.lineWidth=.7;
+      ctx.beginPath();ctx.moveTo(x-r*3,y);ctx.lineTo(x+r*3,y);ctx.moveTo(x,y-r*3);ctx.lineTo(x,y+r*3);ctx.stroke();
+    }
+  }
+  function constellation(pointList,pairs,t,highlight=0) {
+    const pts=pointList.map(([x,y])=>[x*w,y*h]);
+    ctx.save();ctx.strokeStyle='rgba(251,242,206,.13)';ctx.lineWidth=.8;
+    ctx.beginPath();pairs.forEach(([a,b])=>{ctx.moveTo(...pts[a]);ctx.lineTo(...pts[b]);});ctx.stroke();
+    pts.forEach(([x,y],i)=>star(x,y,1.2+(i===highlight?.65:0),.48+.16*Math.sin(t*TAU+i),i===highlight));
+    ctx.restore();
+  }
+  function drawFrame(t) {
+    ctx.drawImage(staticCanvas,0,0,w,h);
+    for(const dot of dots){
+      const twinkle=.45+.55*Math.sin(TAU*t+dot.phase);
+      ctx.fillStyle=color(dot.gold?'255,231,163':'237,242,255',.045+twinkle*.12);
+      ctx.beginPath();ctx.arc(dot.x,dot.y+Math.sin(TAU*t+dot.phase)*1.5,dot.r,0,TAU);ctx.fill();
+    }
+    for(let i=0;i<stars.length;i++){
+      const s=stars[i],p=.5+.5*Math.sin(TAU*t+s.phase),o=.17+.52*p;
+      if (s.kind<.83){
+        ctx.fillStyle=color(s.tint,o*.85);ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,TAU);ctx.fill();
+      }else{
+        ctx.strokeStyle=color(s.tint,o*.74);ctx.lineWidth=.6;
+        const r=s.r*(s.kind>.95?4.1:2.5);
+        ctx.beginPath();ctx.moveTo(s.x-r,s.y);ctx.lineTo(s.x+r,s.y);ctx.moveTo(s.x,s.y-r);ctx.lineTo(s.x,s.y+r);ctx.stroke();
+        ctx.fillStyle=color(s.tint,o);ctx.beginPath();ctx.arc(s.x,s.y,.8,0,TAU);ctx.fill();
+      }
+    }
+    // 카시오페아/북두칠성/오리온: 앱 위젯의 별자리 컨셉을 웹 레이아웃에 맞게 재배치.
+    if(w>700){
+      constellation([[.045,.24],[.086,.29],[.126,.21],[.168,.27],[.205,.18]],[[0,1],[1,2],[2,3],[3,4]],t,2);
+      constellation([[.79,.12],[.817,.145],[.846,.16],[.884,.175],[.92,.2],[.955,.185],[.971,.224]],[[0,1],[1,2],[2,3],[3,4],[4,5],[5,6]],t,4);
+      constellation([[.89,.67],[.95,.68],[.903,.747],[.93,.753],[.953,.759],[.891,.83],[.96,.835]],[[0,2],[1,4],[2,3],[3,4],[2,5],[4,6]],t,3);
+    }else{
+      constellation([[.1,.2],[.18,.24],[.26,.18],[.34,.22],[.42,.16]],[[0,1],[1,2],[2,3],[3,4]],t,2);
+    }
+    // 간헐적인 유성: 사용자 주의를 분산시키지 않는 짧은 움직임.
+    const anchors=[[.05,.07],[.55,.11],[.8,.4],[.14,.43],[.68,.72]];
+    anchors.forEach(([ax,ay],i)=>{
+      const p=(t+i*.205)%1;
+      if(p<.08 || p>.18)return;
+      const local=(p-.08)/.1,fade=Math.sin(local*Math.PI),len=Math.min(w,h)*.23;
+      const travel=Math.min(w,h)*.44;
+      const x=w*ax+travel*local*.78,y=h*ay+travel*local*.58;
+      const x0=x-len*.8,y0=y-len*.6;
+      const g=ctx.createLinearGradient(x0,y0,x,y);
+      g.addColorStop(0,'rgba(255,255,255,0)');g.addColorStop(.75,`rgba(243,239,255,${fade*.4})`);g.addColorStop(1,`rgba(255,236,191,${fade*.8})`);
+      ctx.strokeStyle=g;ctx.lineWidth=1.25;ctx.beginPath();ctx.moveTo(x0,y0);ctx.lineTo(x,y);ctx.stroke();
+      star(x,y,1.2,fade*.78,true);
+    });
+    for(const p of glows){
+      const pulse=.5+.5*Math.sin(TAU*(t+p.phase)),x=p.x+Math.sin(TAU*t+p.idx)*8;
+      const y=p.y-pulse*18;
+      ctx.fillStyle=`rgba(213,234,241,${pulse*.16})`;
+      ctx.beginPath();ctx.arc(x,y,p.r,0,TAU);ctx.fill();
+    }
+  }
+  function animate(now) {
+    raf=requestAnimationFrame(animate);
+    if (!active || reduceMotion.matches || now-lastFrame<32) return; // 최대 약 30 FPS
+    lastFrame=now;
+    drawFrame(((now-clock)%16000)/16000);
+  }
+  document.addEventListener('visibilitychange',()=>{
+    active = !document.hidden;
+    if (active) lastFrame=0;
+  });
+  const onMotionChanged=()=>{if(reduceMotion.matches)drawFrame(0)};
+  if (reduceMotion.addEventListener) reduceMotion.addEventListener('change',onMotionChanged);
+  window.addEventListener('resize',resize,{passive:true});
+  resize();
+  raf=requestAnimationFrame(animate);
+})();
 
-            // 2. 은하수 입자 세팅
-            milkyWayDots = [];
-            let start = {x: width * -0.05, y: height * 0.88};
-            let end = {x: width * 1.05, y: height * 0.20};
-            for(let i=0; i<360; i++) {
-                let p = Math.random();
-                let x = start.x + (end.x - start.x) * p;
-                let baseY = start.y + (end.y - start.y) * p;
-                let wave = Math.sin((p * Math.PI * 3.2) + 0.7) * height * 0.045;
-                let spread = (Math.random() - 0.5) * shortestSide * 0.42;
-                milkyWayDots.push({ x, baseY, wave, spread, r: 0.45 + Math.random() * 1.15, i, p });
-            }
-
-            // 3. 희미한 성운 세팅
-            nebulas = [];
-            for(let i=0; i<28; i++) {
-                nebulas.push({
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    radius: shortestSide * (0.035 + Math.random() * 0.055),
-                    phase: Math.random() * Math.PI * 2,
-                    color: i % 2 === 0 ? '88, 122, 168' : '183, 200, 229'
-                });
-            }
-
-            // 4. 상승하는 빛무리 파티클
-            glowParticles = [];
-            for(let i=0; i<56; i++) {
-                glowParticles.push({
-                    baseX: Math.random() * width,
-                    baseY: height * (0.58 + Math.random() * 0.34),
-                    phaseOffset: Math.random(),
-                    r: 0.75 + Math.random() * 1.25,
-                    color: i%4===0 ? '255, 231, 163' : (i%3===0 ? '143, 170, 212' : '255, 255, 255'),
-                    idx: i
-                });
-            }
-        }
-
-        function renderStaticBackground() {
-            // 바탕 밤하늘 그라데이션
-            const grd = staticCtx.createLinearGradient(0, 0, width, height);
-            grd.addColorStop(0, '#07111F');
-            grd.addColorStop(0.55, '#0D1C33');
-            grd.addColorStop(1, '#142A48');
-            staticCtx.fillStyle = grd;
-            staticCtx.fillRect(0, 0, width, height);
-
-            // 은하수 띠 (흐림 효과) - 성능을 위해 staticCanvas에 한 번만 그림
-            let start = {x: width * -0.05, y: height * 0.88};
-            let end = {x: width * 1.05, y: height * 0.20};
-            
-            staticCtx.save();
-            staticCtx.lineCap = 'round';
-            
-            // 공통 은하수 커브
-            staticCtx.beginPath();
-            staticCtx.moveTo(start.x, start.y);
-            staticCtx.bezierCurveTo(width * 0.26, height * 0.64, width * 0.62, height * 0.42, end.x, end.y); // Simplified curve
-
-            // 넓은 흐릿한 띠 (백색)
-            staticCtx.shadowColor = 'rgba(255, 255, 255, 0.07)';
-            staticCtx.shadowBlur = 34;
-            staticCtx.strokeStyle = 'rgba(255, 255, 255, 0.07)';
-            staticCtx.lineWidth = shortestSide * 0.32;
-            staticCtx.stroke();
-
-            // 중간 푸른 띠 (민트)
-            staticCtx.shadowColor = 'rgba(143, 170, 212, 0.06)';
-            staticCtx.shadowBlur = 26;
-            staticCtx.strokeStyle = 'rgba(143, 170, 212, 0.06)';
-            staticCtx.lineWidth = shortestSide * 0.18;
-            staticCtx.stroke();
-
-            // 좁은 황금빛 띠
-            staticCtx.shadowColor = 'rgba(255, 231, 163, 0.026)';
-            staticCtx.shadowBlur = 18;
-            staticCtx.strokeStyle = 'rgba(255, 231, 163, 0.026)';
-            staticCtx.lineWidth = shortestSide * 0.08;
-            staticCtx.stroke();
-            
-            staticCtx.restore();
-        }
-
-        // --- 드로잉 헬퍼 ---
-        function drawGlowBlob(cx, cy, radius, rgb, opacity, phase, t) {
-            const dx = cx + Math.sin(t * Math.PI * 2 + phase) * 26;
-            const dy = cy + Math.cos(t * Math.PI * 2 + phase) * 18;
-            const grad = ctx.createRadialGradient(dx, dy, 0, dx, dy, radius);
-            grad.addColorStop(0, `rgba(${rgb}, ${opacity})`);
-            grad.addColorStop(0.42, `rgba(${rgb}, ${opacity * 0.38})`);
-            grad.addColorStop(1, `rgba(${rgb}, 0)`);
-            ctx.fillStyle = grad;
-            ctx.beginPath();
-            ctx.arc(dx, dy, radius, 0, Math.PI * 2);
-            ctx.fill();
-        }
-
-        function drawConstellationStar(center, radius, opacity, glowOpacity, scale, bright) {
-            // Glow
-            const rGlow = radius * (bright ? 8.0 : 5.8);
-            const grad = ctx.createRadialGradient(center.x, center.y, 0, center.x, center.y, rGlow);
-            grad.addColorStop(0, `rgba(255, 244, 196, ${glowOpacity})`);
-            grad.addColorStop(0.42, `rgba(143, 170, 212, ${glowOpacity * 0.32})`);
-            grad.addColorStop(1, `rgba(255, 255, 255, 0)`);
-            ctx.fillStyle = grad;
-            ctx.beginPath(); ctx.arc(center.x, center.y, rGlow, 0, Math.PI * 2); ctx.fill();
-
-            // Core Dot
-            ctx.fillStyle = `rgba(255, 245, 204, ${opacity})`;
-            ctx.beginPath(); ctx.arc(center.x, center.y, radius, 0, Math.PI * 2); ctx.fill();
-
-            // Cross Lines
-            ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * (bright ? 0.88 : 0.58)})`;
-            ctx.lineWidth = (bright ? 0.9 : 0.65) * scale;
-            ctx.lineCap = 'round';
-            const r = radius * (bright ? 3.0 : 2.15);
-            ctx.beginPath();
-            ctx.moveTo(center.x - r, center.y); ctx.lineTo(center.x + r, center.y);
-            ctx.moveTo(center.x, center.y - r); ctx.lineTo(center.x, center.y + r);
-            ctx.stroke();
-        }
-
-        // --- 메인 애니메이션 루프 ---
-        const duration = 16000;
-        let startTime = performance.now();
-
-        function animateSky(now) {
-            requestAnimationFrame(animateSky);
-            const t = ((now - startTime) % duration) / duration;
-            
-            ctx.clearRect(0, 0, width, height);
-            
-            // 정적 캔버스 복사 (빠른 배경 렌더링)
-            ctx.drawImage(staticCanvas, 0, 0);
-
-            // 1. 오로라 미스트 
-            drawGlowBlob(width*0.18, height*0.18, width*0.34, '49, 87, 121', 0.18, 0.2, t);
-            drawGlowBlob(width*0.72, height*0.22, width*0.42, '65, 101, 142', 0.16, 1.7, t);
-            drawGlowBlob(width*0.46, height*0.48, width*0.36, '44, 72, 107', 0.14, 3.1, t);
-            drawGlowBlob(width*0.84, height*0.74, width*0.35, '74, 86, 122', 0.13, 4.4, t);
-
-            // 2. 부드러운 성운
-            for(let neb of nebulas) {
-                const pulse = 0.5 + 0.5 * Math.sin(t * Math.PI * 2 + neb.phase);
-                const grad = ctx.createRadialGradient(neb.x, neb.y, 0, neb.x, neb.y, neb.radius);
-                grad.addColorStop(0, `rgba(${neb.color}, ${0.11 + pulse * 0.05})`);
-                grad.addColorStop(0.55, `rgba(${neb.color}, 0.025)`);
-                grad.addColorStop(1, `rgba(${neb.color}, 0)`);
-                ctx.fillStyle = grad;
-                ctx.beginPath(); ctx.arc(neb.x, neb.y, neb.radius, 0, Math.PI*2); ctx.fill();
-            }
-
-            // 3. 은하수 입자 펄스
-            for(let dot of milkyWayDots) {
-                const drift = Math.sin(t * Math.PI * 2 + dot.i * 0.37) * 1.8;
-                const y = dot.baseY + dot.wave + dot.spread + drift;
-                const pulse = 0.5 + 0.5 * Math.sin(t * Math.PI * 2 + dot.i * 0.19);
-                const opacity = 0.05 + pulse * 0.08;
-                
-                let color = dot.i % 8 === 0 ? '255, 231, 163' : (dot.i % 5 === 0 ? '143, 170, 212' : '255, 255, 255');
-                ctx.fillStyle = `rgba(${color}, ${opacity})`;
-                ctx.beginPath(); ctx.arc(dot.x, y, dot.r, 0, Math.PI*2); ctx.fill();
-            }
-
-            // 4. 별들
-            ctx.lineCap = 'round';
-            for(let i=0; i<stars.length; i++) {
-                let star = stars[i];
-                const pulse = 0.5 + 0.5 * Math.sin(t * Math.PI * 2 + star.phase);
-                const op = Math.max(0, Math.min(1, 0.32 + pulse * 0.66));
-                const rgb = star.color;
-                
-                if(star.type < 56) {
-                    ctx.fillStyle = `rgba(${rgb[0]},${rgb[1]},${rgb[2]}, ${op * 0.66})`;
-                    ctx.beginPath(); ctx.arc(star.x, star.y, star.baseSize * 0.5, 0, Math.PI*2); ctx.fill();
-                } else {
-                    const r = star.baseSize * (star.type < 89 ? 1.55 : 2.15);
-                    ctx.strokeStyle = `rgba(${rgb[0]},${rgb[1]},${rgb[2]}, ${op * 0.78})`;
-                    ctx.lineWidth = star.type < 89 ? 0.72 : 0.82;
-                    ctx.beginPath();
-                    ctx.moveTo(star.x - r, star.y); ctx.lineTo(star.x + r, star.y);
-                    ctx.moveTo(star.x, star.y - r); ctx.lineTo(star.x, star.y + r);
-                    ctx.stroke();
-                    ctx.fillStyle = `rgba(${rgb[0]},${rgb[1]},${rgb[2]}, ${op * 0.66})`;
-                    ctx.beginPath(); ctx.arc(star.x, star.y, 0.85, 0, Math.PI*2); ctx.fill();
-                }
-            }
-
-            // 5. 별자리 (카시오페아, 북극성 등)
-            let scale = Math.max(0.82, Math.min(1.22, shortestSide / 390.0));
-            
-            // 북극성 (화면 상단 중앙)
-            let polaris = {x: width * 0.5, y: height * 0.15};
-            const pPulse = 0.5 + 0.5 * Math.sin(t * Math.PI * 2 * 1.2);
-            drawConstellationStar(polaris, 2.6 * scale, 0.92, 0.3, scale, true);
-            
-            // 오리온 자리 선 그리기 (화면 우측 하단)
-            let orionCenter = {x: width * 0.8, y: height * 0.7};
-            const orionPts = [
-                {x: -58, y: -78}, {x: 52, y: -86}, {x: -26, y: -8}, {x: 0, y: 0},
-                {x: 28, y: 8}, {x: -52, y: 82}, {x: 60, y: 72}, {x: 4, y: 34}, {x: 8, y: 58}
-            ].map(p => ({x: orionCenter.x + p.x * scale, y: orionCenter.y + p.y * scale}));
-            
-            const orionPairs = [[0,2], [1,4], [2,3], [3,4], [2,5], [4,6], [3,7], [7,8], [0,1]];
-            ctx.strokeStyle = `rgba(255, 245, 204, 0.15)`;
-            ctx.lineWidth = 0.8 * scale;
-            ctx.beginPath();
-            orionPairs.forEach(pair => {
-                ctx.moveTo(orionPts[pair[0]].x, orionPts[pair[0]].y);
-                ctx.lineTo(orionPts[pair[1]].x, orionPts[pair[1]].y);
-            });
-            ctx.stroke();
-            orionPts.forEach((pt, i) => {
-                const idle = 0.5 + 0.5 * Math.sin(t * Math.PI * 2 * 0.86 + i * 0.68);
-                drawConstellationStar(pt, (i===2||i===3||i===4 ? 2.1 : 1.75) * scale, 0.42 + idle * 0.22, 0.065, scale, i===2||i===3||i===4);
-            });
-
-            // 6. 유성 (Shooting Stars)
-            const anchors = [
-                {x: 0.12, y: 0.10}, {x: 0.46, y: 0.20}, {x: 0.74, y: 0.32}, {x: 0.26, y: 0.52}, {x: 0.61, y: 0.68}
-            ];
-            for (let i = 0; i < anchors.length; i++) {
-                const phase = (t + i * 0.195) % 1.0;
-                if (phase <= 0.035 || phase >= 0.52) continue;
-                
-                const local = Math.max(0, Math.min(1, (phase - 0.035) / 0.485));
-                const opacity = Math.max(0, Math.min(1, Math.sin(local * Math.PI)));
-                const angle = 0.88 + ((i % 3) - 1) * 0.1;
-                const fallDir = {x: Math.cos(angle), y: Math.sin(angle)};
-                const anchor = anchors[i];
-                const travelDist = shortestSide * 0.72 + Math.max(width, height) * 0.14;
-                const base = {x: width * anchor.x, y: height * anchor.y};
-                const head = {x: base.x + fallDir.x * travelDist * local, y: base.y + fallDir.y * travelDist * local};
-                const tailLen = shortestSide * (0.25 + (i % 3) * 0.04);
-                const tail = {x: head.x - fallDir.x * tailLen, y: head.y - fallDir.y * tailLen};
-
-                // Tail gradient
-                const grad = ctx.createLinearGradient(tail.x, tail.y, head.x, head.y);
-                grad.addColorStop(0, 'rgba(255,255,255,0)');
-                grad.addColorStop(0.42, `rgba(255,255,255,${opacity*0.16})`);
-                grad.addColorStop(0.78, `rgba(255,255,255,${opacity*0.62})`);
-                grad.addColorStop(1, `rgba(255,231,163,${opacity*0.82})`);
-                ctx.strokeStyle = grad;
-                ctx.lineWidth = 1.35 + (i % 2) * 0.25;
-                ctx.beginPath(); ctx.moveTo(tail.x, tail.y); ctx.lineTo(head.x, head.y); ctx.stroke();
-
-                // Head glow
-                ctx.fillStyle = `rgba(255, 231, 163, ${opacity * 0.88})`;
-                ctx.beginPath(); ctx.arc(head.x, head.y, 1.8 + opacity * 0.6, 0, Math.PI*2); ctx.fill();
-            }
-
-            // 7. 떠오르는 둥근 파티클
-            for(let gp of glowParticles) {
-                const phase = (t + gp.phaseOffset) % 1.0;
-                const rise = phase * height * (0.035 + (gp.idx % 3) * 0.02);
-                const drift = Math.sin(t * Math.PI * 2 + gp.idx * 0.73) * shortestSide * 0.012;
-                const x = gp.baseX + drift;
-                const y = gp.baseY - rise;
-                const fade = Math.max(0, Math.min(1, Math.sin(phase * Math.PI)));
-                const twinkle = 0.5 + 0.5 * Math.sin(t * Math.PI * 2 * 1.3 + gp.idx);
-                
-                const grad = ctx.createRadialGradient(x, y, 0, x, y, gp.r * 5.5);
-                grad.addColorStop(0, `rgba(${gp.color}, ${(0.10 + twinkle * 0.10)*fade})`);
-                grad.addColorStop(0.42, `rgba(${gp.color}, ${(0.035 + twinkle * 0.04)*fade})`);
-                grad.addColorStop(1, `rgba(${gp.color}, 0)`);
-                ctx.fillStyle = grad;
-                ctx.beginPath(); ctx.arc(x, y, gp.r * 5.5, 0, Math.PI*2); ctx.fill();
-
-                ctx.fillStyle = `rgba(${gp.color}, ${(0.20 + twinkle * 0.22)*fade})`;
-                ctx.beginPath(); ctx.arc(x, y, gp.r, 0, Math.PI*2); ctx.fill();
-            }
-
-            // 8. 테두리 비네팅 (Vignette)
-            const vGrad = ctx.createRadialGradient(width/2, height/2, 0, width/2, height/2, Math.max(width, height) * 0.72);
-            vGrad.addColorStop(0, 'transparent');
-            vGrad.addColorStop(0.72, 'rgba(7, 20, 38, 0.18)');
-            vGrad.addColorStop(1, 'rgba(1, 7, 19, 0.44)');
-            ctx.fillStyle = vGrad;
-            ctx.fillRect(0, 0, width, height);
-        }
-
-        window.onload = function() {
-            setCanvasSize();
-            animateSky(performance.now());
-        };
-
-        async function readAura() {
-            const inputEl = document.getElementById('aura-input');
-            const analyzeBtn = document.getElementById('analyze-btn');
-            const loadingEl = document.getElementById('aura-loading');
-            const resultEl = document.getElementById('aura-result');
-            const orbEl = document.getElementById('aura-orb');
-            const colorNameEl = document.getElementById('aura-color-name');
-            const descEl = document.getElementById('aura-desc');
-            const glowBgEl = document.getElementById('aura-glow-bg');
-            
-            const text = inputEl.value.trim();
-
-            if (!text) {
-                // 커스텀 메시지로 입력 유도
-                inputEl.placeholder = "내용을 입력해주세요! (예: 오늘 하늘이 너무 예뻐서 힐링되는 기분이야)";
-                inputEl.focus();
-                return;
-            }
-
-            // UI를 로딩 상태로 변경
-            loadingEl.classList.remove('hidden');
-            loadingEl.classList.add('flex');
-            analyzeBtn.disabled = true;
-            analyzeBtn.classList.add('opacity-50', 'cursor-not-allowed');
-
-            const apiKey = ""; // API 키는 Canvas 환경에서 자동 주입됩니다.
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
-
-            // Gemini에게 전달할 프롬프트
-            const prompt = `당신은 몽환적이고 공감 능력이 뛰어난 '아우라 리더(Aura Reader)'입니다. 
-사용자가 남긴 기분이나 하루의 일과를 읽고, 현재 그 사람의 감정 상태를 나타내는 '아우라 컬러'를 분석해주세요.
-사용자 입력: "${text}"`;
-
-            const payload = {
-                contents: [{ parts: [{ text: prompt }] }],
-                generationConfig: {
-                    responseMimeType: "application/json",
-                    responseSchema: {
-                        type: "OBJECT",
-                        properties: {
-                            colorHex: { type: "STRING", description: "아우라를 나타내는 아름답고 신비로운 색상의 헥스 코드 (예: #FF5733, #00F5D4)" },
-                            colorName: { type: "STRING", description: "이 색상의 창의적이고 신비로운 이름 (한국어, 예: '새벽빛 보라', '타오르는 별빛 붉은색')" },
-                            description: { type: "STRING", description: "사용자의 텍스트를 바탕으로 현재 에너지를 공감하며 해석해주는 시적이고 몽환적인 2~3문장의 설명 (한국어)" }
-                        },
-                        required: ["colorHex", "colorName", "description"]
-                    }
-                }
-            };
-
-            try {
-                // 지수 백오프 기반 재시도 (최대 3회)
-                let response;
-                let retries = 3;
-                let delay = 1000;
-                
-                while (retries > 0) {
-                    response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    
-                    if (response.ok) break;
-                    retries--;
-                    if (retries === 0) throw new Error("API Limit Reached");
-                    await new Promise(res => setTimeout(res, delay));
-                    delay *= 2;
-                }
-
-                const result = await response.json();
-                
-                if (result.candidates && result.candidates[0].content.parts[0].text) {
-                    const jsonText = result.candidates[0].content.parts[0].text;
-                    const data = JSON.parse(jsonText);
-                    
-                    // UI 결과 업데이트
-                    resultEl.classList.remove('opacity-40');
-                    resultEl.classList.add('opacity-100');
-                    
-                    // 구슬(Orb) 컬러 및 글로우 변경
-                    orbEl.style.backgroundColor = data.colorHex;
-                    orbEl.style.boxShadow = `0 0 50px ${data.colorHex}, inset -10px -10px 20px rgba(0,0,0,0.3), inset 10px 10px 20px rgba(255,255,255,0.5)`;
-                    
-                    // 배경 글로우 틴트 변경 (투명도 적용)
-                    glowBgEl.style.backgroundColor = data.colorHex + '40'; // 40 = 25% opacity
-                    
-                    // 텍스트 변경
-                    colorNameEl.textContent = data.colorName;
-                    colorNameEl.style.color = data.colorHex;
-                    // 가독성을 위해 텍스트 그림자 추가
-                    colorNameEl.style.textShadow = `0 0 10px ${data.colorHex}80`;
-                    
-                    descEl.textContent = data.description;
-                    descEl.classList.remove('text-gray-400');
-                    descEl.classList.add('text-gray-200');
-                }
-            } catch (error) {
-                console.error("Aura Analysis Error");
-                descEl.textContent = "우주의 주파수를 맞추는 데 잠시 실패했습니다. 심호흡을 한 번 하고 다시 시도해주세요.";
-            } finally {
-                // 로딩 종료
-                loadingEl.classList.add('hidden');
-                loadingEl.classList.remove('flex');
-                analyzeBtn.disabled = false;
-                analyzeBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-            }
-        }
-    </script>
+</script>
 </body>
 </html>
