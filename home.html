@@ -839,6 +839,75 @@ html:not([lang="ko"]) .download-content h2{font-family:'Poppins',sans-serif;lett
   .ticker .ticker-track,.ticker .ticker-star,
   .beyond-scan .scan-cinematic-image img{animation:none!important}
 }
+
+/* ========================================================================
+   AuraSpot COSMIC ORIGIN · premium pale iridescent planet / triple orbits
+   Replaces ONLY the illustration under #experience; no UI logic changed.
+   ======================================================================== */
+#experience .cosmic-graphic{
+  width:100%; min-height:550px; height:550px; position:relative;
+  display:grid; place-items:center; isolation:isolate; overflow:visible;
+  transform:translateZ(0);
+}
+#experience .astral-starfield{position:absolute;inset:-3%;z-index:0;pointer-events:none;overflow:visible}
+#experience .astral-star{position:absolute;left:var(--sx);top:var(--sy);width:var(--ss);height:var(--ss);border-radius:50%;background:rgba(235,247,255,.9);box-shadow:0 0 3px 1px rgba(191,221,249,.3);opacity:.17;animation:astral-star-twinkle var(--tw) ease-in-out var(--td) infinite;will-change:opacity,transform}
+#experience .astral-star-bright{background:#fffbeb;box-shadow:0 0 7px 2px rgba(255,241,205,.30),0 0 22px 4px rgba(147,199,232,.17)}
+#experience .astral-star-bright::before,#experience .astral-star-bright::after{content:"";position:absolute;top:50%;left:50%;width:1px;height:12px;background:linear-gradient(transparent,rgba(255,250,224,.84),transparent);transform:translate(-50%,-50%);opacity:.53}
+#experience .astral-star-bright::after{transform:translate(-50%,-50%) rotate(90deg)}
+@keyframes astral-star-twinkle{0%,100%{opacity:.11;transform:scale(.72)}46%{opacity:var(--pk);transform:scale(1.2)}55%{opacity:calc(var(--pk)*.78);transform:scale(1)}69%{opacity:.24;transform:scale(.76)}}
+#experience .astral-celestial-wash{position:absolute;inset:5% -10%;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 54% 48%,rgba(79,135,180,.12),transparent 54%),radial-gradient(ellipse at 30% 58%,rgba(138,134,220,.075),transparent 49%);filter:blur(26px);animation:astral-nebula 22s ease-in-out infinite alternate}
+#experience .astral-far-halo{position:absolute;width:450px;max-width:95%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(146,190,235,.075) 10%,rgba(97,140,222,.055) 31%,transparent 72%);filter:blur(18px);z-index:1;animation:astral-ambient 15s ease-in-out infinite alternate}
+#experience .astral-orbits{position:absolute;width:570px;height:570px;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;pointer-events:none;overflow:visible}
+#experience .astral-orbit-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;transform-origin:50% 50%;filter:drop-shadow(0 0 2px rgba(175,219,255,.13));will-change:transform}
+#experience .astral-orbit-a{animation:astral-spin-cw 58s linear infinite}
+#experience .astral-orbit-b{animation:astral-spin-ccw 78s linear infinite}
+#experience .astral-orbit-c{animation:astral-spin-cw 96s linear -24s infinite}
+#experience .astral-glide{animation:astral-stroke-glide 19s linear infinite;opacity:.38}
+#experience .astral-glide-b{animation-duration:25s;animation-direction:reverse}
+#experience .astral-glide-c{animation-duration:29s}
+@keyframes astral-spin-cw{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes astral-spin-ccw{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
+@keyframes astral-stroke-glide{from{stroke-dashoffset:0}to{stroke-dashoffset:-1620}}
+#experience .astral-planet-corona{position:absolute;width:306px;height:306px;max-width:78vw;border-radius:50%;z-index:2;pointer-events:none;background:radial-gradient(circle,transparent 46%,rgba(161,218,254,.105) 60%,transparent 74%);box-shadow:0 0 85px 16px rgba(151,183,252,.07);filter:blur(7px);animation:astral-corona-breathe 12s ease-in-out infinite}
+#experience .teaser-moon.astral-planet{position:relative;z-index:4;flex-shrink:0;width:278px;height:278px;max-width:none;aspect-ratio:1;overflow:hidden;border:1px solid rgba(239,250,255,.33);
+  background:radial-gradient(ellipse at 25% 22%,rgba(255,254,239,.91) 0%,rgba(236,249,247,.81) 15%,transparent 47%),radial-gradient(circle at 46% 30%,rgba(175,218,234,.88),transparent 51%),radial-gradient(circle at 78% 56%,rgba(178,192,241,.65),transparent 54%),radial-gradient(ellipse at 29% 75%,rgba(118,154,212,.78),transparent 62%),linear-gradient(135deg,#c2e5e7 0%,#b4cfe9 35%,#8eace0 65%,#546a9b 100%);
+  box-shadow: inset -24px -34px 55px rgba(15,32,80,.48),inset 12px 12px 20px rgba(250,255,255,.37),inset -3px 2px 15px rgba(255,255,255,.12),0 0 2px 1px rgba(210,237,255,.30),0 0 24px 3px rgba(170,220,249,.22),0 0 92px 11px rgba(139,176,229,.12);
+  transform:translateZ(0);animation:astral-planet-hover 11s ease-in-out infinite;display:block;
+}
+/* Disable the former star-shaped emblem and its hard lens overlay. */
+#experience .teaser-moon.astral-planet > span{display:none!important}
+#experience .teaser-moon.astral-planet::before{content:"";position:absolute;inset:-11%;border:0;border-radius:50%;box-shadow:none;background:radial-gradient(ellipse at 25% 16%,rgba(255,255,248,.52),transparent 47%),radial-gradient(ellipse at 68% 60%,rgba(212,220,255,.26),transparent 56%);opacity:.70;animation:astral-tide 17s ease-in-out infinite alternate;transform:translate(-4%,-2%);z-index:1;pointer-events:none}
+#experience .teaser-moon.astral-planet::after{content:"";position:absolute;inset:0;border:0;transform:none;background:radial-gradient(ellipse at 23% 25%,rgba(255,255,255,.21),transparent 36%),radial-gradient(circle at 50% 50%,transparent 42%,rgba(14,27,65,.28) 86%,rgba(7,16,43,.39) 100%);box-shadow:inset 5px 4px 14px rgba(253,254,255,.3);border-radius:50%;z-index:6;pointer-events:none}
+#experience .astral-planet-clouds{position:absolute;z-index:2;inset:-42%;width:190%;height:190%;border-radius:48%;background:radial-gradient(ellipse at 35% 48%,rgba(255,252,229,.65),transparent 29%),radial-gradient(ellipse at 67% 40%,rgba(184,245,246,.54),transparent 29%),radial-gradient(ellipse at 57% 62%,rgba(188,174,249,.50),transparent 32%),radial-gradient(ellipse at 34% 71%,rgba(255,220,231,.30),transparent 30%);filter:blur(18px);mix-blend-mode:screen;opacity:.59;animation:astral-clouds 31s ease-in-out infinite alternate;pointer-events:none}
+#experience .astral-planet-silk{position:absolute;inset:-47%;width:195%;height:195%;z-index:3;border-radius:50%;opacity:.36;filter:blur(16px);mix-blend-mode:soft-light;background:conic-gradient(from 22deg at 52% 45%,transparent 0deg,rgba(244,255,250,.60) 43deg,transparent 89deg,rgba(179,209,255,.7) 151deg,transparent 222deg,rgba(235,226,255,.53) 267deg,transparent 360deg);animation:astral-silk-turn 68s linear infinite;pointer-events:none}
+#experience .astral-planet-glass{position:absolute;inset:0;z-index:5;border-radius:50%;background:radial-gradient(ellipse at 21% 16%,rgba(255,255,255,.38),transparent 38%),linear-gradient(130deg,transparent 41%,rgba(234,255,255,.045) 56%,transparent 73%);pointer-events:none}
+#experience .astral-planet-limb{position:absolute;inset:0;z-index:5;border-radius:50%;box-shadow:inset 0 0 5px rgba(255,255,255,.64),inset 1px 1px 7px rgba(248,255,255,.47),inset -3px -5px 19px rgba(11,26,66,.28);pointer-events:none}
+#experience .astral-light-motes{position:absolute;inset:0;z-index:5;pointer-events:none}
+#experience .astral-light-motes i{display:block;position:absolute;border-radius:50%;width:2px;height:2px;background:#f7ffff;box-shadow:0 0 8px 2px rgba(199,231,255,.56);opacity:.1;animation:astral-mote-pulse 8s ease-in-out infinite}
+#experience .astral-light-motes i:nth-child(1){left:9%;top:23%;animation-delay:-2s}
+#experience .astral-light-motes i:nth-child(2){right:12%;top:32%;animation-delay:-5.5s}
+#experience .astral-light-motes i:nth-child(3){left:18%;bottom:13%;animation-delay:-7.1s}
+#experience .astral-light-motes i:nth-child(4){right:9%;bottom:19%;animation-delay:-1.9s}
+#experience .astral-light-motes i:nth-child(5){left:54%;top:3%;animation-delay:-4s}
+#experience .astral-light-motes i:nth-child(6){left:32%;bottom:4%;animation-delay:-6s}
+@keyframes astral-mote-pulse{0%,100%{opacity:.12;scale:.6}44%{opacity:.92;scale:1.5}61%{opacity:.3;scale:.8}}
+@keyframes astral-planet-hover{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-7px) scale(1.013)}}
+@keyframes astral-clouds{0%{transform:translate(-5%,3%) rotate(-9deg) scale(1)}50%{transform:translate(4%,-3%) rotate(7deg) scale(1.05)}100%{transform:translate(-1%,4%) rotate(17deg) scale(.98)}}
+@keyframes astral-silk-turn{to{transform:rotate(360deg)}}
+@keyframes astral-tide{0%{transform:translate(-5%,-3%) scale(.98);opacity:.65}100%{transform:translate(6%,4%) scale(1.08);opacity:.95}}
+@keyframes astral-ambient{0%{opacity:.65;transform:scale(.95)}100%{opacity:1;transform:scale(1.15)}}
+@keyframes astral-corona-breathe{0%,100%{transform:scale(.96);opacity:.7}50%{transform:scale(1.07);opacity:1}}
+@keyframes astral-nebula{0%{transform:translate(-2%,-1%) scale(.98)}100%{transform:translate(3%,2%) scale(1.06)}}
+/* Preserve proportions on mobile: three rings remain visible without horizontal overflow. */
+@media(max-width:900px){#experience .cosmic-graphic{min-height:425px;height:425px}#experience .astral-orbits{width:470px;height:470px}#experience .teaser-moon.astral-planet{width:226px;height:226px}#experience .astral-planet-corona{width:246px;height:246px}}
+@media(max-width:680px){#experience .cosmic-graphic{margin-top:17px;height:345px;min-height:345px;max-width:100%;overflow:visible}#experience .astral-orbits{width:min(108vw,410px);height:min(108vw,410px)}#experience .teaser-moon.astral-planet{width:184px;height:184px}#experience .astral-planet-corona{width:204px;height:204px}#experience .astral-starfield{inset:1% -2%}}
+@media(max-width:360px){#experience .cosmic-graphic{height:320px;min-height:320px}#experience .astral-orbits{width:350px;height:350px}#experience .teaser-moon.astral-planet{width:173px;height:173px}}
+@media(prefers-reduced-motion:reduce){#experience .astral-star,#experience .astral-orbit-svg,#experience .astral-glide,#experience .astral-celestial-wash,#experience .astral-far-halo,#experience .astral-planet-corona,#experience .teaser-moon.astral-planet,#experience .astral-planet-clouds,#experience .astral-planet-silk,#experience .teaser-moon.astral-planet::before,#experience .astral-light-motes i{animation:none!important}}
+
+
+#experience .astral-planet-veils{position:absolute;inset:-9%;width:118%;height:118%;z-index:4;opacity:.48;mix-blend-mode:screen;pointer-events:none;animation:astral-veils-drift 29s ease-in-out infinite alternate}
+@keyframes astral-veils-drift{0%{transform:translate(-5%,1%) rotate(-6deg) scale(1)}52%{transform:translate(4%,-2%) rotate(5deg) scale(1.08)}100%{transform:translate(-1%,3%) rotate(12deg) scale(1.015)}}
+@media(prefers-reduced-motion:reduce){#experience .astral-planet-veils{animation:none!important}}
 </style>
 
 </head>
@@ -1215,8 +1284,158 @@ html:not([lang="ko"]) .download-content h2{font-family:'Poppins',sans-serif;lett
 <div aria-label="Choose a fortune theme" class="fortune-choices" data-i18n-arialabel="choicesLabel" role="group"><button aria-pressed="true" class="fortune-choice is-picked" data-choice="love" type="button">♡ <span data-i18n="choiceLove">Love</span></button><button aria-pressed="false" class="fortune-choice" data-choice="money" type="button">✦ <span data-i18n="choiceMoney">Money</span></button><button aria-pressed="false" class="fortune-choice" data-choice="relation" type="button">✧ <span data-i18n="choiceRelation">Connections</span></button></div>
 <div aria-live="polite" class="choice-result"><span class="choice-eyebrow">YOUR LUCK STARTS HERE</span><p data-i18n="choiceDefault" id="choice-result-copy">A little spark may be waiting wherever your heart leads.</p><a href="#download"><span data-i18n="choiceCTA">Explore my fortune in the app ↗</span><span aria-hidden="true">↗</span></a></div>
 </div>
-<div aria-hidden="true" class="teaser-graphic"><div class="teaser-ring teaser-ring-1"></div><div class="teaser-ring teaser-ring-2"></div><div class="teaser-ring teaser-ring-3"></div><div class="teaser-moon"><span>✧</span></div><span class="teaser-twinkle t-1">✦</span><span class="teaser-twinkle t-2">✧</span><span class="teaser-twinkle t-3">✦</span><span class="teaser-twinkle t-4">✧</span></div>
+<div aria-hidden="true" class="teaser-graphic cosmic-graphic">
+  <!-- Delicate local galaxy, not icon-font stars -->
+  <div class="astral-starfield">
+<span class="astral-star" style="--sx:84.88%;--sy:79.45%;--ss:2.24px;--tw:5.15s;--td:-0.46s;--pk:0.68" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:89.69%;--sy:44.74%;--ss:0.69px;--tw:4.93s;--td:-1.01s;--pk:0.83" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:12.87%;--sy:90.91%;--ss:0.99px;--tw:5.57s;--td:-8.54s;--pk:0.35" aria-hidden="true"></span>
+<span class="astral-star astral-star-bright" style="--sx:56.95%;--sy:9.96%;--ss:1.28px;--tw:6.16s;--td:-2.78s;--pk:0.48" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:4.17%;--sy:27.52%;--ss:1.19px;--tw:6.9s;--td:-5.65s;--pk:0.67" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:89.21%;--sy:77.84%;--ss:0.86px;--tw:3.84s;--td:-5.38s;--pk:0.68" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:25.55%;--sy:61.36%;--ss:0.78px;--tw:4.38s;--td:-2.85s;--pk:0.71" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:6.02%;--sy:18.53%;--ss:0.97px;--tw:4.54s;--td:-6.04s;--pk:0.56" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:46.57%;--sy:21.89%;--ss:1.67px;--tw:8.84s;--td:-10.79s;--pk:0.63" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:27.64%;--sy:44.92%;--ss:1.72px;--tw:4.55s;--td:-10.75s;--pk:0.73" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:23.63%;--sy:31.38%;--ss:1.04px;--tw:4.12s;--td:-6.76s;--pk:0.7" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:72.71%;--sy:18.62%;--ss:1.04px;--tw:9.15s;--td:-5.01s;--pk:0.35" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:60.56%;--sy:56.47%;--ss:0.88px;--tw:6.09s;--td:-1.08s;--pk:0.41" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:24.66%;--sy:34.43%;--ss:0.59px;--tw:5.25s;--td:-9.75s;--pk:0.46" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:19.72%;--sy:71.57%;--ss:1.59px;--tw:5.97s;--td:-9.62s;--pk:0.37" aria-hidden="true"></span>
+<span class="astral-star astral-star-bright" style="--sx:78.26%;--sy:82.48%;--ss:1.1px;--tw:5.61s;--td:-9.74s;--pk:0.44" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:44.02%;--sy:5.15%;--ss:0.83px;--tw:5.39s;--td:-1.14s;--pk:0.63" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:77.56%;--sy:17.67%;--ss:2.18px;--tw:9.34s;--td:-8.88s;--pk:0.74" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:51.28%;--sy:13.01%;--ss:0.47px;--tw:5.03s;--td:-10.58s;--pk:0.77" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:39.46%;--sy:88.54%;--ss:0.79px;--tw:6.34s;--td:-9.21s;--pk:0.67" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:3.0%;--sy:19.92%;--ss:0.98px;--tw:6.51s;--td:-7.95s;--pk:0.72" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:65.39%;--sy:58.83%;--ss:1.77px;--tw:9.11s;--td:-5.81s;--pk:0.7" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:82.9%;--sy:27.48%;--ss:1.06px;--tw:4.05s;--td:-2.11s;--pk:0.52" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:87.08%;--sy:42.74%;--ss:1.12px;--tw:5.17s;--td:-7.4s;--pk:0.36" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:19.41%;--sy:61.76%;--ss:1.86px;--tw:9.73s;--td:-5.73s;--pk:0.43" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:23.32%;--sy:79.68%;--ss:0.5px;--tw:6.94s;--td:-8.0s;--pk:0.81" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:56.6%;--sy:2.88%;--ss:1.82px;--tw:7.91s;--td:-7.04s;--pk:0.38" aria-hidden="true"></span>
+<span class="astral-star astral-star-bright" style="--sx:40.14%;--sy:18.85%;--ss:0.69px;--tw:7.02s;--td:-7.05s;--pk:0.57" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:17.53%;--sy:70.86%;--ss:0.98px;--tw:5.01s;--td:-1.56s;--pk:0.58" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:92.96%;--sy:24.09%;--ss:0.8px;--tw:7.99s;--td:-3.81s;--pk:0.44" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:98.34%;--sy:97.15%;--ss:0.79px;--tw:4.77s;--td:-2.36s;--pk:0.65" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:6.91%;--sy:66.42%;--ss:0.9px;--tw:4.57s;--td:-2.3s;--pk:0.42" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:58.34%;--sy:25.11%;--ss:2.92px;--tw:7.11s;--td:-6.25s;--pk:0.8" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:64.08%;--sy:3.67%;--ss:1.19px;--tw:7.52s;--td:-6.16s;--pk:0.42" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:64.2%;--sy:63.06%;--ss:0.53px;--tw:6.19s;--td:-6.39s;--pk:0.73" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:17.63%;--sy:36.64%;--ss:1.09px;--tw:4.91s;--td:-7.36s;--pk:0.42" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:92.19%;--sy:80.45%;--ss:0.55px;--tw:8.1s;--td:-3.09s;--pk:0.46" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:72.97999999999999%;--sy:33.84%;--ss:0.61px;--tw:4.21s;--td:-2.82s;--pk:0.81" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:2.7900000000000063%;--sy:69.05%;--ss:0.68px;--tw:7.41s;--td:-7.13s;--pk:0.68" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:13.98%;--sy:84.6%;--ss:1.12px;--tw:8.92s;--td:-8.09s;--pk:0.67" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:47.69%;--sy:94.74%;--ss:0.84px;--tw:5.62s;--td:-4.55s;--pk:0.7" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:83.73%;--sy:75.96%;--ss:1.88px;--tw:9.0s;--td:-10.71s;--pk:0.46" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:53.82%;--sy:86.45%;--ss:1.56px;--tw:4.12s;--td:-6.12s;--pk:0.84" aria-hidden="true"></span>
+<span class="astral-star astral-star-bright" style="--sx:43.01%;--sy:16.54%;--ss:2.26px;--tw:6.01s;--td:-0.4s;--pk:0.68" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:77.28999999999999%;--sy:48.37%;--ss:0.55px;--tw:5.46s;--td:-1.94s;--pk:0.34" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:84.26%;--sy:91.59%;--ss:0.51px;--tw:5.58s;--td:-0.36s;--pk:0.42" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:71.65%;--sy:1.65%;--ss:1.29px;--tw:6.39s;--td:-0.99s;--pk:0.42" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:11.3%;--sy:73.72%;--ss:0.75px;--tw:4.59s;--td:-8.14s;--pk:0.73" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:6.36%;--sy:21.84%;--ss:0.89px;--tw:7.05s;--td:-7.04s;--pk:0.77" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:98.7%;--sy:44.71%;--ss:1.92px;--tw:7.42s;--td:-10.17s;--pk:0.51" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:70.56%;--sy:64.75%;--ss:0.89px;--tw:7.14s;--td:-3.98s;--pk:0.48" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:75.69%;--sy:7.27%;--ss:0.65px;--tw:8.57s;--td:-2.13s;--pk:0.6" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:98.41%;--sy:88.92%;--ss:1.09px;--tw:5.29s;--td:-2.54s;--pk:0.75" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:3.18%;--sy:81.01%;--ss:2.3px;--tw:8.4s;--td:-6.48s;--pk:0.37" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:25.56%;--sy:76.74%;--ss:1.47px;--tw:7.9s;--td:-2.94s;--pk:0.58" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:43.73%;--sy:72.8%;--ss:2.66px;--tw:5.25s;--td:-2.55s;--pk:0.64" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:64.66%;--sy:65.47%;--ss:2.05px;--tw:8.41s;--td:-8.37s;--pk:0.64" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:36.1%;--sy:25.66%;--ss:1.83px;--tw:8.86s;--td:-5.12s;--pk:0.68" aria-hidden="true"></span>
+<span class="astral-star astral-star-bright" style="--sx:72.5%;--sy:75.16%;--ss:1.25px;--tw:9.8s;--td:-0.62s;--pk:0.64" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:86.47%;--sy:59.42%;--ss:1.82px;--tw:3.89s;--td:-8.75s;--pk:0.74" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:64.42%;--sy:87.7%;--ss:1.45px;--tw:7.5s;--td:-4.58s;--pk:0.85" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:49.29%;--sy:77.6%;--ss:0.83px;--tw:4.92s;--td:-1.65s;--pk:0.64" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:21.67%;--sy:65.29%;--ss:2.31px;--tw:5.78s;--td:-5.55s;--pk:0.55" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:35.84%;--sy:77.88%;--ss:0.94px;--tw:9.26s;--td:-4.06s;--pk:0.74" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:88.12%;--sy:33.29%;--ss:0.82px;--tw:6.07s;--td:-5.98s;--pk:0.77" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:15.22%;--sy:46.23%;--ss:1.87px;--tw:9.52s;--td:-1.79s;--pk:0.71" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:18.29%;--sy:21.12%;--ss:1.21px;--tw:8.04s;--td:-1.63s;--pk:0.38" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:71.95%;--sy:11.25%;--ss:0.67px;--tw:4.53s;--td:-10.72s;--pk:0.4" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:22.55%;--sy:72.16%;--ss:1.69px;--tw:4.8s;--td:-6.89s;--pk:0.76" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:37.02%;--sy:55.41%;--ss:1.29px;--tw:4.41s;--td:-0.73s;--pk:0.6" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:90.74%;--sy:83.72%;--ss:0.5px;--tw:8.03s;--td:-8.35s;--pk:0.41" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:2.530000000000001%;--sy:43.53%;--ss:0.51px;--tw:9.51s;--td:-5.31s;--pk:0.7" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:89.12%;--sy:5.78%;--ss:0.98px;--tw:5.63s;--td:-9.7s;--pk:0.4" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:8.35%;--sy:21.48%;--ss:0.78px;--tw:4.78s;--td:-4.06s;--pk:0.51" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:9.32%;--sy:98.62%;--ss:0.71px;--tw:8.4s;--td:-3.05s;--pk:0.4" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:79.64%;--sy:62.88%;--ss:1.41px;--tw:3.91s;--td:-3.49s;--pk:0.82" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:7.87%;--sy:44.76%;--ss:0.92px;--tw:7.53s;--td:-1.69s;--pk:0.43" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:37.47%;--sy:95.9%;--ss:0.84px;--tw:5.46s;--td:-4.04s;--pk:0.63" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:61.42%;--sy:54.96%;--ss:1.02px;--tw:4.34s;--td:-1.66s;--pk:0.84" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:86.0%;--sy:31.56%;--ss:0.6px;--tw:8.65s;--td:-9.2s;--pk:0.37" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:75.68%;--sy:6.57%;--ss:0.81px;--tw:7.78s;--td:-8.73s;--pk:0.71" aria-hidden="true"></span>
+<span class="astral-star astral-star-bright" style="--sx:84.88%;--sy:70.57%;--ss:3.08px;--tw:9.74s;--td:-5.77s;--pk:0.88" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:3.54%;--sy:62.79%;--ss:0.46px;--tw:8.83s;--td:-0.96s;--pk:0.71" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:98.05%;--sy:91.42%;--ss:1.63px;--tw:7.28s;--td:-6.42s;--pk:0.85" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:12.1%;--sy:54.0%;--ss:0.74px;--tw:7.3s;--td:-9.01s;--pk:0.85" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:66.2%;--sy:1.23%;--ss:1.44px;--tw:5.42s;--td:-7.1s;--pk:0.64" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:0.3499999999999943%;--sy:38.08%;--ss:1.16px;--tw:8.91s;--td:-7.05s;--pk:0.76" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:17.98%;--sy:37.65%;--ss:1.95px;--tw:4.08s;--td:-1.67s;--pk:0.39" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:39.89%;--sy:10.32%;--ss:1.06px;--tw:5.96s;--td:-0.35s;--pk:0.5" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:53.45%;--sy:18.47%;--ss:0.59px;--tw:6.84s;--td:-3.74s;--pk:0.46" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:40.08%;--sy:80.56%;--ss:1.3px;--tw:6.77s;--td:-2.2s;--pk:0.37" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:32.94%;--sy:26.49%;--ss:1.73px;--tw:8.23s;--td:-9.4s;--pk:0.39" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:72.15%;--sy:43.09%;--ss:0.93px;--tw:8.12s;--td:-8.82s;--pk:0.42" aria-hidden="true"></span>
+<span class="astral-star" style="--sx:81.31%;--sy:56.76%;--ss:0.86px;--tw:4.29s;--td:-2.61s;--pk:0.7" aria-hidden="true"></span>
+  </div>
+  <div class="astral-celestial-wash"></div>
+  <div class="astral-far-halo"></div>
+  <!-- Three slowly precessing orbital planes; each spins at an independent speed/direction. -->
+  <div class="astral-orbits" aria-hidden="true">
+    <svg class="astral-orbit-svg astral-orbit-a" viewBox="0 0 600 600" focusable="false">
+      <defs>
+        <linearGradient id="astral-a-grad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#b4e0f3" stop-opacity=".04"/><stop offset=".19" stop-color="#d6faff" stop-opacity=".48"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".12"/><stop offset=".78" stop-color="#ffe9c8" stop-opacity=".38"/><stop offset="1" stop-color="#d1d9fc" stop-opacity=".08"/>
+        </linearGradient>
+      </defs>
+      <g transform="rotate(-24 300 300)">
+        <ellipse cx="300" cy="300" rx="268" ry="114" fill="none" stroke="url(#astral-a-grad)" stroke-width="1.25"/>
+        <ellipse cx="300" cy="300" rx="268" ry="114" fill="none" stroke="#e9f7ff" stroke-opacity=".8" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="8 1360" class="astral-glide astral-glide-a"/>
+        <circle cx="568" cy="300" r="2.5" fill="#e5f8ff" opacity=".92"/>
+      </g>
+    </svg>
+    <svg class="astral-orbit-svg astral-orbit-b" viewBox="0 0 600 600" focusable="false">
+      <defs><linearGradient id="astral-b-grad" x1="0" y1=".1" x2=".8" y2="1"><stop offset="0" stop-color="#cbccff" stop-opacity=".1"/><stop offset=".32" stop-color="#e2d6ff" stop-opacity=".37"/><stop offset=".68" stop-color="#a0eaf0" stop-opacity=".29"/><stop offset="1" stop-color="#c4d1ff" stop-opacity=".05"/></linearGradient></defs>
+      <g transform="rotate(47 300 300)">
+        <ellipse cx="300" cy="300" rx="241" ry="164" fill="none" stroke="url(#astral-b-grad)" stroke-width=".95"/>
+        <ellipse cx="300" cy="300" rx="241" ry="164" fill="none" stroke="#ffe9d6" stroke-opacity=".56" stroke-width="1" stroke-dasharray="4 1540" class="astral-glide astral-glide-b"/>
+        <circle cx="541" cy="300" r="1.6" fill="#e8ddff" opacity=".79"/>
+      </g>
+    </svg>
+    <svg class="astral-orbit-svg astral-orbit-c" viewBox="0 0 600 600" focusable="false">
+      <defs><linearGradient id="astral-c-grad" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#bdd8f9" stop-opacity=".07"/><stop offset=".31" stop-color="#b9eff0" stop-opacity=".23"/><stop offset=".55" stop-color="#fff2df" stop-opacity=".48"/><stop offset="1" stop-color="#aaacec" stop-opacity=".07"/></linearGradient></defs>
+      <g transform="rotate(113 300 300)">
+        <ellipse cx="300" cy="300" rx="278" ry="86" fill="none" stroke="url(#astral-c-grad)" stroke-width=".85"/>
+        <ellipse cx="300" cy="300" rx="278" ry="86" fill="none" stroke="#c7f9f5" stroke-opacity=".52" stroke-width="1" stroke-dasharray="12 1480" class="astral-glide astral-glide-c"/>
+        <circle cx="578" cy="300" r="2" fill="#eafdfb" opacity=".68"/>
+      </g>
+    </svg>
+  </div>
+  <div class="astral-planet-corona"></div>
+  <div class="teaser-moon astral-planet">
+    <div class="astral-planet-clouds"></div>
+    <div class="astral-planet-silk"></div>
+    <svg class="astral-planet-veils" viewBox="0 0 320 320" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="astral-veil-mist" x1="0" x2="1" y1="1" y2="0"><stop offset="0" stop-color="#effff9" stop-opacity="0"/><stop offset=".25" stop-color="#effff9" stop-opacity=".32"/><stop offset=".66" stop-color="#b8dbff" stop-opacity=".46"/><stop offset="1" stop-color="#cbd5ff" stop-opacity="0"/></linearGradient>
+        <linearGradient id="astral-veil-lavender" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#e6f7ff" stop-opacity="0"/><stop offset=".51" stop-color="#d6cbff" stop-opacity=".39"/><stop offset="1" stop-color="#e8efff" stop-opacity="0"/></linearGradient>
+        <filter id="astral-mist-soft"><feGaussianBlur stdDeviation="12"/></filter>
+      </defs>
+      <path d="M-50 206 C45 185 62 131 143 133 S265 114 361 35" fill="none" stroke="url(#astral-veil-mist)" stroke-width="35" filter="url(#astral-mist-soft)" />
+      <path d="M-26 248 C65 194 117 231 190 174 S267 126 346 111" fill="none" stroke="url(#astral-veil-lavender)" stroke-width="29" filter="url(#astral-mist-soft)" />
+      <path d="M3 93 C82 39 117 84 199 74 S285 78 347 22" fill="none" stroke="url(#astral-veil-mist)" stroke-width="26" filter="url(#astral-mist-soft)" />
+    </svg>
+    <div class="astral-planet-glass"></div>
+    <div class="astral-planet-limb"></div>
+  </div>
+  <!-- Almost-invisible meteor dust, no five-point/star-shaped emojis -->
+  <div class="astral-light-motes"><i></i><i></i><i></i><i></i><i></i><i></i></div>
 </div>
+  </div>
 </section>
 <!-- 07 · DOWNLOAD -->
 <section class="download-section section-pad" id="download"><div class="container"><div class="download-panel" data-reveal=""><div class="dl-aura dl-aura-left"></div><div class="dl-aura dl-aura-right"></div><div aria-hidden="true" class="dl-particles"><span>✧</span><span>✦</span><span>✧</span><span>✷</span><span>✧</span></div><div class="download-content"><div aria-hidden="true" class="dl-symbol">✳</div><p class="eyebrow">IT'S YOUR TURN TO SHINE</p><h2 data-i18n-html="downloadTitle">What kind of luck<br/><em>is coming your way?</em></h2><p class="download-desc" data-i18n-html="downloadDesc">A little wonder starts here.<br/> Find your daily fortune with AuraSpot.</p><div class="store-actions"><a aria-label="Download AuraSpot from the App Store" class="store-button" data-i18n-arialabel="appStoreLabel" href="https://apps.apple.com/kr/app/auraspot/id6760815307" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M16.66 12.73c.02 2.09 1.85 2.78 1.87 2.79-.02.05-.29 1-.97 1.99-.59.86-1.2 1.71-2.16 1.73-.95.02-1.26-.56-2.35-.56-1.1 0-1.44.54-2.35.58-.94.03-1.66-.94-2.25-1.8-1.23-1.77-2.17-5-.91-7.18a3.47 3.47 0 0 1 2.9-1.76c.91-.02 1.78.62 2.34.62.56 0 1.61-.77 2.72-.66.47.02 1.81.19 2.67 1.46-.07.05-1.59.92-1.57 2.79ZM14.73 6.85a3.27 3.27 0 0 0 .76-2.53 3.28 3.28 0 0 0-2.19 1.3 3.14 3.14 0 0 0-.79 2.45 2.73 2.73 0 0 0 2.22-1.22Z" fill="currentColor"></path></svg><span><small>Download on the</small><strong>App Store</strong></span></a><a aria-label="Download AuraSpot from Google Play" class="store-button" data-i18n-arialabel="googlePlayLabel" href="https://play.google.com/store/apps/details?id=com.ybong.mdai" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4.5 2.7c-.3.26-.48.69-.48 1.24v16.15c0 .54.18.98.49 1.24l9.06-9.28v-.05L4.5 2.7Z" fill="#65c4f2"></path><path d="m16.63 15.2-3.06-3.15v-.05l3.06-3.15.07.04 3.63 2.08c1.03.6 1.03 1.57 0 2.16l-3.63 2.08-.07-.01Z" fill="#f7cc59"></path><path d="m16.7 15.19-3.13-3.19-9.07 9.33c.33.35.88.39 1.5.04l10.7-6.18Z" fill="#f36a75"></path><path d="M16.7 8.81 6 2.63c-.62-.35-1.17-.31-1.5.06L13.57 12l3.13-3.19Z" fill="#6bd1a0"></path></svg><span><small>GET IT ON</small><strong>Google Play</strong></span></a></div></div></div></div></section>
@@ -2012,4 +2231,3 @@ if ('IntersectionObserver' in window) {
 </script>
 </body>
 </html>
-
